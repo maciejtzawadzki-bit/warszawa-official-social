@@ -84,13 +84,15 @@ export function slideHtml(slide, format, index, total, image, { overlay = false 
   const title = rich(slide.title);
   let body;
   let size;
+  // Okładki i pojedyncze miejsca: rozmiar dobierany w przeglądarce (window.__fit), tak żeby najdłuższa linijka
+  // tytułu zajęła prawie całą szerokość kadru (Maciej 14.10: „napisy mogą być sporo większe”). `size` wyłącza dopasowanie.
+  const fit = (target, maxH, maxS) => (slide.size ? "" : ` data-fit="${target}" data-maxh="${Math.round(H * maxH)}" data-maxs="${maxS}"`);
   if (layout === "cover" && slide.num) {
-    size = slide.size ?? 104;
-    const numSize = slide.numSize ?? Math.round(H * (story ? 0.36 : 0.5));
-    body = `<div class="numrow"><div class="num" style="font-size:${numSize}px">${esc(slide.num)}</div><div class="numtext"><h1>${title}</h1>${sub}</div></div>`;
+    size = slide.size ?? 120;
+    body = `<div class="block left"><div class="fit"${fit(W - 64 - 48, story ? 0.42 : 0.56, 220)} style="font-size:${size}px"><div class="numrow"><div class="num">${esc(slide.num)}</div><div class="numtext"><h1>${title}</h1></div></div>${sub}</div></div>`;
   } else if (layout === "cover") {
     size = slide.size ?? 168;
-    body = `<div class="block left"><h1>${title}</h1>${sub}</div>`;
+    body = `<div class="block left"><div class="fit"${fit(W - 64 - 48, story ? 0.5 : 0.62, 330)} style="font-size:${size}px"><h1>${title}</h1>${sub}</div></div>`;
   } else if (layout === "repost") {
     body = `<div class="frame"><img src="${image}" alt="">${slide.credit ? `<div class="credit">${esc(slide.credit)}</div>` : ""}</div>`;
   } else if (layout === "list") {
@@ -101,15 +103,19 @@ export function slideHtml(slide, format, index, total, image, { overlay = false 
         return `<li><b>${rich(name)}</b>${text ? `<span>${rich(text)}</span>` : ""}</li>`;
       })
       .join("");
-    body = `<div class="block top"><h1>${title}</h1>${sub}<ol>${items}</ol></div>`;
+    body = `<div class="block top"><div class="fit" style="font-size:${size}px"><h1>${title}</h1>${sub}</div><ol>${items}</ol></div>`;
+  } else if (layout === "place") {
+    size = slide.size ?? 124;
+    body = `<div class="block center"><div class="fit serif"${fit(Math.round(W * 0.88), story ? 0.4 : 0.5, 300)} style="font-size:${size}px"><h1>${title}</h1>${sub}</div></div>`;
   } else {
-    size = slide.size ?? (layout === "place" ? 124 : 96);
-    body = `<div class="block center"><h1 class="serif">${title}</h1>${sub}</div>`;
+    size = slide.size ?? 96;
+    body = `<div class="block center"><div class="fit serif" style="font-size:${size}px"><h1>${title}</h1>${sub}</div></div>`;
   }
   const photo = image && layout !== "repost" && !overlay
     ? `<div class="photo" style="background-image:url('${image}');background-position:${esc(slide.focus ?? "center")}"></div>`
     : "";
-  // Delikatna poświata za napisem tylko dla czytelności na jasnych zdjęciach (`glow`: 0 wyłącza).
+  // Zdjęcie to tło, treść jest najważniejsza (Maciej 14.10): lekkie przyciemnienie całości (`wash`)
+  // i poświata za napisem (`glow`); 0 wyłącza.
   const glowAt = layout === "cover" ? "32% 50%" : "50% 50%";
   const glow = (photo || overlay) && layout !== "repost" ? `<div class="glow"></div>` : "";
   const bg = overlay ? "transparent" : layout === "repost" ? "#FFFFFF" : "#121214";
@@ -120,18 +126,18 @@ export function slideHtml(slide, format, index, total, image, { overlay = false 
   html, body { width: ${W}px; height: ${H}px; }
   body { background: ${bg}; color: #FFFFFF; position: relative; overflow: hidden; }
   .photo { position: absolute; inset: 0; background-size: cover; }
-  .glow { position: absolute; inset: 0; background: radial-gradient(ellipse 60% 34% at ${glowAt}, rgba(0,0,0,${slide.glow ?? 0.22}) 0%, rgba(0,0,0,0) 100%); }
-  h1 { font: 400 ${size}px/0.98 "League Gothic"; letter-spacing: 0.5px; text-shadow: 0 0 36px rgba(0,0,0,.22); }
-  h1.serif { font-family: "Newsreader"; font-variation-settings: "opsz" 72; line-height: 0.96; letter-spacing: -0.025em; }
-  .sub { margin-top: 0.15em; font: 400 ${Math.round((size ?? 100) * 0.62)}px/1.0 "League Gothic"; letter-spacing: 0.5px; text-shadow: 0 0 30px rgba(0,0,0,.25); }
-  .center .sub { font: 400 ${Math.round((size ?? 100) * 0.36)}px/1.2 "Newsreader"; letter-spacing: -0.01em; margin-top: 0.5em; }
-  .block { position: absolute; left: 96px; right: 96px; }
+  .glow { position: absolute; inset: 0; background: radial-gradient(ellipse 60% 34% at ${glowAt}, rgba(0,0,0,${slide.glow ?? 0.22}) 0%, rgba(0,0,0,0) 100%), rgba(0,0,0,${slide.wash ?? 0.14}); }
+  .fit { display: inline-block; }
+  h1 { display: inline-block; white-space: nowrap; font: 400 1em/0.98 "League Gothic"; letter-spacing: 0.005em; text-shadow: 0 0 36px rgba(0,0,0,.22); }
+  .serif h1 { font-family: "Newsreader"; font-variation-settings: "opsz" 72; line-height: 0.96; letter-spacing: -0.025em; }
+  .sub { margin-top: 0.12em; font: 400 0.5em/1.0 "League Gothic"; letter-spacing: 0.005em; text-shadow: 0 0 30px rgba(0,0,0,.25); max-width: ${W - 112}px; }
+  .serif .sub { font: 400 max(0.3em, 46px)/1.2 "Newsreader"; letter-spacing: -0.01em; margin: 0.45em auto 0; }
+  .block { position: absolute; left: 64px; right: 48px; }
   .left { top: ${slide.y ?? 47}%; transform: translateY(-50%); }
-  .center { top: ${slide.y ?? 50}%; transform: translateY(-50%); text-align: center; }
+  .center { left: 40px; right: 40px; top: ${slide.y ?? 50}%; transform: translateY(-50%); text-align: center; }
   .top { top: ${story ? 300 : 150}px; }
-  .numrow { position: absolute; left: 76px; right: 60px; top: ${slide.y ?? 48}%; transform: translateY(-50%); display: flex; align-items: flex-start; gap: 22px; }
-  .num { font-family: "League Gothic"; line-height: 0.8; letter-spacing: -2px; text-shadow: 0 0 40px rgba(0,0,0,.22); }
-  .numtext { padding-top: 0.6%; }
+  .numrow { display: flex; align-items: flex-start; gap: 0.18em; }
+  .num { font-family: "League Gothic"; line-height: 0.8; letter-spacing: -0.02em; text-shadow: 0 0 40px rgba(0,0,0,.22); }
   .numtext h1 { line-height: 1.0; }
   .frame { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 26px; }
   .frame img { width: ${W - 180}px; height: auto; max-height: ${H - 330}px; object-fit: contain; display: block; }
@@ -140,7 +146,22 @@ export function slideHtml(slide, format, index, total, image, { overlay = false 
   li { border-top: 1px solid rgba(255,255,255,.22); padding-top: ${story ? 26 : 22}px; display: grid; gap: 6px; }
   li b { font: 400 ${story ? 58 : 52}px/1.05 "League Gothic"; letter-spacing: 0.5px; }
   li span { font: 400 ${story ? 32 : 29}px/1.35 "Instrument Sans"; color: rgba(255,255,255,.80); }
-</style></head><body>
+</style>
+<script>
+// Dopasowanie: tytuł (z liczbą) zajmuje data-fit px szerokości, cały blok najwyżej data-maxh px wysokości.
+window.__fit = () => {
+  for (const el of document.querySelectorAll("[data-fit]")) {
+    const target = +el.dataset.fit, maxH = +el.dataset.maxh, maxS = +el.dataset.maxs;
+    const h1 = el.querySelector("h1"), num = el.querySelector(".num");
+    for (let i = 0; i < 5; i += 1) {
+      if (num) num.style.fontSize = (h1.offsetHeight / 0.74) + "px";
+      const width = num ? el.querySelector(".numrow").scrollWidth : h1.offsetWidth;
+      const k = Math.min(target / width, maxH / el.offsetHeight);
+      el.style.fontSize = Math.min(parseFloat(el.style.fontSize) * k, maxS) + "px";
+    }
+  }
+};
+</script></head><body>
 ${photo}
 ${glow}
 ${body}
@@ -177,6 +198,7 @@ export async function renderPost(post, outDir) {
       return specs.filter((spec) => !document.fonts.check(spec, "Ąż"));
     }, FONT_CHECK);
     if (missing.length) throw new Error(`Nie wczytano fontów: ${missing.join(", ")}`);
+    await page.evaluate(() => window.__fit?.());
     const file = path.join(outDir, `${post.id}-${String(i + 1).padStart(2, "0")}.png`);
     await page.screenshot({ path: file });
     files.push(file);

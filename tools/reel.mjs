@@ -38,7 +38,7 @@ export async function renderReel(post, outDir) {
   const clips = [];
   for (const [i, slide] of slides.entries()) {
     await page.setContent(slideHtml(slide, "story", i, slides.length, null, { overlay: true }), { waitUntil: "load" });
-    await page.evaluate(async () => { await document.fonts.ready; });
+    await page.evaluate(async () => { await document.fonts.ready; window.__fit?.(); });
     const layer = path.join(tmp, `napis-${i}.png`);
     await page.screenshot({ path: layer, omitBackground: true });
     const photo = await photoFile(await slideImage(slide), tmp, i);

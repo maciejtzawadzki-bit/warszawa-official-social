@@ -37,13 +37,17 @@ Ustalenia właściciela z 14.10.2026. Zasady pracy automatu są w `CLAUDE.md`. T
 
 ## Opis profilu
 
-Po angielsku, ogólny, bez nastawienia na dzieci; zmieniany ręcznie w dniu startu (API nie zmienia opisu). Ze słowem „unofficial”, żeby konto nie było brane za oficjalne konto miasta.
+Zostaje obecny: „PIERWSZA DAMA WWA👸 |#warszawaofficial” (decyzja właściciela 14.10; wcześniejszy pomysł opisu po angielsku odłożony).
+
+## Treść przed zdjęciem
+
+Obserwujących przynosi wartość informacji, zdjęcie jest tłem (właściciel 14.10). Duże, konkretne tytuły z liczbą albo datą, druga linijka z miejscem, godziną i ceną. Własne nagrania właściciela, gdy są, mają pierwszeństwo.
 
 ## Ryzyka
 
 | Ryzyko | Jak ograniczamy |
 |---|---|
-| Konto wzięte za oficjalne konto miasta | „unofficial” w opisie, głos persony, brak herbów i logo |
+| Konto wzięte za oficjalne konto miasta | głos persony („Pierwsza Dama WWA”), brak herbów i logo |
 | Błędna informacja (data, „za darmo”) | źródło przy każdym wydarzeniu, sprawdzenie u organizatora |
 | Sprzeciw autora grafiki | oznaczenie autora; usunięcie posta tego samego dnia |
 | Żart w dniu uroczystym | kalendarz dni uroczystych (`docs/KALENDARZ_ZRODLA.md`) |

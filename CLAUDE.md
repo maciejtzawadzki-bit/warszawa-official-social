@@ -45,8 +45,9 @@ Relacje: według możliwości API (obraz bez naklejek), „Dziś u mnie”. W dz
    - Rolka: nagłówek z emotką i 1–2 zdania (150–250 znaków), potem EN i hasztagi.
    - Wzór pisze nazwy kont bez „@”. My piszemy z „@”, bo oznaczenie powiadamia organizatora i zwiększa szansę, że udostępni post.
 4. **Materiały innych profili** (decyzja właściciela 14.10): zdjęcia i grafiki organizatora z oznaczeniem autora w opisie i na zdjęciu; gdy organizator się sprzeciwi, post znika tego samego dnia. Nie przerabiaj cudzych grafik poza kadrowaniem i napisem.
-5. **Grafiki tylko z `tools/render.mjs`** (styl zmierzony na slajdach @projekt.miejski 14.10):
-   - `cover`: zdjęcie „z życia” (ludzie, wnętrza, światło, nie pocztówka z zabytkiem), biały napis League Gothic małymi literami, wyrównany do lewej; data jako ostatnia linia tytułu („co się dzieje\nw Warszawie\n16.10–18.10”); z `num` duża liczba po lewej („7” + „miejsc na listopad z dzieckiem”).
+5. **Treść przed zdjęciem** (Maciej 14.10): obserwujących przynosi wartość informacji, zdjęcie jest tłem. Tytuł duży (renderer sam dopasowuje go prawie do szerokości kadru), konkretny i z liczbą albo datą, gdy się da („9 pomysłów na weekend 16–18.10”); druga linijka mówi kiedy, gdzie i za ile. Bez przesady z efektami. Własne nagrania właściciela mają pierwszeństwo przed każdym innym materiałem.
+6. **Grafiki tylko z `tools/render.mjs`** (styl zmierzony na slajdach @projekt.miejski 14.10):
+   - `cover`: zdjęcie „z życia” (ludzie, wnętrza, światło, nie pocztówka z zabytkiem), lekko przyciemnione, biały napis League Gothic małymi literami, wyrównany do lewej; data jako ostatnia linia tytułu („co się dzieje\nw Warszawie\n16.10–18.10”); z `num` duża liczba po lewej („9” + „pomysłów\nna weekend\nw Warszawie\n16–18.10”), to preferowany wariant okładki „Weekend u mnie”.
    - `repost`: grafika lub zdjęcie organizatora w całości na białym tle, pod spodem szary podpis `credit` z kontem; obraz z pola `ig` („@konto/SKRÓT”, listę daje `node tools/ig-media.mjs <konto>`), do tego `tags: ["@konto"]` (oznaczenie na zdjęciu).
    - `place`: jedno miejsce lub wydarzenie, Newsreader na środku kadru, małe litery poza nazwami własnymi.
    - Na obrazie nigdy: nazwa naszego konta, numeracja slajdów, logo, ramki, kolory poza bielą. Nie zmieniaj cudzych grafik poza dopasowaniem do kadru.
