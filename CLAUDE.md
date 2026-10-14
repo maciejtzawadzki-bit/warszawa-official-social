@@ -7,7 +7,7 @@ Strategia i ustalenia właściciela (Maciej, 14.10.2026): `docs/STRATEGIA.md`. K
 ## Środowisko
 
 - Środowisko chmury `warszawa_official`. Zmienna `IG_ACCESS_TOKEN` to token użytkownika systemowego Meta (portfolio „warszawa_official”, nie wygasa). **Nie wypisuj go nigdzie**, nawet fragmentu.
-- Sieć: `graph.facebook.com`, GitHub, npm, a do grafik organizatorów także CDN Instagrama (`*.cdninstagram.com`, `*.fbcdn.net`). Bez CDN slajdy `repost` się nie wyrenderują: zgłoś to w odpowiedzi, nie zastępuj ich innymi zdjęciami.
+- Sieć: `graph.facebook.com`, GitHub, npm, CDN Instagrama (`*.cdninstagram.com`, `*.fbcdn.net`, grafiki organizatorów), `api.open-meteo.com` (prognoza). Bez CDN slajdy `repost` się nie wyrenderują: zgłoś to w odpowiedzi, nie zastępuj ich innymi zdjęciami.
 - Instalacja: `cd tools && npm install --silent` (playwright-core; Chromium jest w `/opt/pw-browsers`).
 - Konto: Instagram `warszawa_official`, połączone ze stroną na Facebooku „Pierwsza Dama WWA”. Publikator sam znajduje ID konta z tokena.
 - To środowisko **nie ma** strażnika KMZ: automat wypycha na `main` tego repozytorium (tak działa hosting grafik). W innych repozytoriach niczego nie zmieniaj.
@@ -62,10 +62,11 @@ Relacje: według możliwości API (obraz bez naklejek), „Dziś u mnie”. W dz
 ### Tryb 2: plan tygodnia z wetem (czwartek po południu)
 0. Raport tygodnia: `node tools/stats.mjs --write` (dopisuje tabelę na górze `RAPORTY.md`). Pod tabelą 2–4 zdania wniosków, oddzielone od liczb: które posty miały najwięcej zapisów i udostępnień i co z tego wynika dla planu. Do 100 zaangażowanych osób Instagram nie pokazuje ich demografii, więc nie zgaduj.
 1. Przeczytaj `RAPORTY.md`, `DZIENNIK.md`, `queue/`, `docs/KALENDARZ_ZRODLA.md`, `docs/RODZINY_MIEJSCA.md`.
-2. Sprawdź źródła wydarzeń (rdzeń: RSS PIK „za darmo”, RSS Go2Warsaw, RSS Muzeum Warszawy, Kids in the City, strona 19115 „Ciekawe wydarzenia”; raz w tygodniu waw4free) i ułóż kolejny tydzień (pon.–nd.) według rytmu. Każdy post sprawdzony u źródła.
-3. Wyrenderuj grafiki, obejrzyj każdy PNG (Read), popraw długość napisu.
-4. Podgląd tygodnia: `node tools/preview.mjs RRRR-MM-DD` → `preview/tydzien-RRRR-MM-DD.png`.
-5. Commit i push na `main`. W ostatniej odpowiedzi: lista postów i link do podglądu. **Właściciel ma weto, brak odpowiedzi = publikacja** (decyzja 14.10).
+2. **Kontekst tygodnia** (właściciel 14.10: „szukajmy przez pryzmat okoliczności”): `node tools/pogoda.mjs` daje prognozę na 7 dni i sezon. Dobierz propozycje do pogody i pory roku: deszcz, zimno, wiatr → przewaga atrakcji pod dachem (parki trampolin, sale zabaw, centra nauki, baseny, ścianki, muzea, kino, teatr); słońce i ciepło → plenery (parki, bulwary, targi i food trucki na zewnątrz, kina plenerowe, pikniki); sezon świąteczny → iluminacje, pokazy świateł, jarmarki, lodowiska; październik → dynie i Halloween. Gdy prognoza na weekend wyraźnie się zmieni po publikacji planu, dołóż w piątek krótki post pod pogodę (np. „deszczowa niedziela: 7 miejsc pod dachem”). Pogodę wspominaj w opisie tylko wtedy, gdy jest pewna (prognoza na 1–2 dni).
+3. Sprawdź źródła wydarzeń (rdzeń: RSS PIK „za darmo”, RSS Go2Warsaw, RSS Muzeum Warszawy, Kids in the City, strona 19115 „Ciekawe wydarzenia”; raz w tygodniu waw4free) i ułóż kolejny tydzień (pon.–nd.) według rytmu. Każdy post sprawdzony u źródła.
+4. Wyrenderuj grafiki, obejrzyj każdy PNG (Read), popraw długość napisu.
+5. Podgląd tygodnia: `node tools/preview.mjs RRRR-MM-DD` → `preview/tydzien-RRRR-MM-DD.png`.
+6. Commit i push na `main`. W ostatniej odpowiedzi: lista postów i link do podglądu. **Właściciel ma weto, brak odpowiedzi = publikacja** (decyzja 14.10).
 
 ### Tryb 3: rolki z modną muzyką (półautomat)
 Raz w tygodniu 1–2 rolki: pionowe klipy lub obrazy z napisem w stylu konta, gotowy opis i lista oznaczeń w `reels/RRRR-MM-DD-<slug>/`. Nie publikujesz ich: właściciel dodaje w aplikacji popularny utwór albo szablon i publikuje sam. W ostatniej odpowiedzi podaj link do katalogu.
