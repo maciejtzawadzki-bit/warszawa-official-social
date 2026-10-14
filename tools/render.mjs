@@ -8,7 +8,7 @@
 //            z polem `num` duża liczba po lewej i tekst obok („7 miejsc na listopad z dzieckiem”),
 //   place  — jedno miejsce lub wydarzenie (też klatki rolek): szeryf (Newsreader) na środku kadru,
 //   repost — grafika lub zdjęcie organizatora w całości na białym tle, pod spodem szary podpis `credit`
-//            (tak wyglądają środkowe slajdy przeglądów u wzoru),
+//            (tak wyglądają środkowe slajdy przeglądów u wzoru); `crop: "3/2"` kadruje zbyt szerokie grafiki,
 //   text   — sam napis na ciemnym tle (dni uroczyste),
 //   list   — ciemne tło, tytuł i lista pozycji [tytuł, opis] (rzadko; szczegóły zwykle idą do opisu).
 // Domyślnie: pierwszy slajd ze zdjęciem to `cover`, kolejne `repost`; bez zdjęcia `text`.
@@ -94,7 +94,9 @@ export function slideHtml(slide, format, index, total, image, { overlay = false 
     size = slide.size ?? 168;
     body = `<div class="block left"><div class="fit"${fit(W - 64 - 48, story ? 0.5 : 0.62, 330)} style="font-size:${size}px"><h1>${title}</h1>${sub}</div></div>`;
   } else if (layout === "repost") {
-    body = `<div class="frame"><img src="${image}" alt="">${slide.credit ? `<div class="credit">${esc(slide.credit)}</div>` : ""}</div>`;
+    // `crop` (np. "3/2") kadruje zbyt szerokie albo wysokie grafiki; `focus` wskazuje, który fragment zostaje.
+    const crop = slide.crop ? ` style="aspect-ratio:${esc(slide.crop)};object-fit:cover;object-position:${esc(slide.focus ?? "center")}"` : "";
+    body = `<div class="frame"><img src="${image}" alt=""${crop}>${slide.credit ? `<div class="credit">${esc(slide.credit)}</div>` : ""}</div>`;
   } else if (layout === "list") {
     size = slide.size ?? 120;
     const items = (slide.items ?? [])
