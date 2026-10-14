@@ -2,6 +2,7 @@
 // Użycie: node tools/plan.mjs  (wywołują go run.mjs, reakcje.mjs i tryb 2; panel KMZ czyta plik z raw.githubusercontent.com).
 // Tylko pola do pokazania: id, data, godzina, typ, rubryka, status, pierwsza linia i pełny opis, adresy miniatur
 // wyrenderowanych slajdów (media/mini/, tools/miniatury.mjs; tylko slajdy, które już leżą w media/), permalink.
+import "./siec.mjs";
 import { existsSync } from "node:fs";
 import { readdir, readFile, writeFile } from "node:fs/promises";
 import path from "node:path";

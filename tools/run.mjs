@@ -5,6 +5,7 @@
 //   --now      — ignoruje godzinę z kolejki (publikuje posty z dzisiejszą datą od razu).
 // Kolejność dla każdego posta: render PNG → commit i push media/ → czekanie, aż obraz
 // będzie publiczny → publikacja przez Graph API → status "published" + dziennik → push.
+import "./siec.mjs";
 import { readFile, writeFile, readdir, appendFile } from "node:fs/promises";
 import { existsSync } from "node:fs";
 import { execFileSync } from "node:child_process";

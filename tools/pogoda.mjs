@@ -2,6 +2,7 @@
 // Użycie: node tools/pogoda.mjs [dni=7]
 // Wynik: dzień po dniu temperatura, opady i ocena „pod dachem / na zewnątrz”, a na końcu sezon.
 // Sieć środowiska musi przepuszczać api.open-meteo.com.
+import "./siec.mjs";
 
 const days = Number(process.argv[2] ?? 7);
 const URL_ =

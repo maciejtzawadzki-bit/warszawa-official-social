@@ -2,6 +2,7 @@
 // Każdy slajd ze zdjęciem: powolne przybliżenie zdjęcia (ffmpeg) i napis szeryfem na środku (układ `place` z render.mjs),
 // slajdy łączone przenikaniem. Modny utwór dodaje właściciel w aplikacji Instagram przy publikacji.
 // Użycie: node tools/reel.mjs <post.json> [katalog-wyjściowy]  →  rolka.mp4, okladka.jpg, opis.txt
+import "./siec.mjs";
 import { readFile, writeFile, mkdir, rm } from "node:fs/promises";
 import { execFileSync } from "node:child_process";
 import os from "node:os";

@@ -15,6 +15,7 @@
 // Zdjęcie: adres https albo ścieżka w repozytorium (np. media/zrodla/plik.jpg); pobierane przez Node i wklejane
 // do strony, więc Chromium nie potrzebuje sieci. `tags` slajdu (np. ["@organizator"]) publikator dodaje jako
 // oznaczenia na zdjęciu; na obrazie nie są rysowane.
+import "./siec.mjs";
 import { readFile, mkdir } from "node:fs/promises";
 import { existsSync, readdirSync, readFileSync } from "node:fs";
 import path from "node:path";

@@ -1,5 +1,6 @@
 // Podgląd tygodnia dla właściciela (weto): node tools/preview.mjs <data-poniedziałku RRRR-MM-DD>
 // Renderuje wszystkie posty z kolejki z pn–nd tego tygodnia i skleja je w preview/tydzien-<data>.png.
+import "./siec.mjs";
 import { readdir, readFile, mkdir } from "node:fs/promises";
 import { existsSync, readFileSync } from "node:fs";
 import os from "node:os";

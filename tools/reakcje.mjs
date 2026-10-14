@@ -8,6 +8,7 @@
 // run.mjs wywołuje odbierzReakcje() sam przed publikacją i nie publikuje posta, przy którym czeka „zmień”.
 // Klucz w zmiennej KMZ_WARSZAWA_SEKRET (nigdy go nie wypisuj); bez niej albo bez sieci skrypt tylko to zgłasza i kończy
 // z kodem 0, żeby nie zatrzymać publikacji.
+import "./siec.mjs";
 import { execFileSync } from "node:child_process";
 import { readdir, readFile, writeFile } from "node:fs/promises";
 import path from "node:path";

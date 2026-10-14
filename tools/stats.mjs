@@ -2,6 +2,7 @@
 // Użycie: node tools/stats.mjs [--days 7] [--write]
 //   bez --write wypisuje raport, z --write dopisuje go na początku RAPORTY.md (najnowszy na górze).
 // Liczby z API idą do tabel bez interpretacji; wnioski dopisuje człowiek albo agent pod tabelą.
+import "./siec.mjs";
 import { readFile, writeFile } from "node:fs/promises";
 import { existsSync } from "node:fs";
 import path from "node:path";

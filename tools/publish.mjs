@@ -8,6 +8,7 @@
 //   IG_GRAPH_VERSION  — opcjonalnie, domyślnie v23.0.
 // Obsługiwane typy: feed (1 obraz), carousel (2–10 obrazów), story (1 obraz albo wideo),
 // reel (wideo). Wideo: pole `video` = plik w media/video/ (MP4, H.264 + AAC, 9:16).
+import "./siec.mjs";
 import { readFile } from "node:fs/promises";
 
 const GRAPH = `https://graph.facebook.com/${process.env.IG_GRAPH_VERSION ?? "v23.0"}`;

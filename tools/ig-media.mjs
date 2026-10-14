@@ -6,6 +6,7 @@
 // to fragment adresu posta (instagram.com/p/SKRÓT/). Renderer zamienia go na aktualny `media_url` (adresy CDN
 // wygasają po kilku dniach, więc nie zapisujemy ich w kolejce).
 // Sieć środowiska musi przepuszczać graph.facebook.com oraz CDN Instagrama (*.cdninstagram.com, *.fbcdn.net).
+import "./siec.mjs";
 import { graph, igUserId } from "./publish.mjs";
 
 const FIELDS = "id,caption,media_type,timestamp,permalink,media_url,thumbnail_url,children{media_type,media_url,thumbnail_url}";
