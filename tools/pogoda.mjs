@@ -1,10 +1,12 @@
-// Prognoza dla Warszawy na najbliższe dni (Open-Meteo, bez klucza) i kontekst sezonu do planu tygodnia.
-// Użycie: node tools/pogoda.mjs [dni=7]
+// Prognoza dla Warszawy na najbliższe dni i kontekst sezonu do planu tygodnia. Źródła bez klucza: Open-Meteo (z
+// prawdopodobieństwem opadów), a gdy nie odpowiada, met.no (Norweski Instytut Meteorologiczny). Open-Meteo bywa
+// niedostępne ze współdzielonych adresów chmury (14.10: limit czasu w automacie, HTTP 429), met.no odpowiada.
+// Użycie: node tools/pogoda.mjs [dni=7] [--metno]   (--metno: od razu drugie źródło, do sprawdzenia)
 // Wynik: dzień po dniu temperatura, opady i ocena „pod dachem / na zewnątrz”, a na końcu sezon.
-// Sieć środowiska musi przepuszczać api.open-meteo.com.
 import "./siec.mjs";
 
-const days = Number(process.argv[2] ?? 7);
+const days = Number(process.argv.slice(2).find((a) => /^\d+$/.test(a)) ?? 7);
+const tylkoMetno = process.argv.includes("--metno");
 const URL_ =
   "https://api.open-meteo.com/v1/forecast?latitude=52.23&longitude=21.01&timezone=Europe%2FWarsaw" +
   `&forecast_days=${days}&daily=weather_code,temperature_2m_max,temperature_2m_min,precipitation_probability_max,precipitation_sum,wind_speed_10m_max`;
@@ -19,9 +21,10 @@ const sky = (code) => WMO.find(([codes]) => codes.includes(code))?.[1] ?? `kod $
 const DOW = ["nd.", "pon.", "wt.", "śr.", "czw.", "pt.", "sob."];
 
 // Prosta ocena do doboru propozycji (wniosek, nie prognoza): deszcz, zimno albo wiatr → pod dachem.
+// met.no nie podaje prawdopodobieństwa opadów (rainProb = null): wtedy liczą się same milimetry.
 function verdict(d) {
-  if (d.rainProb >= 60 || d.rain >= 2 || d.max < 5 || d.wind >= 45) return "pod dachem";
-  if (d.rainProb <= 30 && d.max >= 15) return "na zewnątrz";
+  if ((d.rainProb ?? 0) >= 60 || d.rain >= 2 || d.max < 5 || d.wind >= 45) return "pod dachem";
+  if ((d.rainProb ?? (d.rain < 0.5 ? 0 : 100)) <= 30 && d.max >= 15) return "na zewnątrz";
   return "mieszanie (pod dachem + krótko na zewnątrz)";
 }
 
@@ -39,30 +42,76 @@ function season(date) {
   return "jesień: muzea i wystawy, teatr, warsztaty; przy słońcu parki i spacery";
 }
 
-// Dwie próby po 20 s; bez prognozy plan i tak powstaje (wtedy dobór tylko według sezonu).
-let daily = null;
-for (const proba of [1, 2]) {
+async function openMeteo() {
+  const res = await fetch(URL_, { signal: AbortSignal.timeout(15_000) });
+  if (!res.ok) throw new Error(`HTTP ${res.status}`);
+  const { daily } = await res.json();
+  return daily.time.map((t, i) => ({
+    dzien: t, max: Math.round(daily.temperature_2m_max[i]), min: Math.round(daily.temperature_2m_min[i]),
+    rainProb: daily.precipitation_probability_max[i] ?? 0, rain: daily.precipitation_sum[i] ?? 0,
+    wind: Math.round(daily.wind_speed_10m_max[i] ?? 0), niebo: sky(daily.weather_code[i]),
+  }));
+}
+
+// met.no: prognoza co godzinę (ok. 2,5 dnia), potem co 6 godzin (do 10 dni); składamy dni czasu polskiego.
+const NIEBO_METNO = [
+  [/thunder/, "burza"], [/snow/, "śnieg"], [/sleet/, "deszcz ze śniegiem"], [/rain/, "deszcz"], [/fog/, "mgła"],
+  [/^cloudy/, "pochmurno"], [/fair|partlycloudy/, "częściowe zachmurzenie"], [/clearsky/, "słońce"],
+];
+async function metNo() {
+  const res = await fetch("https://api.met.no/weatherapi/locationforecast/2.0/compact?lat=52.23&lon=21.01", {
+    headers: { "User-Agent": "warszawa-official-social github.com/maciejtzawadzki-bit/warszawa-official-social" },
+    signal: AbortSignal.timeout(20_000),
+  });
+  if (!res.ok) throw new Error(`HTTP ${res.status}`);
+  const dzienPL = (iso) => new Intl.DateTimeFormat("en-CA", { timeZone: "Europe/Warsaw" }).format(new Date(iso));
+  const dni = new Map();
+  for (const { time, data } of (await res.json()).properties.timeseries) {
+    const k = dzienPL(time);
+    const d = dni.get(k) ?? { dzien: k, temp: [], rain: 0, wind: 0, symbole: {} };
+    d.temp.push(data.instant.details.air_temperature);
+    d.wind = Math.max(d.wind, data.instant.details.wind_speed ?? 0);
+    const okres = data.next_1_hours ?? data.next_6_hours;
+    d.rain += okres?.details?.precipitation_amount ?? 0;
+    const sym = okres?.summary?.symbol_code?.replace(/_(day|night|polartwilight)$/, "");
+    if (sym) d.symbole[sym] = (d.symbole[sym] ?? 0) + 1;
+    dni.set(k, d);
+  }
+  // Dziś po południu met.no ma już tylko resztę dnia (min i max z kilku godzin): pomijamy, plan dotyczy kolejnych dni.
+  const dzis = dzienPL(new Date().toISOString());
+  const poPoludniu = Number(new Intl.DateTimeFormat("en-GB", { timeZone: "Europe/Warsaw", hour: "2-digit", hourCycle: "h23" }).format(new Date())) >= 12;
+  return [...dni.values()].filter((d) => d.temp.length >= 3 && !(d.dzien === dzis && poPoludniu)).slice(0, days).map((d) => {
+    const sym = Object.entries(d.symbole).sort((a, b) => b[1] - a[1])[0]?.[0] ?? "";
+    return {
+      dzien: d.dzien, max: Math.round(Math.max(...d.temp)), min: Math.round(Math.min(...d.temp)),
+      rainProb: null, rain: Math.round(d.rain * 10) / 10, wind: Math.round(d.wind * 3.6),
+      niebo: NIEBO_METNO.find(([re]) => re.test(sym))?.[1] ?? sym,
+    };
+  });
+}
+
+// Bez prognozy plan i tak powstaje (wtedy dobór tylko według sezonu).
+let prognoza = null;
+let zrodlo = null;
+const bledy = [];
+for (const [nazwa, pobierz] of tylkoMetno ? [["met.no", metNo]] : [["Open-Meteo", openMeteo], ["met.no", metNo]]) {
   try {
-    const res = await fetch(URL_, { signal: AbortSignal.timeout(20_000) });
-    if (!res.ok) throw new Error(`HTTP ${res.status}`);
-    ({ daily } = await res.json());
+    prognoza = await pobierz();
+    zrodlo = nazwa;
     break;
   } catch (error) {
-    if (proba === 2) console.log(`Prognoza niedostępna (Open-Meteo: ${error.message}). Dobór według sezonu.`);
+    bledy.push(`${nazwa}: ${error.message}`);
   }
 }
-if (!daily) {
+if (!prognoza) {
+  console.log(`Prognoza niedostępna (${bledy.join("; ")}). Dobór według sezonu.`);
   console.log(`Sezon: ${season(new Date())}`);
   process.exit(0);
 }
-console.log("Prognoza Warszawa (Open-Meteo):");
-daily.time.forEach((t, i) => {
-  const d = {
-    max: Math.round(daily.temperature_2m_max[i]), min: Math.round(daily.temperature_2m_min[i]),
-    rainProb: daily.precipitation_probability_max[i] ?? 0, rain: daily.precipitation_sum[i] ?? 0,
-    wind: Math.round(daily.wind_speed_10m_max[i] ?? 0), code: daily.weather_code[i],
-  };
-  const date = new Date(`${t}T12:00:00`);
-  console.log(`- ${DOW[date.getDay()]} ${t.slice(8, 10)}.${t.slice(5, 7)}: ${d.min}–${d.max}°C, ${sky(d.code)}, opady ${d.rainProb}% (${d.rain} mm), wiatr do ${d.wind} km/h → ${verdict(d)}`);
-});
+console.log(`Prognoza Warszawa (${zrodlo}${bledy.length ? `; ${bledy.join("; ")}` : ""}):`);
+for (const d of prognoza) {
+  const date = new Date(`${d.dzien}T12:00:00`);
+  const opady = d.rainProb == null ? `opady ${d.rain} mm` : `opady ${d.rainProb}% (${d.rain} mm)`;
+  console.log(`- ${DOW[date.getDay()]} ${d.dzien.slice(8, 10)}.${d.dzien.slice(5, 7)}: ${d.min}–${d.max}°C, ${d.niebo}, ${opady}, wiatr do ${d.wind} km/h → ${verdict(d)}`);
+}
 console.log(`Sezon: ${season(new Date())}`);
