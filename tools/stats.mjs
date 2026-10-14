@@ -41,6 +41,14 @@ async function mediaMetrics(id) {
   return out;
 }
 
+// Zmiana liczby obserwujących względem poprzedniego raportu (pewniejsza niż follows_and_unfollows,
+// którego wymiary FOLLOWER / NON_FOLLOWER Meta opisuje niejednoznacznie).
+async function previousFollowers() {
+  if (!existsSync(REPORT)) return null;
+  const m = (await readFile(REPORT, "utf8")).match(/Obserwujący: \*\*(\d+)\*\*/);
+  return m ? Number(m[1]) : null;
+}
+
 export async function buildReport() {
   const user = await igUserId();
   const until = Math.floor(Date.now() / 1000);
@@ -86,12 +94,14 @@ export async function buildReport() {
     // poniżej progu albo zmiana API: zostaje opis „niedostępna”
   }
 
+  const prev = await previousFollowers();
+  const delta = prev == null ? "pierwszy raport" : `${account.followers_count - prev >= 0 ? "+" : ""}${account.followers_count - prev} od poprzedniego raportu`;
   const from = day(since * 1000);
   const to = day(until * 1000);
   return [
     `## ${from} – ${to}`,
     "",
-    `Obserwujący: **${account.followers_count}** (nowi ${byType.FOLLOWER ?? "–"}, odeszli ${byType.NON_FOLLOWER ?? "–"}), postów łącznie ${account.media_count}.`,
+    `Obserwujący: **${account.followers_count}** (${delta}; API follows_and_unfollows: FOLLOWER ${byType.FOLLOWER ?? "–"}, NON_FOLLOWER ${byType.NON_FOLLOWER ?? "–"}), postów łącznie ${account.media_count}.`,
     "",
     "| Konto, ostatnie dni | wartość |",
     "|---|---|",
