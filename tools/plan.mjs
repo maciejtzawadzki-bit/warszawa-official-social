@@ -1,12 +1,24 @@
 // Spis kolejki dla panelu KMZ (dział Warszawa Official): plan.json w katalogu głównym repozytorium.
-// Użycie: node tools/plan.mjs  (wywołują go run.mjs i tryb 2; panel KMZ czyta plik z raw.githubusercontent.com).
-// Tylko pola do pokazania: id, data, godzina, typ, rubryka, status, pierwsza linia opisu, permalink.
+// Użycie: node tools/plan.mjs  (wywołują go run.mjs, reakcje.mjs i tryb 2; panel KMZ czyta plik z raw.githubusercontent.com).
+// Tylko pola do pokazania: id, data, godzina, typ, rubryka, status, pierwsza linia i pełny opis, adresy wyrenderowanych
+// slajdów (tylko te, które już leżą w media/), permalink.
+import { existsSync } from "node:fs";
 import { readdir, readFile, writeFile } from "node:fs/promises";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const QUEUE = path.join(ROOT, "queue");
+const MEDIA = path.join(ROOT, "media");
+const RAW = "https://raw.githubusercontent.com/maciejtzawadzki-bit/warszawa-official-social/main/media";
+
+function obrazy(p) {
+  if (p.video) return [];
+  return (p.slides ?? [])
+    .map((_, i) => `${p.id}-${String(i + 1).padStart(2, "0")}.png`)
+    .filter((f) => existsSync(path.join(MEDIA, f)))
+    .map((f) => `${RAW}/${f}`);
+}
 
 export async function writePlan() {
   const files = (await readdir(QUEUE)).filter((f) => f.endsWith(".json")).sort();
@@ -21,6 +33,8 @@ export async function writePlan() {
       rubric: p.rubric ?? null,
       status: p.status ?? null,
       naglowek: String(p.caption ?? "").split("\n")[0].slice(0, 160),
+      podpis: String(p.caption ?? "").slice(0, 2400),
+      obrazy: obrazy(p),
       permalink: p.permalink ?? null,
     });
   }

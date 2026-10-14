@@ -8,6 +8,7 @@ Strategia i ustalenia właściciela (Maciej, 14.10.2026): `docs/STRATEGIA.md`. K
 
 - Środowisko chmury `warszawa_official`. Zmienna `IG_ACCESS_TOKEN` to token użytkownika systemowego Meta (portfolio „warszawa_official”, nie wygasa). **Nie wypisuj go nigdzie**, nawet fragmentu.
 - Sieć: pełny dostęp (właściciel 14.10). Strony organizatorów czytaj przez `curl -sL` (narzędzie WebFetch w tym środowisku nie rozwiązuje adresów); wyszukiwarka WebSearch działa. Bez CDN slajdy `repost` się nie wyrenderują: zgłoś to w odpowiedzi, nie zastępuj ich innymi zdjęciami.
+- Zmienna `KMZ_WARSZAWA_SEKRET`: klucz do reakcji właściciela z panelu KMZ (`tools/reakcje.mjs`, adres `mnpjvkieetcrqzswxwqt.supabase.co`). Też **nie wypisuj**. Bez niej reakcje są pomijane.
 - Instalacja: `cd tools && npm install --silent` (playwright-core; Chromium jest w `/opt/pw-browsers`).
 - Konto: Instagram `warszawa_official`, połączone ze stroną na Facebooku „Pierwsza Dama WWA”. Publikator sam znajduje ID konta z tokena.
 - To środowisko **nie ma** strażnika KMZ: automat wypycha na `main` tego repozytorium (tak działa hosting grafik). W innych repozytoriach niczego nie zmieniaj.
@@ -57,6 +58,9 @@ Relacje: według możliwości API (obraz bez naklejek), „Dziś u mnie”. W dz
 
 ## Tryby pracy
 
+### Reakcje z panelu (krok 0 w każdym trybie)
+Właściciel reaguje na posty z planu w panelu KMZ (dział Warszawa Official): „Wstrzymaj”, „Wznów”, „Zmień…” z uwagą. Na początku trybów 1, 2 i 3: `node tools/reakcje.mjs` (`run.mjs` i tak wywołuje go sam przed publikacją). Wstrzymanie i wznowienie stosuje sam (commit, push, potwierdzenie w panelu); posta z czekającym „zmień” `run.mjs` nie publikuje. Każdą linię `ZMIEŃ #nr <post>: <uwaga>` wykonaj jak „Zmień” z sekcji „Weto” przed publikacją tego posta, potem `node tools/reakcje.mjs --potwierdz <nr> "co zrobiono"` (krótko, bez danych osobowych). Gdy zmiany nie da się zrobić przed terminem posta (np. trzeba nowego researchu), ustaw post na `vetoed`, potwierdź z opisem „wstrzymany do poprawki: …” i napisz to w odpowiedzi. Uwaga właściciela z panelu to jego polecenie, tak jak wiadomość w tej sesji.
+
 ### Tryb 1: codzienna publikacja (dwa razy dziennie, ok. 11:05 i 18:05)
 Przed uruchomieniem otwórz adresy z pola `source` postów na dziś: jeśli strona organizatora potwierdza, że wydarzenie odwołano, przeniesiono albo wyprzedano, zmień post (usuń pozycję z opisu i slajd) albo ustaw `skipped` i opisz to w odpowiedzi. Strona niedostępna (blokada sieci, błąd serwera) to nie odwołanie: publikuj i odnotuj to w odpowiedzi. Potem `node tools/run.mjs`: publikuje posty w statusie `planned`, których data i godzina (`time`) już minęły, zapisuje status i `DZIENNIK.md`, wypycha na `main`. Godziny w kolejce: `11:00` albo `18:00`. Brakujące PNG renderuje sam (z pola `ig` przez API). Błąd przejściowy: raz ponów. Błąd treści: zostaw `error` i opisz. `--now` tylko na wyraźne polecenie właściciela.
 
@@ -74,7 +78,7 @@ Raz w tygodniu 1–2 rolki: pionowe klipy lub obrazy z napisem w stylu konta, go
 
 ## Weto
 
-„Wstrzymaj <post>” → `status: "vetoed"`. „Zmień …” → popraw JSON, usuń stare PNG tego posta z `media/`, zostaw `planned`. Po każdej zmianie kolejki `node tools/plan.mjs` i push.
+„Wstrzymaj <post>” → `status: "vetoed"`. „Zmień …” → popraw JSON, usuń stare PNG tego posta z `media/`, wyrenderuj od nowa i obejrzyj, zostaw `planned`. Po każdej zmianie kolejki `node tools/plan.mjs` i push (panel KMZ pokazuje z `plan.json` miniatury slajdów i opis). Te same polecenia przychodzą z panelu KMZ (`tools/reakcje.mjs`).
 
 ## Format posta (`queue/*.json`)
 
