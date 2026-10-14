@@ -1,0 +1,25 @@
+{
+  "zaktualizowano": "2026-10-14T16:33:24.897Z",
+  "posty": [
+    {
+      "id": "2026-10-15-wrocilam",
+      "date": "2026-10-14",
+      "time": "18:00",
+      "type": "feed",
+      "rubric": "Start konta",
+      "status": "planned",
+      "naglowek": "Wróciłam 👸",
+      "permalink": null
+    },
+    {
+      "id": "2026-10-15-weekend-u-mnie",
+      "date": "2026-10-15",
+      "time": "18:00",
+      "type": "carousel",
+      "rubric": "Weekend u mnie",
+      "status": "planned",
+      "naglowek": "Co u mnie w weekend? ✨",
+      "permalink": null
+    }
+  ]
+}

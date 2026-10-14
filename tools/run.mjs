@@ -12,6 +12,7 @@ import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { renderPost } from "./render.mjs";
 import { publishPost, mediaUrls } from "./publish.mjs";
+import { writePlan } from "./plan.mjs";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const QUEUE = path.join(ROOT, "queue");
@@ -144,13 +145,15 @@ for (const item of due) {
     console.error(`Błąd ${post.id}: ${post.error}`);
   }
   await save(item);
-  git("add", "queue", "DZIENNIK.md");
+  await writePlan();
+  git("add", "queue", "DZIENNIK.md", "plan.json");
   git("commit", "-q", "-m", `instagram: ${post.status} ${post.id}`);
   pushWithRetry();
 }
 
 if (!dryRun && skipped.length && !due.length) {
-  git("add", "queue", "DZIENNIK.md");
+  await writePlan();
+  git("add", "queue", "DZIENNIK.md", "plan.json");
   git("commit", "-q", "-m", "instagram: pominięte zaległe posty");
   pushWithRetry();
 }
