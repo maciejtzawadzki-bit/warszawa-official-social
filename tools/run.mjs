@@ -153,14 +153,14 @@ for (const item of due) {
   }
   await save(item);
   await writePlan();
-  git("add", "queue", "DZIENNIK.md", "plan.json");
+  git("add", "queue", "DZIENNIK.md", "plan.json", "media");
   git("commit", "-q", "-m", `instagram: ${post.status} ${post.id}`);
   pushWithRetry();
 }
 
 if (!dryRun && skipped.length && !due.length) {
   await writePlan();
-  git("add", "queue", "DZIENNIK.md", "plan.json");
+  git("add", "queue", "DZIENNIK.md", "plan.json", "media");
   git("commit", "-q", "-m", "instagram: pominięte zaległe posty");
   pushWithRetry();
 }

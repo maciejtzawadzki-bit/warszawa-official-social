@@ -116,7 +116,7 @@ export async function odbierzReakcje({ dryRun = false } = {}) {
       await writeFile(item.file, `${JSON.stringify(item.post, null, 2)}\n`);
     }
     await writePlan();
-    git("add", "queue", "plan.json");
+    git("add", "queue", "plan.json", "media");
     git("commit", "-q", "-m", `panel KMZ: reakcje właściciela (${[...zmienione].join(", ")})`);
     pushWithRetry();
   }
