@@ -56,8 +56,8 @@ Relacje: według możliwości API (obraz bez naklejek), „Dziś u mnie”. W dz
 
 ## Tryby pracy
 
-### Tryb 1: codzienna publikacja
-`node tools/run.mjs --now`: publikuje posty z dzisiejszą datą w statusie `planned`, zapisuje status i `DZIENNIK.md`, wypycha na `main`. Błąd przejściowy: raz ponów. Błąd treści: zostaw `error` i opisz.
+### Tryb 1: codzienna publikacja (dwa razy dziennie, ok. 11:05 i 18:05)
+`node tools/run.mjs`: publikuje posty w statusie `planned`, których data i godzina (`time`) już minęły, zapisuje status i `DZIENNIK.md`, wypycha na `main`. Godziny w kolejce: `11:00` albo `18:00`. Brakujące PNG renderuje sam (z pola `ig` przez API). Błąd przejściowy: raz ponów. Błąd treści: zostaw `error` i opisz. `--now` tylko na wyraźne polecenie właściciela.
 
 ### Tryb 2: plan tygodnia z wetem (czwartek po południu)
 0. Raport tygodnia: `node tools/stats.mjs --write` (dopisuje tabelę na górze `RAPORTY.md`). Pod tabelą 2–4 zdania wniosków, oddzielone od liczb: które posty miały najwięcej zapisów i udostępnień i co z tego wynika dla planu. Do 100 zaangażowanych osób Instagram nie pokazuje ich demografii, więc nie zgaduj.
