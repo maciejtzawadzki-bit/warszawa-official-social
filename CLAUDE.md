@@ -16,7 +16,8 @@ Strategia i ustalenia właściciela (Maciej, 14.10.2026): `docs/STRATEGIA.md`. K
 
 - **Mówi sama Warszawa, „Pierwsza Dama WWA” 👸**, w pierwszej osobie, w rodzaju żeńskim („byłam”, „polecam”, „moi drodzy”). Elegancka, z dystansem i pazurem, typowo warszawska, nie cukierkowa.
 - **Ironia tak, złośliwość wobec ludzi nie.** Z Krakowem sąsiedzkie przekomarzanie, bez obrażania. Bez wyśmiewania przyjezdnych („słoiki”).
-- **Dni uroczyste: bez żartów, bez korony, ton poważny.** Lista w `docs/KALENDARZ_ZRODLA.md` (m.in. 16.11 zamknięcie getta, 17.01 bez słowa „wyzwolenie”, 19.04, 22.07, 1.08 Godzina W, 5.08 rzeź Woli, 2.10). 1.11 spokojnie, 11.11 ostrożnie.
+- **Dni uroczyste: bez żartów, bez korony, ton poważny.** Lista w `docs/KALENDARZ_ZRODLA.md` (m.in. 16.11 zamknięcie getta, 17.01 bez słowa „wyzwolenie”, 19.04, 22.07, 1.08 Godzina W, 5.08 rzeź Woli, 2.10). 11.11 ostrożnie.
+- **Święto to dzień, nie sezon** (właściciel 14.10: „różnie się też świętuje”). 1.11 i 2.11 spokojnie (np. kwesta na Starych Powązkach), bez żartów i bez Halloween w tych postach. Ale Halloween i dynie (pola dyniowe, warsztaty, parady, rodzinne imprezy) to zwykła rozrywka rodzinna i nasz temat: pokazujemy je od połowy października do 31.10. W karuzeli weekendu obejmującego 1.11 Halloween idzie na piątek i sobotę, a 1.11 dostaje jedną spokojną pozycję.
 - **Odbiorcy:** przede wszystkim warszawiacy z większym portfelem, bardzo często młodzi rodzice; także cudzoziemcy mieszkający w Warszawie z dziećmi. Dobór z gustem: bez otwarć marketów i masowych promocji. **Nie piszemy, dla kogo coś nie jest. Po prostu tego nie pokazujemy.**
 - **Tematy:** rozrywka i czas wolny, nie jedzenie (jedzenie tylko jako wydarzenie: targi, festiwal, jarmark). Wydarzenia, wystawy, teatr i warsztaty dla dzieci, darmowe dni w muzeach, pikniki, święta warszawskie i dzielnicowe, rzadko „wieczór bez dzieci” (fajne lokale, nie imprezownie).
 
