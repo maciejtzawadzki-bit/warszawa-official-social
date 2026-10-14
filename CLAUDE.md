@@ -7,7 +7,7 @@ Strategia i ustalenia właściciela (Maciej, 14.10.2026): `docs/STRATEGIA.md`. K
 ## Środowisko
 
 - Środowisko chmury `warszawa_official`. Zmienna `IG_ACCESS_TOKEN` to token użytkownika systemowego Meta (portfolio „warszawa_official”, nie wygasa). **Nie wypisuj go nigdzie**, nawet fragmentu.
-- Sieć: `graph.facebook.com`, GitHub, npm, CDN Instagrama (`*.cdninstagram.com`, `*.fbcdn.net`, grafiki organizatorów), `api.open-meteo.com` (prognoza). Bez CDN slajdy `repost` się nie wyrenderują: zgłoś to w odpowiedzi, nie zastępuj ich innymi zdjęciami.
+- Sieć: pełny dostęp (właściciel 14.10). Strony organizatorów czytaj przez `curl -sL` (narzędzie WebFetch w tym środowisku nie rozwiązuje adresów); wyszukiwarka WebSearch działa. Bez CDN slajdy `repost` się nie wyrenderują: zgłoś to w odpowiedzi, nie zastępuj ich innymi zdjęciami.
 - Instalacja: `cd tools && npm install --silent` (playwright-core; Chromium jest w `/opt/pw-browsers`).
 - Konto: Instagram `warszawa_official`, połączone ze stroną na Facebooku „Pierwsza Dama WWA”. Publikator sam znajduje ID konta z tokena.
 - To środowisko **nie ma** strażnika KMZ: automat wypycha na `main` tego repozytorium (tak działa hosting grafik). W innych repozytoriach niczego nie zmieniaj.

@@ -38,9 +38,22 @@ function season(date) {
   return "jesień: muzea i wystawy, teatr, warsztaty; przy słońcu parki i spacery";
 }
 
-const res = await fetch(URL_);
-if (!res.ok) throw new Error(`Open-Meteo: HTTP ${res.status}`);
-const { daily } = await res.json();
+// Dwie próby po 20 s; bez prognozy plan i tak powstaje (wtedy dobór tylko według sezonu).
+let daily = null;
+for (const proba of [1, 2]) {
+  try {
+    const res = await fetch(URL_, { signal: AbortSignal.timeout(20_000) });
+    if (!res.ok) throw new Error(`HTTP ${res.status}`);
+    ({ daily } = await res.json());
+    break;
+  } catch (error) {
+    if (proba === 2) console.log(`Prognoza niedostępna (Open-Meteo: ${error.message}). Dobór według sezonu.`);
+  }
+}
+if (!daily) {
+  console.log(`Sezon: ${season(new Date())}`);
+  process.exit(0);
+}
 console.log("Prognoza Warszawa (Open-Meteo):");
 daily.time.forEach((t, i) => {
   const d = {
