@@ -1,7 +1,7 @@
 // Publikacja posta @warszawa_official na Instagramie przez oficjalne Instagram Graph API (Meta).
 // Użycie: node publish.mjs <post.json> [--dry-run]
 // Zmienne środowiskowe (nigdy w repo):
-//   IG_USER_ID        — opcjonalnie; bez niej ustalany z tokena (jedyne konto albo IG_USERNAME, domyślnie warszawa_official),
+//   IG_USER_ID        — opcjonalnie; domyślnie konto @warszawa_official (WARSZAWA_IG_ID); token musi je widzieć,
 //   IG_ACCESS_TOKEN   — token użytkownika systemowego Meta Business (nie wygasa),
 //   IG_MEDIA_BASE_URL — publiczny adres katalogu z PNG (Instagram pobiera obraz z URL),
 //   IG_VIDEO_BASE_URL — publiczny adres katalogu media/ dla wideo (typ video/mp4); bez niej IG_MEDIA_BASE_URL,
@@ -44,15 +44,14 @@ async function waitReady(containerId, { attempts = 30, intervalMs = 2000 } = {})
 
 const VIDEO_WAIT = { attempts: 60, intervalMs: 5000 };
 
-// Konto Instagram powiązane ze stroną na Facebooku, do której token ma dostęp.
+// Konto Instagram @warszawa_official (ID z konfiguracji Meta 14.10.2026). Publikujemy wyłącznie na nie: token, który
+// go nie widzi (np. token innego projektu w innym środowisku), kończy pracę błędem, zamiast wybrać jedyne widoczne konto.
+export const WARSZAWA_IG_ID = "17841401471147811";
 export async function igUserId() {
-  if (process.env.IG_USER_ID) return process.env.IG_USER_ID;
-  const username = (process.env.IG_USERNAME ?? "warszawa_official").toLowerCase();
+  const expected = process.env.IG_USER_ID ?? WARSZAWA_IG_ID;
   const { data = [] } = await graph("GET", "me/accounts", { fields: "instagram_business_account{id,username}" });
-  const accounts = data.map((page) => page.instagram_business_account).filter(Boolean);
-  // Jedno konto → bierzemy je (zmiana nazwy na Instagramie nie psuje publikacji).
-  const account = accounts.length === 1 ? accounts[0] : accounts.find((ig) => ig.username?.toLowerCase() === username);
-  if (!account) throw new Error(`Token nie ma dostępu do konta Instagram @${username}`);
+  const account = data.map((page) => page.instagram_business_account).find((ig) => ig?.id === expected);
+  if (!account) throw new Error(`Token nie ma dostępu do konta Instagram @warszawa_official (${expected}); publikacja wstrzymana`);
   return account.id;
 }
 
