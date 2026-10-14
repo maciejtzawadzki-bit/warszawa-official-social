@@ -1,0 +1,9 @@
+{
+  "name": "warszawa-official-instagram-tools",
+  "private": true,
+  "type": "module",
+  "description": "Renderer i publikator postów Instagrama @warszawa_official (na wzór automatu BiznesDOK).",
+  "dependencies": {
+    "playwright-core": "1.56.1"
+  }
+}
