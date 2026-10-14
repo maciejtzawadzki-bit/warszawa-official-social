@@ -61,14 +61,15 @@ async function imageData(src) {
   return uri;
 }
 
-function slideHtml(slide, format, index, total, image) {
+// `overlay`: sama warstwa napisu z przyciemnieniem na przezroczystym tle (do rolek: zdjęcie dokłada ffmpeg).
+export function slideHtml(slide, format, index, total, image, { overlay = false } = {}) {
   const [W, H] = SIZES[format];
   const story = format === "story";
-  const layout = slide.layout ?? (image ? "photo" : "text");
+  const layout = slide.layout ?? (image || overlay ? "photo" : "text");
   const pad = 80;
   const bottom = story ? 330 : 120;
   const size = slide.size ?? (layout === "photo" ? (story ? 132 : 118) : layout === "list" ? (story ? 96 : 84) : story ? 104 : 92);
-  const counter = total > 1 ? `<div class="counter">${index + 1}/${total}</div>` : "";
+  const counter = total > 1 && !overlay ? `<div class="counter">${index + 1}/${total}</div>` : "";
   const credit = slide.credit ? `<div class="credit">${esc(slide.credit)}</div>` : "";
   const sub = slide.sub ? `<div class="sub">${rich(slide.sub)}</div>` : "";
   const items = (slide.items ?? [])
@@ -83,15 +84,17 @@ function slideHtml(slide, format, index, total, image) {
       : layout === "text"
         ? `<div class="block center"><h1 style="font-size:${size}px">${rich(slide.title)}</h1>${sub}</div>`
         : `<div class="block bottom"><h1 style="font-size:${size}px">${rich(slide.title)}</h1>${sub}</div>`;
-  const bg = image
-    ? `<div class="photo" style="background-image:url('${image}');background-position:${esc(slide.focus ?? "center")}"></div><div class="shade"></div>`
-    : "";
+  const bg = overlay
+    ? `<div class="shade"></div>`
+    : image
+      ? `<div class="photo" style="background-image:url('${image}');background-position:${esc(slide.focus ?? "center")}"></div><div class="shade"></div>`
+      : "";
   return `<!doctype html><html lang="pl"><head><meta charset="utf-8">
 <style>
   ${FONTS}
   * { box-sizing: border-box; margin: 0; padding: 0; }
   html, body { width: ${W}px; height: ${H}px; }
-  body { background: #0D0D0F; color: #FFFFFF; font-family: "Instrument Sans", sans-serif; position: relative; overflow: hidden; }
+  body { background: ${overlay ? "transparent" : "#0D0D0F"}; color: #FFFFFF; font-family: "Instrument Sans", sans-serif; position: relative; overflow: hidden; }
   .photo { position: absolute; inset: 0; background-size: cover; }
   .shade { position: absolute; inset: 0; background: linear-gradient(180deg, rgba(0,0,0,.30) 0%, rgba(0,0,0,0) 20%, rgba(0,0,0,0) 42%, rgba(0,0,0,.55) 68%, rgba(0,0,0,.86) 100%); }
   .block { position: absolute; left: ${pad}px; right: ${pad}px; }
