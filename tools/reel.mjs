@@ -1,5 +1,5 @@
 // Rolka w półautomacie (tryb 3 w CLAUDE.md): post (JSON) → pionowe wideo 1080×1920 bez dźwięku.
-// Każdy slajd ze zdjęciem: powolne przybliżenie zdjęcia (ffmpeg) i napis w stylu konta (warstwa z render.mjs),
+// Każdy slajd ze zdjęciem: powolne przybliżenie zdjęcia (ffmpeg) i napis szeryfem na środku (układ `place` z render.mjs),
 // slajdy łączone przenikaniem. Modny utwór dodaje właściciel w aplikacji Instagram przy publikacji.
 // Użycie: node tools/reel.mjs <post.json> [katalog-wyjściowy]  →  rolka.mp4, okladka.jpg, opis.txt
 import { readFile, writeFile, mkdir, rm } from "node:fs/promises";
@@ -8,7 +8,7 @@ import os from "node:os";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { chromium } from "playwright-core";
-import { slideHtml, chromiumPath } from "./render.mjs";
+import { slideHtml, chromiumPath, slideImage } from "./render.mjs";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const W = 1080, H = 1920, FPS = 30, FADE = 0.6;
@@ -26,7 +26,7 @@ async function photoFile(src, dir, i) {
 const ff = (...args) => execFileSync("ffmpeg", ["-v", "error", "-y", ...args], { stdio: ["ignore", "ignore", "inherit"] });
 
 export async function renderReel(post, outDir) {
-  const slides = post.slides.filter((s) => s.image);
+  const slides = post.slides.filter((s) => s.image || s.ig);
   if (!slides.length) throw new Error("Rolka wymaga co najmniej jednego slajdu ze zdjęciem");
   const tmp = path.join(os.tmpdir(), `rolka-${post.id}`);
   await mkdir(tmp, { recursive: true });
@@ -41,7 +41,7 @@ export async function renderReel(post, outDir) {
     await page.evaluate(async () => { await document.fonts.ready; });
     const layer = path.join(tmp, `napis-${i}.png`);
     await page.screenshot({ path: layer, omitBackground: true });
-    const photo = await photoFile(slide.image, tmp, i);
+    const photo = await photoFile(await slideImage(slide), tmp, i);
     const frames = Math.round(seconds * FPS);
     const clip = path.join(tmp, `klip-${i}.mp4`);
     // Zdjęcie skalowane z zapasem (płynniejsze przybliżenie), kadr wg pola `focus` uproszczony do środka.

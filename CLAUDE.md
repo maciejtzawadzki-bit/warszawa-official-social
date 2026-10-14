@@ -7,7 +7,7 @@ Strategia i ustalenia właściciela (Maciej, 14.10.2026): `docs/STRATEGIA.md`. K
 ## Środowisko
 
 - Środowisko chmury `warszawa_official`. Zmienna `IG_ACCESS_TOKEN` to token użytkownika systemowego Meta (portfolio „warszawa_official”, nie wygasa). **Nie wypisuj go nigdzie**, nawet fragmentu.
-- Sieć: `graph.facebook.com` (dopuszczone w środowisku), GitHub, npm.
+- Sieć: `graph.facebook.com`, GitHub, npm, a do grafik organizatorów także CDN Instagrama (`*.cdninstagram.com`, `*.fbcdn.net`). Bez CDN slajdy `repost` się nie wyrenderują: zgłoś to w odpowiedzi, nie zastępuj ich innymi zdjęciami.
 - Instalacja: `cd tools && npm install --silent` (playwright-core; Chromium jest w `/opt/pw-browsers`).
 - Konto: Instagram `warszawa_official`, połączone ze stroną na Facebooku „Pierwsza Dama WWA”. Publikator sam znajduje ID konta z tokena.
 - To środowisko **nie ma** strażnika KMZ: automat wypycha na `main` tego repozytorium (tak działa hosting grafik). W innych repozytoriach niczego nie zmieniaj.
@@ -26,7 +26,7 @@ Strategia i ustalenia właściciela (Maciej, 14.10.2026): `docs/STRATEGIA.md`. K
 |---|---|
 | pon. | „Za darmo, a z klasą”: 3 propozycje na tydzień (co jest za darmo, kiedy, czy wejściówka) |
 | wt. | „Z dzieckiem” albo „Miejsca” |
-| czw. | „Weekend u mnie”: karuzela, okładka + 2 propozycje dla dorosłych + 2 rodzinne + slajd z biletami |
+| czw. | „Weekend u mnie”: karuzela, okładka (`cover`) + 5–9 slajdów `repost` z grafikami organizatorów (dorośli i rodziny na przemian); godziny i bilety w opisie |
 | pt. | „Moje święta” (według kalendarza) albo „Miejsca” / „Wieczór bez dzieci” |
 | sob. lub nd. | „Z dzieckiem” albo „Warszawiacy” |
 
@@ -36,9 +36,20 @@ Relacje: według możliwości API (obraz bez naklejek), „Dziś u mnie”. W dz
 
 1. **Każde wydarzenie sprawdzone u źródła** (strona organizatora albo instytucji) przy przygotowaniu posta: data, godzina, miejsce, cena, czy za darmo, wiek. Bez źródła nie publikujemy. Źródło zapisz w polu `source` posta.
 2. **Nie obiecuj angielskiego prowadzenia**, jeśli nie jest potwierdzone.
-3. **Opis:** po polsku (2–5 zdań w głosie Warszawy), potem pusty wiersz i krótka wersja po angielsku (2–3 zdania), na końcu kogo dotyczy (oznaczenie organizatora) i 3–6 hasztagów, w tym `#warszawaofficial`.
+3. **Opis** (układ wzoru @projekt.miejski, głos Warszawy):
+   - pierwsza linia: krótki nagłówek w głosie Warszawy, często z emotką na końcu („Co u mnie w weekend? ✨”),
+   - pusta linia, potem lista: każda pozycja w osobnym akapicie, zaczyna się emotką tematyczną (🎺 🧘 🎨 🧒 🎭), ma co, gdzie, kiedy i `@organizatora`; pozycje w kolejności slajdów,
+   - opcjonalnie jedno zdanie z pazurem na koniec listy,
+   - pusta linia, 1–2 zdania po angielsku („This weekend in Warsaw: …”),
+   - na końcu `#warszawa #warszawaofficial`. Bez „zapisz”, „udostępnij”, „link w bio”.
+   - Rolka: nagłówek z emotką i 1–2 zdania (150–250 znaków), potem EN i hasztagi.
+   - Wzór pisze nazwy kont bez „@”. My piszemy z „@”, bo oznaczenie powiadamia organizatora i zwiększa szansę, że udostępni post.
 4. **Materiały innych profili** (decyzja właściciela 14.10): zdjęcia i grafiki organizatora z oznaczeniem autora w opisie i na zdjęciu; gdy organizator się sprzeciwi, post znika tego samego dnia. Nie przerabiaj cudzych grafik poza kadrowaniem i napisem.
-5. **Grafiki tylko z `tools/render.mjs`:** zdjęcie na cały ekran, przyciemnienie, duży biały napis Instrument Serif małymi literami, pod nim mała linijka z datą i miejscem. Bez nowych kolorów (biały, bez akcentów).
+5. **Grafiki tylko z `tools/render.mjs`** (styl zmierzony na slajdach @projekt.miejski 14.10):
+   - `cover`: zdjęcie „z życia” (ludzie, wnętrza, światło, nie pocztówka z zabytkiem), biały napis League Gothic małymi literami, wyrównany do lewej; data jako ostatnia linia tytułu („co się dzieje\nw Warszawie\n17.10–19.10”); z `num` duża liczba po lewej („7” + „miejsc na listopad z dzieckiem”).
+   - `repost`: grafika lub zdjęcie organizatora w całości na białym tle, pod spodem szary podpis `credit` z kontem; obraz z pola `ig` („@konto/SKRÓT”, listę daje `node tools/ig-media.mjs <konto>`), do tego `tags: ["@konto"]` (oznaczenie na zdjęciu).
+   - `place`: jedno miejsce lub wydarzenie, Newsreader na środku kadru, małe litery poza nazwami własnymi.
+   - Na obrazie nigdy: nazwa naszego konta, numeracja slajdów, logo, ramki, kolory poza bielą. Nie zmieniaj cudzych grafik poza dopasowaniem do kadru.
 
 ## Tryby pracy
 
@@ -70,7 +81,10 @@ Raz w tygodniu 1–2 rolki: pionowe klipy lub obrazy z napisem w stylu konta, go
   "rubric": "Weekend u mnie",
   "source": ["https://…"],
   "tags": ["@organizator"],
-  "slides": [{ "image": "https://… albo media/zrodla/plik.jpg", "credit": "fot. @autor", "title": "weekend u mnie", "sub": "31.10–1.11 · śródmieście / wilanów" }],
+  "slides": [
+    { "layout": "cover", "image": "https://… albo media/zrodla/plik.jpg", "tags": ["@autor"], "title": "co się dzieje\nw Warszawie\n30.10–1.11" },
+    { "layout": "repost", "ig": "@organizator/SKRÓT", "credit": "@organizator", "tags": ["@organizator"] }
+  ],
   "caption": "…"
 }
 ```

@@ -1,14 +1,20 @@
 // Renderer grafik Instagrama @warszawa_official: plik posta (JSON) → PNG dla każdego slajdu.
 // Użycie: node render.mjs <post.json> [katalog-wyjściowy]
 // Wymaga playwright-core i Chromium (PLAYWRIGHT_BROWSERS_PATH albo CHROMIUM_PATH).
-// Styl konta (ustalenia z Maciejem 14.10.2026, wzór: @projekt.miejski): zdjęcie na cały ekran, przyciemnienie od dołu,
-// duży biały napis Instrument Serif, pod nim mała linijka z datą i miejscem; tylko biel, bez kolorowych akcentów.
-// Układy slajdu (`layout`):
-//   photo  — zdjęcie + tytuł + linijka (domyślny, gdy jest `image`),
-//   text   — sam tekst na ciemnym tle (dni uroczyste, slajdy bez zdjęcia; bez korony i ozdobników),
-//   list   — ciemne tło, tytuł i lista pozycji [tytuł, opis] (np. ostatni slajd z biletami i godzinami).
+// Styl konta (Maciej 14.10.2026, wzór @projekt.miejski, zmierzony na ich slajdach): zdjęcie „z telefonu” na cały
+// kadr, biały napis bez ramek i bez przyciemnienia od dołu, bez nazwy konta i numeracji na obrazie.
+// Układy (`layout`):
+//   cover  — okładka: wąski grotesk (League Gothic), małe litery, blok wyrównany do lewej na wysokości środka;
+//            z polem `num` duża liczba po lewej i tekst obok („7 miejsc na listopad z dzieckiem”),
+//   place  — jedno miejsce lub wydarzenie (też klatki rolek): szeryf (Newsreader) na środku kadru,
+//   repost — grafika lub zdjęcie organizatora w całości na białym tle, pod spodem szary podpis `credit`
+//            (tak wyglądają środkowe slajdy przeglądów u wzoru),
+//   text   — sam napis na ciemnym tle (dni uroczyste),
+//   list   — ciemne tło, tytuł i lista pozycji [tytuł, opis] (rzadko; szczegóły zwykle idą do opisu).
+// Domyślnie: pierwszy slajd ze zdjęciem to `cover`, kolejne `repost`; bez zdjęcia `text`.
 // Zdjęcie: adres https albo ścieżka w repozytorium (np. media/zrodla/plik.jpg); pobierane przez Node i wklejane
-// do strony, więc Chromium nie potrzebuje sieci. `credit` (np. „fot. @autor”) trafia w prawy dolny róg.
+// do strony, więc Chromium nie potrzebuje sieci. `tags` slajdu (np. ["@organizator"]) publikator dodaje jako
+// oznaczenia na zdjęciu; na obrazie nie są rysowane.
 import { readFile, mkdir } from "node:fs/promises";
 import { existsSync, readdirSync, readFileSync } from "node:fs";
 import path from "node:path";
@@ -18,23 +24,24 @@ import { chromium } from "playwright-core";
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const FONT_DIR = path.join(ROOT, "tools", "fonts");
 const FONTS = [
-  ["Instrument Sans", 400, "InstrumentSans-Regular.ttf"],
-  ["Instrument Sans", 600, "InstrumentSans-SemiBold.ttf"],
-  ["Instrument Serif", 400, "InstrumentSerif-Regular.ttf"],
+  ["League Gothic", "400", "LeagueGothic.ttf"],
+  ["Newsreader", "200 800", "Newsreader.ttf"],
+  ["Instrument Sans", "400", "InstrumentSans-Regular.ttf"],
+  ["Instrument Sans", "600", "InstrumentSans-SemiBold.ttf"],
 ]
   .map(([family, weight, file]) => {
     const data = readFileSync(path.join(FONT_DIR, file)).toString("base64");
     return `@font-face { font-family: "${family}"; font-weight: ${weight}; src: url(data:font/ttf;base64,${data}) format("truetype"); }`;
   })
   .join("\n");
+const FONT_CHECK = ['16px "League Gothic"', '400 16px "Newsreader"', '16px "Instrument Sans"', '600 16px "Instrument Sans"'];
 
 const SIZES = { feed: [1080, 1350], story: [1080, 1920] };
-const HANDLE = "warszawa_official";
 const UA = { "User-Agent": "warszawa-official-social/0.1 (github.com/maciejtzawadzki-bit/warszawa-official-social)" };
 
 // Polska typografia: krótkie przyimki i spójniki nie zostają na końcu wiersza.
 const GLUE = /(^|[\s(])(w|z|i|o|u|a|we|ze|na|do|po|od|bez|dla|że|to|—)\s+/giu;
-const typo = (text) => String(text ?? "").replace(GLUE, (_, pre, word) => `${pre}${word} `);
+const typo = (text) => String(text ?? "").replace(GLUE, (_, pre, word) => `${pre}${word}\u00a0`);
 const esc = (text) => String(text ?? "").replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" })[c]);
 const rich = (text) => esc(typo(text)).replace(/\n/g, "<br>");
 
@@ -61,61 +68,82 @@ async function imageData(src) {
   return uri;
 }
 
-// `overlay`: sama warstwa napisu z przyciemnieniem na przezroczystym tle (do rolek: zdjęcie dokłada ffmpeg).
+export function slideLayout(slide, index, image, overlay = false) {
+  if (slide.layout) return slide.layout;
+  if (overlay) return "place";
+  if (!image) return "text";
+  return index === 0 ? "cover" : "repost";
+}
+
+// `overlay`: sama warstwa napisu na przezroczystym tle (do rolek: zdjęcie dokłada ffmpeg).
 export function slideHtml(slide, format, index, total, image, { overlay = false } = {}) {
   const [W, H] = SIZES[format];
   const story = format === "story";
-  const layout = slide.layout ?? (image || overlay ? "photo" : "text");
-  const pad = 80;
-  const bottom = story ? 330 : 120;
-  const size = slide.size ?? (layout === "photo" ? (story ? 132 : 118) : layout === "list" ? (story ? 96 : 84) : story ? 104 : 92);
-  const counter = total > 1 && !overlay ? `<div class="counter">${index + 1}/${total}</div>` : "";
-  const credit = slide.credit ? `<div class="credit">${esc(slide.credit)}</div>` : "";
+  const layout = slideLayout(slide, index, image, overlay);
   const sub = slide.sub ? `<div class="sub">${rich(slide.sub)}</div>` : "";
-  const items = (slide.items ?? [])
-    .map((item) => {
-      const [title, text] = Array.isArray(item) ? item : [item, ""];
-      return `<li><b>${rich(title)}</b>${text ? `<span>${rich(text)}</span>` : ""}</li>`;
-    })
-    .join("");
-  const body =
-    layout === "list"
-      ? `<div class="block top"><h1 style="font-size:${size}px">${rich(slide.title)}</h1>${sub}<ol>${items}</ol></div>`
-      : layout === "text"
-        ? `<div class="block center"><h1 style="font-size:${size}px">${rich(slide.title)}</h1>${sub}</div>`
-        : `<div class="block bottom"><h1 style="font-size:${size}px">${rich(slide.title)}</h1>${sub}</div>`;
-  const bg = overlay
-    ? `<div class="shade"></div>`
-    : image
-      ? `<div class="photo" style="background-image:url('${image}');background-position:${esc(slide.focus ?? "center")}"></div><div class="shade"></div>`
-      : "";
+  const title = rich(slide.title);
+  let body;
+  let size;
+  if (layout === "cover" && slide.num) {
+    size = slide.size ?? 104;
+    const numSize = slide.numSize ?? Math.round(H * (story ? 0.36 : 0.5));
+    body = `<div class="numrow"><div class="num" style="font-size:${numSize}px">${esc(slide.num)}</div><div class="numtext"><h1>${title}</h1>${sub}</div></div>`;
+  } else if (layout === "cover") {
+    size = slide.size ?? 168;
+    body = `<div class="block left"><h1>${title}</h1>${sub}</div>`;
+  } else if (layout === "repost") {
+    body = `<div class="frame"><img src="${image}" alt="">${slide.credit ? `<div class="credit">${esc(slide.credit)}</div>` : ""}</div>`;
+  } else if (layout === "list") {
+    size = slide.size ?? 120;
+    const items = (slide.items ?? [])
+      .map((item) => {
+        const [name, text] = Array.isArray(item) ? item : [item, ""];
+        return `<li><b>${rich(name)}</b>${text ? `<span>${rich(text)}</span>` : ""}</li>`;
+      })
+      .join("");
+    body = `<div class="block top"><h1>${title}</h1>${sub}<ol>${items}</ol></div>`;
+  } else {
+    size = slide.size ?? (layout === "place" ? 124 : 96);
+    body = `<div class="block center"><h1 class="serif">${title}</h1>${sub}</div>`;
+  }
+  const photo = image && layout !== "repost" && !overlay
+    ? `<div class="photo" style="background-image:url('${image}');background-position:${esc(slide.focus ?? "center")}"></div>`
+    : "";
+  // Delikatna poświata za napisem tylko dla czytelności na jasnych zdjęciach (`glow`: 0 wyłącza).
+  const glowAt = layout === "cover" ? "32% 50%" : "50% 50%";
+  const glow = (photo || overlay) && layout !== "repost" ? `<div class="glow"></div>` : "";
+  const bg = overlay ? "transparent" : layout === "repost" ? "#FFFFFF" : "#121214";
   return `<!doctype html><html lang="pl"><head><meta charset="utf-8">
 <style>
   ${FONTS}
   * { box-sizing: border-box; margin: 0; padding: 0; }
   html, body { width: ${W}px; height: ${H}px; }
-  body { background: ${overlay ? "transparent" : "#0D0D0F"}; color: #FFFFFF; font-family: "Instrument Sans", sans-serif; position: relative; overflow: hidden; }
+  body { background: ${bg}; color: #FFFFFF; position: relative; overflow: hidden; }
   .photo { position: absolute; inset: 0; background-size: cover; }
-  .shade { position: absolute; inset: 0; background: linear-gradient(180deg, rgba(0,0,0,.30) 0%, rgba(0,0,0,0) 20%, rgba(0,0,0,0) 42%, rgba(0,0,0,.55) 68%, rgba(0,0,0,.86) 100%); }
-  .block { position: absolute; left: ${pad}px; right: ${pad}px; }
-  .bottom { bottom: ${bottom}px; }
-  .center { top: 50%; transform: translateY(-50%); text-align: left; }
-  .top { top: ${story ? 300 : 170}px; }
-  h1 { font-family: "Instrument Serif", serif; font-weight: 400; line-height: 0.98; letter-spacing: -1px; text-shadow: 0 2px 24px rgba(0,0,0,.25); }
-  .sub { margin-top: 30px; font: 400 ${story ? 36 : 32}px/1.35 "Instrument Sans"; color: rgba(255,255,255,.88); letter-spacing: .2px; }
+  .glow { position: absolute; inset: 0; background: radial-gradient(ellipse 60% 34% at ${glowAt}, rgba(0,0,0,${slide.glow ?? 0.22}) 0%, rgba(0,0,0,0) 100%); }
+  h1 { font: 400 ${size}px/0.98 "League Gothic"; letter-spacing: 0.5px; text-shadow: 0 0 36px rgba(0,0,0,.22); }
+  h1.serif { font-family: "Newsreader"; font-variation-settings: "opsz" 72; line-height: 0.96; letter-spacing: -0.025em; }
+  .sub { margin-top: 0.15em; font: 400 ${Math.round((size ?? 100) * 0.62)}px/1.0 "League Gothic"; letter-spacing: 0.5px; text-shadow: 0 0 30px rgba(0,0,0,.25); }
+  .center .sub { font: 400 ${Math.round((size ?? 100) * 0.36)}px/1.2 "Newsreader"; letter-spacing: -0.01em; margin-top: 0.5em; }
+  .block { position: absolute; left: 96px; right: 96px; }
+  .left { top: ${slide.y ?? 47}%; transform: translateY(-50%); }
+  .center { top: ${slide.y ?? 50}%; transform: translateY(-50%); text-align: center; }
+  .top { top: ${story ? 300 : 150}px; }
+  .numrow { position: absolute; left: 76px; right: 60px; top: ${slide.y ?? 48}%; transform: translateY(-50%); display: flex; align-items: flex-start; gap: 22px; }
+  .num { font-family: "League Gothic"; line-height: 0.8; letter-spacing: -2px; text-shadow: 0 0 40px rgba(0,0,0,.22); }
+  .numtext { padding-top: 0.6%; }
+  .numtext h1 { line-height: 1.0; }
+  .frame { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 26px; }
+  .frame img { width: ${W - 180}px; height: auto; max-height: ${H - 330}px; object-fit: contain; display: block; }
+  .credit { max-width: ${W - 180}px; text-align: center; font: 400 26px/1.3 "Instrument Sans"; color: #BDBDBD; }
   ol { list-style: none; margin-top: 56px; display: grid; gap: ${story ? 34 : 28}px; }
   li { border-top: 1px solid rgba(255,255,255,.22); padding-top: ${story ? 26 : 22}px; display: grid; gap: 6px; }
-  li b { font: 600 ${story ? 38 : 34}px/1.2 "Instrument Sans"; }
-  li span { font: 400 ${story ? 32 : 29}px/1.35 "Instrument Sans"; color: rgba(255,255,255,.78); }
-  .handle { position: absolute; top: 56px; left: ${pad}px; font: 600 22px "Instrument Sans"; letter-spacing: 3px; text-transform: uppercase; color: rgba(255,255,255,.78); }
-  .counter { position: absolute; top: 56px; right: ${pad}px; font: 600 22px "Instrument Sans"; letter-spacing: 2px; color: rgba(255,255,255,.78); }
-  .credit { position: absolute; right: 28px; bottom: ${story ? 250 : 26}px; font: 400 17px "Instrument Sans"; color: rgba(255,255,255,.62); }
+  li b { font: 400 ${story ? 58 : 52}px/1.05 "League Gothic"; letter-spacing: 0.5px; }
+  li span { font: 400 ${story ? 32 : 29}px/1.35 "Instrument Sans"; color: rgba(255,255,255,.80); }
 </style></head><body>
-${bg}
-<div class="handle">${HANDLE}</div>
-${counter}
+${photo}
+${glow}
 ${body}
-${credit}
 </body></html>`;
 }
 
@@ -126,22 +154,28 @@ export function chromiumPath() {
   return dir ? path.join(base, dir, "chrome-linux", "chrome") : undefined;
 }
 
+// Pole `ig` slajdu (grafika organizatora z Instagrama) zamieniane na aktualny adres obrazu przez API.
+export async function slideImage(slide) {
+  if (slide.image || !slide.ig) return slide.image;
+  const { resolveIg } = await import("./ig-media.mjs");
+  return resolveIg(slide.ig);
+}
+
 export async function renderPost(post, outDir) {
   const format = post.type === "story" ? "story" : "feed";
   const [W, H] = SIZES[format];
   await mkdir(outDir, { recursive: true });
-  const images = await Promise.all(post.slides.map((slide) => imageData(slide.image)));
+  const images = await Promise.all(post.slides.map(async (slide) => imageData(await slideImage(slide))));
   const browser = await chromium.launch({ executablePath: chromiumPath() });
   const page = await browser.newPage({ viewport: { width: W, height: H }, deviceScaleFactor: 1 });
   const files = [];
   for (const [i, slide] of post.slides.entries()) {
     await page.setContent(slideHtml(slide, format, i, post.slides.length, images[i]), { waitUntil: "load" });
-    const missing = await page.evaluate(async () => {
-      const specs = ['16px "Instrument Sans"', '600 16px "Instrument Sans"', '16px "Instrument Serif"'];
+    const missing = await page.evaluate(async (specs) => {
       await Promise.all(specs.map((spec) => document.fonts.load(spec, "Ąż")));
       await document.fonts.ready;
       return specs.filter((spec) => !document.fonts.check(spec, "Ąż"));
-    });
+    }, FONT_CHECK);
     if (missing.length) throw new Error(`Nie wczytano fontów: ${missing.join(", ")}`);
     const file = path.join(outDir, `${post.id}-${String(i + 1).padStart(2, "0")}.png`);
     await page.screenshot({ path: file });

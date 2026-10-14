@@ -18,7 +18,7 @@ function env(name) {
   return value;
 }
 
-async function graph(method, pathName, params) {
+export async function graph(method, pathName, params) {
   const url = new URL(`${GRAPH}/${pathName}`);
   const body = new URLSearchParams({ ...params, access_token: env("IG_ACCESS_TOKEN") });
   const res =
@@ -45,7 +45,7 @@ async function waitReady(containerId, { attempts = 30, intervalMs = 2000 } = {})
 const VIDEO_WAIT = { attempts: 60, intervalMs: 5000 };
 
 // Konto Instagram powiązane ze stroną na Facebooku, do której token ma dostęp.
-async function igUserId() {
+export async function igUserId() {
   if (process.env.IG_USER_ID) return process.env.IG_USER_ID;
   const username = (process.env.IG_USERNAME ?? "warszawa_official").toLowerCase();
   const { data = [] } = await graph("GET", "me/accounts", { fields: "instagram_business_account{id,username}" });
@@ -68,10 +68,17 @@ export function mediaUrls(post) {
   return [`${base}/video/${post.video}`];
 }
 
+/** Oznaczenia kont na zdjęciu (pole `tags` slajdu, np. ["@organizator"]); Instagram wymaga pozycji 0–1. */
+export function userTags(slide) {
+  const tags = (slide?.tags ?? []).map((t) => String(t).replace(/^@/, "")).filter(Boolean);
+  if (!tags.length) return {};
+  return { user_tags: JSON.stringify(tags.map((username, i) => ({ username, x: 0.5, y: Math.min(0.9, 0.5 + i * 0.08) }))) };
+}
+
 export async function publishPost(post, { dryRun = false } = {}) {
   if (post.type === "reel" && !post.video) throw new Error("Reel wymaga pola video");
   const urls = mediaUrls(post);
-  if (dryRun) return { dryRun: true, type: post.type, urls, caption: post.caption };
+  if (dryRun) return { dryRun: true, type: post.type, urls, caption: post.caption, tags: (post.slides ?? []).map((s) => userTags(s).user_tags ?? null) };
   const user = await igUserId();
 
   let creationId;
@@ -92,8 +99,8 @@ export async function publishPost(post, { dryRun = false } = {}) {
   } else if (post.type === "carousel") {
     if (urls.length < 2 || urls.length > 10) throw new Error("Karuzela wymaga 2–10 slajdów");
     const children = [];
-    for (const image_url of urls) {
-      const { id } = await graph("POST", `${user}/media`, { image_url, is_carousel_item: "true" });
+    for (const [i, image_url] of urls.entries()) {
+      const { id } = await graph("POST", `${user}/media`, { image_url, is_carousel_item: "true", ...userTags(post.slides[i]) });
       await waitReady(id);
       children.push(id);
     }
@@ -103,7 +110,7 @@ export async function publishPost(post, { dryRun = false } = {}) {
       caption: post.caption,
     }));
   } else {
-    ({ id: creationId } = await graph("POST", `${user}/media`, { image_url: urls[0], caption: post.caption }));
+    ({ id: creationId } = await graph("POST", `${user}/media`, { image_url: urls[0], caption: post.caption, ...userTags(post.slides?.[0]) }));
   }
   await waitReady(creationId);
   const { id: mediaId } = await graph("POST", `${user}/media_publish`, { creation_id: creationId });

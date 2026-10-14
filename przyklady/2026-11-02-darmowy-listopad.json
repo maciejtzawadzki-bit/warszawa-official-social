@@ -15,53 +15,38 @@
   ],
   "slides": [
     {
-      "image": "media/zrodla/zamek-krolewski.jpg",
-      "credit": "fot. Chris Olszewski, CC BY-SA 4.0",
-      "title": "królewski listopad",
-      "sub": "sob.–nd. · 14–15, 21–22 i 28–29.11 · wstęp wolny"
-    },
-    {
-      "image": "media/zrodla/lazienki-palac.jpg",
-      "credit": "fot. Chicken4War, CC BY-SA 4.0",
-      "title": "łazienki",
-      "sub": "sob.–nd. 14–15.11 · ul. Agrykola 1 · część wnętrz za darmo"
-    },
-    {
+      "layout": "cover",
       "image": "media/zrodla/zamek-sala-marmurowa.jpg",
       "focus": "center 35%",
-      "credit": "fot. Tim Adams, CC BY 3.0",
-      "title": "zamek królewski",
-      "sub": "sob.–nd. 21–22.11 · pl. Zamkowy 4 · część wnętrz za darmo"
+      "num": "3",
+      "title": "darmowe weekendy\nw królewskich\nrezydencjach",
+      "tags": []
     },
     {
+      "layout": "repost",
+      "image": "media/zrodla/lazienki-palac.jpg",
+      "credit": "Łazienki · fot. Chicken4War, CC BY-SA 4.0",
+      "tags": [
+        "@lazienki.krolewskie"
+      ]
+    },
+    {
+      "layout": "repost",
+      "image": "media/zrodla/zamek-krolewski.jpg",
+      "credit": "Zamek Królewski · fot. Chris Olszewski, CC BY-SA 4.0",
+      "tags": [
+        "@zamekkrolewski"
+      ]
+    },
+    {
+      "layout": "repost",
       "image": "media/zrodla/wilanow-brama.jpg",
-      "focus": "center 40%",
-      "credit": "fot. Scotch Mist, CC BY-SA 4.0",
-      "title": "wilanów",
-      "sub": "sob.–nd. 28–29.11 · ul. Potockiego 10/16 · część wnętrz za darmo"
-    },
-    {
-      "layout": "list",
-      "title": "zanim wyjdziecie",
-      "items": [
-        [
-          "14–15.11 · Łazienki Królewskie",
-          "park zawsze za darmo, w ten weekend także część wnętrz"
-        ],
-        [
-          "21–22.11 · Zamek Królewski",
-          ""
-        ],
-        [
-          "28–29.11 · Wilanów",
-          ""
-        ],
-        [
-          "Wejściówki i godziny",
-          "sprawdźcie na stronach muzeów przed wyjściem"
-        ]
+      "credit": "Wilanów · fot. Scotch Mist, CC BY-SA 4.0",
+      "tags": [
+        "@wilanowpalac"
       ]
     }
   ],
-  "caption": "Listopad jest u mnie królewski i, co rzadkie, za darmo. Przez trzy weekendy otwieram część zbiorów w moich rezydencjach, a dla dzieci i dorosłych są warsztaty. Najpierw Łazienki, potem Zamek, na koniec Wilanów. Kraków ma jeden Wawel, ja mam trzy adresy. Godziny i ewentualne wejściówki sprawdźcie przed wyjściem na stronach muzeów.\n\nNovember is royal and, for once, free. Over three weekends the royal residences open part of their collections, with workshops for kids and adults: Łazienki (14–15 Nov), the Royal Castle (21–22 Nov) and Wilanów (28–29 Nov). Check hours and free tickets on the museums' websites.\n\n@lazienki.krolewskie @wilanowpalac\n\n#warszawaofficial #darmowylistopad #warszawazdzieckiem #muzeawarszawa\n\nfot.: Chris Olszewski, Chicken4War, Scotch Mist (CC BY-SA 4.0), Tim Adams (CC BY 3.0), Wikimedia Commons"
+  "caption": "Listopad mam królewski i, co rzadkie, za darmo 👑\n\n🏛️ 14–15.11 Łazienki, ul. Agrykola 1: park jak zawsze, a w ten weekend także część wnętrz @lazienki.krolewskie\n\n🏰 21–22.11 Zamek Królewski, pl. Zamkowy 4: piwnice i strychy, których zwykle nie pokazuję @zamekkrolewski\n\n🌳 28–29.11 Wilanów, ul. Potockiego 10/16: pałac i festiwal dawnych rzemiosł @wilanowpalac\n\nKraków ma jeden Wawel, ja mam trzy adresy. Godziny i wejściówki sprawdźcie przed wyjściem.\n\nFree royal weekends in Warsaw this November: Łazienki (14–15), the Royal Castle (21–22) and Wilanów (28–29). Check hours and free tickets before you go.\n\n#warszawa #warszawaofficial\n\nfot.: Chicken4War, Chris Olszewski, Scotch Mist (CC BY-SA 4.0), Tim Adams (CC BY 3.0), Wikimedia Commons",
+  "note": "Przykład układu. W automacie slajdy repost biorą grafiki organizatorów z Instagrama (pole ig), a okładka zdjęcie z życia, nie pocztówkę."
 }
