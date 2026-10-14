@@ -46,7 +46,7 @@ Relacje: według możliwości API (obraz bez naklejek), „Dziś u mnie”. W dz
    - Wzór pisze nazwy kont bez „@”. My piszemy z „@”, bo oznaczenie powiadamia organizatora i zwiększa szansę, że udostępni post.
 4. **Materiały innych profili** (decyzja właściciela 14.10): zdjęcia i grafiki organizatora z oznaczeniem autora w opisie i na zdjęciu; gdy organizator się sprzeciwi, post znika tego samego dnia. Nie przerabiaj cudzych grafik poza kadrowaniem i napisem.
 5. **Grafiki tylko z `tools/render.mjs`** (styl zmierzony na slajdach @projekt.miejski 14.10):
-   - `cover`: zdjęcie „z życia” (ludzie, wnętrza, światło, nie pocztówka z zabytkiem), biały napis League Gothic małymi literami, wyrównany do lewej; data jako ostatnia linia tytułu („co się dzieje\nw Warszawie\n17.10–19.10”); z `num` duża liczba po lewej („7” + „miejsc na listopad z dzieckiem”).
+   - `cover`: zdjęcie „z życia” (ludzie, wnętrza, światło, nie pocztówka z zabytkiem), biały napis League Gothic małymi literami, wyrównany do lewej; data jako ostatnia linia tytułu („co się dzieje\nw Warszawie\n16.10–18.10”); z `num` duża liczba po lewej („7” + „miejsc na listopad z dzieckiem”).
    - `repost`: grafika lub zdjęcie organizatora w całości na białym tle, pod spodem szary podpis `credit` z kontem; obraz z pola `ig` („@konto/SKRÓT”, listę daje `node tools/ig-media.mjs <konto>`), do tego `tags: ["@konto"]` (oznaczenie na zdjęciu).
    - `place`: jedno miejsce lub wydarzenie, Newsreader na środku kadru, małe litery poza nazwami własnymi.
    - Na obrazie nigdy: nazwa naszego konta, numeracja slajdów, logo, ramki, kolory poza bielą. Nie zmieniaj cudzych grafik poza dopasowaniem do kadru.
@@ -57,7 +57,8 @@ Relacje: według możliwości API (obraz bez naklejek), „Dziś u mnie”. W dz
 `node tools/run.mjs --now`: publikuje posty z dzisiejszą datą w statusie `planned`, zapisuje status i `DZIENNIK.md`, wypycha na `main`. Błąd przejściowy: raz ponów. Błąd treści: zostaw `error` i opisz.
 
 ### Tryb 2: plan tygodnia z wetem (czwartek po południu)
-1. Przeczytaj `DZIENNIK.md`, `queue/`, `docs/KALENDARZ_ZRODLA.md`, `docs/RODZINY_MIEJSCA.md`.
+0. Raport tygodnia: `node tools/stats.mjs --write` (dopisuje tabelę na górze `RAPORTY.md`). Pod tabelą 2–4 zdania wniosków, oddzielone od liczb: które posty miały najwięcej zapisów i udostępnień i co z tego wynika dla planu. Do 100 zaangażowanych osób Instagram nie pokazuje ich demografii, więc nie zgaduj.
+1. Przeczytaj `RAPORTY.md`, `DZIENNIK.md`, `queue/`, `docs/KALENDARZ_ZRODLA.md`, `docs/RODZINY_MIEJSCA.md`.
 2. Sprawdź źródła wydarzeń (rdzeń: RSS PIK „za darmo”, RSS Go2Warsaw, RSS Muzeum Warszawy, Kids in the City, strona 19115 „Ciekawe wydarzenia”; raz w tygodniu waw4free) i ułóż kolejny tydzień (pon.–nd.) według rytmu. Każdy post sprawdzony u źródła.
 3. Wyrenderuj grafiki, obejrzyj każdy PNG (Read), popraw długość napisu.
 4. Podgląd tygodnia: `node tools/preview.mjs RRRR-MM-DD` → `preview/tydzien-RRRR-MM-DD.png`.
