@@ -43,7 +43,7 @@ Relacje: według możliwości API (obraz bez naklejek), „Dziś u mnie”. W dz
    - pusta linia, 1–2 zdania po angielsku („This weekend in Warsaw: …”),
    - na końcu `#warszawa #warszawaofficial`. Bez „zapisz”, „udostępnij”, „link w bio”.
    - Rolka: nagłówek z emotką i 1–2 zdania (150–250 znaków), potem EN i hasztagi.
-   - Wzór pisze nazwy kont bez „@”. My piszemy z „@”, bo oznaczenie powiadamia organizatora i zwiększa szansę, że udostępni post.
+   - Jak u wzoru: każde konto z „@” (klikalne, powiadamia organizatora, a ten często udostępnia post w relacji). Uwaga: Business Discovery usuwa „@” z cudzych opisów, więc w danych z API konta wzoru wyglądają na gołe nazwy.
 4. **Materiały innych profili** (decyzja właściciela 14.10): zdjęcia i grafiki organizatora z oznaczeniem autora w opisie i na zdjęciu; gdy organizator się sprzeciwi, post znika tego samego dnia. Nie przerabiaj cudzych grafik poza kadrowaniem i napisem.
 5. **Treść przed zdjęciem** (Maciej 14.10): obserwujących przynosi wartość informacji, zdjęcie jest tłem. Tytuł duży (renderer sam dopasowuje go prawie do szerokości kadru), konkretny i z liczbą albo datą, gdy się da („9 pomysłów na weekend 16–18.10”); druga linijka mówi kiedy, gdzie i za ile. Bez przesady z efektami. Własne nagrania właściciela mają pierwszeństwo przed każdym innym materiałem.
 6. **Grafiki tylko z `tools/render.mjs`** (styl zmierzony na slajdach @projekt.miejski 14.10):

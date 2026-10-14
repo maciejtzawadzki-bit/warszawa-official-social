@@ -20,7 +20,7 @@ Ustalenia właściciela z 14.10.2026. Zasady pracy automatu są w `CLAUDE.md`. T
 - Okładki karuzel: zdjęcie z życia, biały wąski grotesk małymi literami, do lewej, bez ramek i przyciemnienia; wariant z dużą liczbą („12 miejsc…”).
 - Środek przeglądu: plakaty i zdjęcia organizatorów w całości na białym tle, pod spodem szary podpis z kontem.
 - Rolki: zdjęcie lub film miejsca, szeryf na środku kadru, modna muzyka.
-- Opisy: nagłówek, lista z emotką na początku każdej pozycji, jeden hasztag, bez wezwań do działania.
+- Opisy: nagłówek, lista z emotką na początku każdej pozycji i oznaczonym kontem miejsca lub organizatora (np. „🧘 joga w @cafe__plas”), jeden hasztag, bez wezwań do działania.
 - Formaty u nich (40 postów, 28.07–13.10.2026): karuzele 18 (śr. 333 polubienia, zwykle 13–17 slajdów), rolki 22 (śr. 161). Cotygodniowy przegląd „Co dzieje się w Warszawie?”: 11 postów, śr. 335 polubień.
 - Czym się różnimy: u nich neutralny głos i jedzenie, u nas mówi Warszawa i w centrum jest rozrywka, rodziny i moje święta.
 
