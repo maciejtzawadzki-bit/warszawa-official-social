@@ -75,10 +75,18 @@ export function userTags(slide) {
   return { user_tags: JSON.stringify(tags.map((username, i) => ({ username, x: 0.5, y: Math.min(0.9, 0.5 + i * 0.08) }))) };
 }
 
+/** Zaproszenia do współautorstwa (pole `collab` posta): do 3 kont, tylko post, karuzela i rolka (nie relacja).
+ *  Gdy konto nie przyjmie zaproszenia, post zostaje normalnie u nas. */
+export function collaborators(post) {
+  const names = (post.collab ?? []).map((t) => String(t).replace(/^@/, "")).filter(Boolean);
+  if (names.length > 3) throw new Error(`Instagram przyjmuje najwyżej 3 współautorów, w poście ${post.id}: ${names.length}`);
+  return names.length && post.type !== "story" ? { collaborators: JSON.stringify(names) } : {};
+}
+
 export async function publishPost(post, { dryRun = false } = {}) {
   if (post.type === "reel" && !post.video) throw new Error("Reel wymaga pola video");
   const urls = mediaUrls(post);
-  if (dryRun) return { dryRun: true, type: post.type, urls, caption: post.caption, tags: (post.slides ?? []).map((s) => userTags(s).user_tags ?? null) };
+  if (dryRun) return { dryRun: true, type: post.type, urls, caption: post.caption, tags: (post.slides ?? []).map((s) => userTags(s).user_tags ?? null), ...collaborators(post) };
   const user = await igUserId();
 
   let creationId;
@@ -88,6 +96,7 @@ export async function publishPost(post, { dryRun = false } = {}) {
       video_url: urls[0],
       caption: post.caption,
       share_to_feed: "true",
+      ...collaborators(post),
       thumb_offset: String(post.thumbOffsetMs ?? 1500),
     }));
     await waitReady(creationId, VIDEO_WAIT);
@@ -108,9 +117,10 @@ export async function publishPost(post, { dryRun = false } = {}) {
       media_type: "CAROUSEL",
       children: children.join(","),
       caption: post.caption,
+      ...collaborators(post),
     }));
   } else {
-    ({ id: creationId } = await graph("POST", `${user}/media`, { image_url: urls[0], caption: post.caption, ...userTags(post.slides?.[0]) }));
+    ({ id: creationId } = await graph("POST", `${user}/media`, { image_url: urls[0], caption: post.caption, ...userTags(post.slides?.[0]), ...collaborators(post) }));
   }
   await waitReady(creationId);
   const { id: mediaId } = await graph("POST", `${user}/media_publish`, { creation_id: creationId });

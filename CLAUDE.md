@@ -45,6 +45,7 @@ Relacje: według możliwości API (obraz bez naklejek), „Dziś u mnie”. W dz
    - Rolka: nagłówek z emotką i 1–2 zdania (150–250 znaków), potem EN i hasztagi.
    - Jak u wzoru: każde konto z „@” (klikalne, powiadamia organizatora, a ten często udostępnia post w relacji). Uwaga: Business Discovery usuwa „@” z cudzych opisów, więc w danych z API konta wzoru wyglądają na gołe nazwy.
 4. **Materiały innych profili** (decyzja właściciela 14.10): zdjęcia i grafiki organizatora z oznaczeniem autora w opisie i na zdjęciu; gdy organizator się sprzeciwi, post znika tego samego dnia. Nie przerabiaj cudzych grafik poza kadrowaniem i napisem.
+   - **Współautorstwo** (właściciel 14.10: „jak nie przyjmą, co nam to szkodzi”): pole `collab` posta, do 3 kont organizatorów, których materiał jest w poście (najciekawsze najpierw). Instagram wysyła im zaproszenie; przyjęte pokazuje post także na ich profilu, nieprzyjęte wygasa bez śladu. Nie dla relacji i nie w dni uroczyste. Pozostałe konta tylko oznaczamy.
 5. **Treść przed zdjęciem** (Maciej 14.10): obserwujących przynosi wartość informacji, zdjęcie jest tłem. Tytuł duży (renderer sam dopasowuje go prawie do szerokości kadru), konkretny i z liczbą albo datą, gdy się da („9 pomysłów na weekend 16–18.10”); druga linijka mówi kiedy, gdzie i za ile. Bez przesady z efektami. Własne nagrania właściciela mają pierwszeństwo przed każdym innym materiałem.
 6. **Grafiki tylko z `tools/render.mjs`** (styl zmierzony na slajdach @projekt.miejski 14.10):
    - `cover`: zdjęcie „z życia” (ludzie, wnętrza, światło, nie pocztówka z zabytkiem), lekko przyciemnione, biały napis League Gothic małymi literami, wyrównany do lewej; data jako ostatnia linia tytułu („co się dzieje\nw Warszawie\n16.10–18.10”); z `num` duża liczba po lewej („9” + „pomysłów\nna weekend\nw Warszawie\n16–18.10”), to preferowany wariant okładki „Weekend u mnie”.
@@ -83,6 +84,7 @@ Raz w tygodniu 1–2 rolki: pionowe klipy lub obrazy z napisem w stylu konta, go
   "rubric": "Weekend u mnie",
   "source": ["https://…"],
   "tags": ["@organizator"],
+  "collab": ["@organizator"],
   "slides": [
     { "layout": "cover", "image": "https://… albo media/zrodla/plik.jpg", "tags": ["@autor"], "title": "co się dzieje\nw Warszawie\n30.10–1.11" },
     { "layout": "repost", "ig": "@organizator/SKRÓT", "credit": "@organizator", "tags": ["@organizator"] }
