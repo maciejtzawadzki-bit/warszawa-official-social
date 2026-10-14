@@ -1,0 +1,17 @@
+{
+  "id": "2026-11-02-darmowy-listopad",
+  "date": "2026-11-02", "time": "18:30",
+  "type": "carousel",
+  "status": "przyklad",
+  "rubric": "Za darmo, a z klasą",
+  "source": ["https://dzieje.pl/node/170607", "https://lazienki-krolewskie.pl/pl/wideo/koncerty/rezydencje-krolewskie-zapraszaja-na-darmowy-listopad"],
+  "tags": ["@lazienki.krolewskie", "@wilanowpalac"],
+  "slides": [
+    { "image": "media/zrodla/zamek-krolewski.jpg", "credit": "fot. Chris Olszewski, CC BY-SA 4.0", "title": "królewski listopad", "sub": "trzy darmowe weekendy w moich rezydencjach" },
+    { "image": "media/zrodla/lazienki-palac.jpg", "credit": "fot. Chicken4War, CC BY-SA 4.0", "title": "łazienki", "sub": "14–15.11 · część zbiorów za darmo, warsztaty" },
+    { "image": "media/zrodla/zamek-sala-marmurowa.jpg", "focus": "center 35%", "credit": "fot. Tim Adams, CC BY 3.0", "title": "zamek królewski", "sub": "21–22.11 · część zbiorów za darmo, warsztaty" },
+    { "image": "media/zrodla/wilanow-brama.jpg", "focus": "center 40%", "credit": "fot. Scotch Mist, CC BY-SA 4.0", "title": "wilanów", "sub": "28–29.11 · część zbiorów za darmo, warsztaty" },
+    { "layout": "list", "title": "zanim wyjdziecie", "items": [["14–15.11 · Łazienki Królewskie", "park zawsze za darmo, w ten weekend także część wnętrz"], ["21–22.11 · Zamek Królewski", ""], ["28–29.11 · Wilanów", ""], ["Wejściówki i godziny", "sprawdźcie na stronach muzeów przed wyjściem"]] }
+  ],
+  "caption": "Listopad jest u mnie królewski i, co rzadkie, za darmo. Przez trzy weekendy otwieram część zbiorów w moich rezydencjach, a dla dzieci i dorosłych są warsztaty. Najpierw Łazienki, potem Zamek, na koniec Wilanów. Kraków ma jeden Wawel, ja mam trzy adresy. Godziny i ewentualne wejściówki sprawdźcie przed wyjściem na stronach muzeów.\n\nNovember is royal and, for once, free. Over three weekends the royal residences open part of their collections, with workshops for kids and adults: Łazienki (14–15 Nov), the Royal Castle (21–22 Nov) and Wilanów (28–29 Nov). Check hours and free tickets on the museums' websites.\n\n@lazienki.krolewskie @wilanowpalac\n\n#warszawaofficial #darmowylistopad #warszawazdzieckiem #muzeawarszawa\n\nfot.: Chris Olszewski, Chicken4War, Scotch Mist (CC BY-SA 4.0), Tim Adams (CC BY 3.0), Wikimedia Commons"
+}

@@ -1,0 +1,13 @@
+{
+  "id": "2026-11-13-chopin-100-lat",
+  "date": "2026-11-13", "time": "18:30",
+  "type": "feed",
+  "status": "przyklad",
+  "rubric": "Moje święta",
+  "source": ["https://ipn.gov.pl/pl/aktualnosci/233416,Pomnik-Fryderyka-Chopina-w-Warszawie-Adrian-Sobieszczanski-dla-programu-Historia.pdf"],
+  "tags": ["@lazienki.krolewskie"],
+  "slides": [
+    { "image": "media/zrodla/chopin-lazienki.jpg", "focus": "center 30%", "credit": "fot. Ethan Doyle White, CC BY-SA 4.0", "title": "sto lat\npod wierzbą", "sub": "14.11.1926 → 14.11.2026 · łazienki królewskie" }
+  ],
+  "caption": "W sobotę mija sto lat, odkąd Chopin siedzi u mnie pod wierzbą w Łazienkach. Pomnik odsłonięto 14 listopada 1926 roku. Przetrwał więcej niż niejeden z nas, więc w weekend zajrzyjcie do niego na chwilę. Park jest otwarty i nic nie kosztuje.\n\nThis Saturday the Chopin Monument in Łazienki turns 100: it was unveiled on 14 November 1926. The park is free and open, so pay him a short visit this weekend.\n\n@lazienki.krolewskie\n\n#warszawaofficial #chopin #łazienkikrólewskie #warszawa\n\nfot. Ethan Doyle White, CC BY-SA 4.0, Wikimedia Commons"
+}
