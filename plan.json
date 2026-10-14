@@ -1,5 +1,5 @@
 {
-  "zaktualizowano": "2026-10-14T18:10:00.690Z",
+  "zaktualizowano": "2026-10-14T18:42:17.831Z",
   "posty": [
     {
       "id": "2026-10-15-wrocilam",
@@ -13,7 +13,8 @@
       "obrazy": [
         "https://raw.githubusercontent.com/maciejtzawadzki-bit/warszawa-official-social/main/media/mini/2026-10-15-wrocilam-01-b42c6722.jpg"
       ],
-      "permalink": null
+      "permalink": null,
+      "uwagi": []
     },
     {
       "id": "2026-10-15-weekend-u-mnie",
@@ -35,7 +36,10 @@
         "https://raw.githubusercontent.com/maciejtzawadzki-bit/warszawa-official-social/main/media/mini/2026-10-15-weekend-u-mnie-08-be612d30.jpg",
         "https://raw.githubusercontent.com/maciejtzawadzki-bit/warszawa-official-social/main/media/mini/2026-10-15-weekend-u-mnie-09-9f4ec761.jpg"
       ],
-      "permalink": null
+      "permalink": null,
+      "uwagi": [
+        "pozycja bez @organizatora: Farma Dyń w Powsinie, ul. Drewny 17: po…"
+      ]
     }
   ]
 }

@@ -71,7 +71,7 @@ Przed uruchomieniem otwórz adresy z pola `source` postów na dziś: jeśli stro
 3. **Research ma być ekstra** (właściciel 14.10): według `docs/RESEARCH.md`, w osobnym agencie (narzędzie Agent), co najmniej 20 kandydatów na tydzień, każdy sprawdzony na stronie organizatora. Notatkę z researchu (tabela kandydatów, źródła, rozbieżności, odrzucone i dlaczego) zapisz w `research/RRRR-MM-DD.md`. Potem ułóż kolejny tydzień (pon.–nd.) według rytmu; nowe posty od razu w statusie `planned` (weto właściciela je zatrzymuje).
 4. Wyrenderuj grafiki, obejrzyj każdy PNG (Read), popraw długość napisu.
 5. Podgląd tygodnia: `node tools/preview.mjs RRRR-MM-DD` → `preview/tydzien-RRRR-MM-DD.png`.
-6. `node tools/plan.mjs` (spis kolejki `plan.json` i miniatury `media/mini/` dla panelu KMZ), commit i push na `main`. W ostatniej odpowiedzi: lista postów i link do podglądu. **Właściciel ma weto, brak odpowiedzi = publikacja** (decyzja 14.10).
+6. `node tools/kontrola.mjs`: popraw każdą uwagę albo świadomie zostaw (panel KMZ pokazuje je właścicielowi przy poście). Potem `node tools/plan.mjs` (spis kolejki `plan.json`, miniatury `media/mini/` i uwagi dla panelu KMZ), commit i push na `main`. W ostatniej odpowiedzi: lista postów i link do podglądu. **Właściciel ma weto, brak odpowiedzi = publikacja** (decyzja 14.10).
 
 ### Tryb 3: rolki z modną muzyką (półautomat)
 Raz w tygodniu 1–2 rolki: pionowe klipy lub obrazy z napisem w stylu konta, gotowy opis i lista oznaczeń w `reels/RRRR-MM-DD-<slug>/`. Nie publikujesz ich: właściciel dodaje w aplikacji popularny utwór albo szablon i publikuje sam. W ostatniej odpowiedzi podaj link do katalogu.

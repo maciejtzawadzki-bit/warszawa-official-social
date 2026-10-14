@@ -1,12 +1,14 @@
 // Spis kolejki dla panelu KMZ (dział Warszawa Official): plan.json w katalogu głównym repozytorium.
 // Użycie: node tools/plan.mjs  (wywołują go run.mjs, reakcje.mjs i tryb 2; panel KMZ czyta plik z raw.githubusercontent.com).
 // Tylko pola do pokazania: id, data, godzina, typ, rubryka, status, pierwsza linia i pełny opis, adresy miniatur
-// wyrenderowanych slajdów (media/mini/, tools/miniatury.mjs; tylko slajdy, które już leżą w media/), permalink.
+// wyrenderowanych slajdów (media/mini/, tools/miniatury.mjs; tylko slajdy, które już leżą w media/), permalink oraz uwagi
+// z kontroli zgodności z zasadami (tools/kontrola.mjs; tylko przy postach jeszcze nieopublikowanych).
 import "./siec.mjs";
 import { existsSync } from "node:fs";
 import { readdir, readFile, writeFile } from "node:fs/promises";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
+import { uwagiPosta } from "./kontrola.mjs";
 import { miniatury } from "./miniatury.mjs";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
@@ -34,9 +36,9 @@ async function obrazy(p) {
 
 export async function writePlan() {
   const files = (await readdir(QUEUE)).filter((f) => f.endsWith(".json")).sort();
+  const kolejka = await Promise.all(files.map(async (f) => JSON.parse(await readFile(path.join(QUEUE, f), "utf8"))));
   const posty = [];
-  for (const f of files) {
-    const p = JSON.parse(await readFile(path.join(QUEUE, f), "utf8"));
+  for (const p of kolejka) {
     posty.push({
       id: p.id,
       date: p.date,
@@ -48,6 +50,7 @@ export async function writePlan() {
       podpis: String(p.caption ?? "").slice(0, 2400),
       obrazy: await obrazy(p),
       permalink: p.permalink ?? null,
+      uwagi: p.status === "published" ? [] : uwagiPosta(p, kolejka),
     });
   }
   posty.sort((a, b) => `${a.date} ${a.time}`.localeCompare(`${b.date} ${b.time}`));
