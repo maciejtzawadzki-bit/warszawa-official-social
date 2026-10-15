@@ -1,0 +1,121 @@
+{
+  "id": "2026-10-22-weekend-u-mnie",
+  "date": "2026-10-22",
+  "time": "18:00",
+  "type": "carousel",
+  "status": "planned",
+  "rubric": "Weekend u mnie",
+  "research": "research/2026-10-19.md",
+  "source": [
+    "https://muzeumrzezby.mnw.pl/wystawy-czasowe/obecne/rzezba-na-mebloscianke",
+    "https://korczak-festival.pl/events/wszystko-albo-nic-tout-rien/",
+    "https://muzeumpragi.pl/wydarzenia/historyczne-mieszkania-na-ulicy-stalowej-spacer-praskie-wnetrza/",
+    "https://branthotel.pl/dyniowe-pole",
+    "https://zacheta.art.pl/pl/kalendarz/saturday-artwalk-47",
+    "https://teatrguliwer.pl/spektakl/niezwykla-historia-sebastiana-van-pirka/",
+    "https://filharmonia.pl/repertuar/koncert-symfoniczny-849264913",
+    "https://stacjamuzeum.pl/wydarzenia/otwarcie-wnetrz-wagonow-39/",
+    "https://legia.com/articles/trwa-otwarta-sprzedaz-biletow-na-mecz-legia-warszawa-lech-poznan",
+    "https://www.ekstraklasa.org/terminarz/2026-2027/kolejka-12/"
+  ],
+  "tags": [
+    "@muzeum_pragi",
+    "@krolikarnia",
+    "@festiwal_korczak",
+    "@mercure_wiazowna_brant",
+    "@galeria_zacheta",
+    "@teatrguliwer",
+    "@warsawphil",
+    "@stacjamuzeum",
+    "@legiawarszawa"
+  ],
+  "collab": [
+    "@krolikarnia",
+    "@festiwal_korczak",
+    "@teatrguliwer"
+  ],
+  "slides": [
+    {
+      "layout": "cover",
+      "ig": "@muzeum_pragi/DdZQMuBCl7h#12",
+      "tags": [
+        "@muzeum_pragi"
+      ],
+      "num": "9",
+      "title": "pomysłów\nna weekend\nw Warszawie\n23–25.10"
+    },
+    {
+      "layout": "repost",
+      "ig": "@krolikarnia/DdWbWGuMeqt",
+      "credit": "@krolikarnia",
+      "tags": [
+        "@krolikarnia"
+      ]
+    },
+    {
+      "layout": "repost",
+      "ig": "@festiwal_korczak/Dd3cjiFNJwA",
+      "credit": "@festiwal_korczak",
+      "tags": [
+        "@festiwal_korczak"
+      ]
+    },
+    {
+      "layout": "repost",
+      "image": "https://muzeumpragi.pl/wp-content/uploads/sites/3/2026/09/Stalowa-28_1-1920x1280.jpg",
+      "credit": "@muzeum_pragi",
+      "tags": [
+        "@muzeum_pragi"
+      ]
+    },
+    {
+      "layout": "repost",
+      "ig": "@mercure_wiazowna_brant/DdqgUR4M52P",
+      "credit": "@mercure_wiazowna_brant",
+      "tags": [
+        "@mercure_wiazowna_brant"
+      ]
+    },
+    {
+      "layout": "repost",
+      "image": "https://zacheta.art.pl/public/upload/events/medium/68877aa516396.jpg",
+      "credit": "@galeria_zacheta",
+      "tags": [
+        "@galeria_zacheta"
+      ]
+    },
+    {
+      "layout": "repost",
+      "ig": "@teatrguliwer/Dd9DzibDBav#7",
+      "credit": "@teatrguliwer",
+      "tags": [
+        "@teatrguliwer"
+      ]
+    },
+    {
+      "layout": "repost",
+      "image": "https://filharmonia.pl/upload/thumb/2026/05/fn_www_symfoniczne8_auto_640x640.jpg",
+      "credit": "@warsawphil",
+      "tags": [
+        "@warsawphil"
+      ]
+    },
+    {
+      "layout": "repost",
+      "image": "https://stacjamuzeum.pl/wp-content/uploads/2025/05/salonfb.jpg",
+      "credit": "@stacjamuzeum",
+      "tags": [
+        "@stacjamuzeum"
+      ]
+    },
+    {
+      "layout": "repost",
+      "image": "https://d37cqpsmbe2nek.cloudfront.net/eyJidWNrZXQiOiJub3BpcmUtbGVnaWEtbWVkaWEtZmlsZXMiLCJrZXkiOiJwaWxrYS1ub3puYS83NzdjYWIzOC0xOGI0LTRhZTItYTExZS02YTEzNGE4NTQyYWJfMTc2NTQ5MzQ1NV8yMDI1LTAyLTI2LXBvZHN1bW93YW5pZTIwMjUtbGVnaWEtamFnaWVsbG9uaWEtcHAtbWVjei1raWJpY2UtanAtMDA0OS5KUEciLCJlZGl0cyI6eyJleHRyYWN0Ijp7ImxlZnQiOjAsInRvcCI6Mjg1LCJ3aWR0aCI6NTQ3MiwiaGVpZ2h0IjozMDc4fSwicmVzaXplIjp7IndpZHRoIjoxOTIwLCJoZWlnaHQiOjEwODAsImZpdCI6ImNvdmVyIn0sIndlYnAiOnsicXVhbGl0eSI6ODB9fX0=",
+      "credit": "@legiawarszawa · fot. Janusz Partyka",
+      "tags": [
+        "@legiawarszawa"
+      ]
+    }
+  ],
+  "caption": "Co u mnie w weekend? ✨\n\n🗿 „Rzeźba na meblościankę” w Królikarni, ostatni weekend wystawy: pt. 10–20, sob. i nd. 10–18, ul. Puławska 113a; 20/15 zł, rodzinny 36 zł, w sob. o 12:00 oprowadzanie @krolikarnia\n\n🎪 „Wszystko albo Nic / Tout/Rien”, nowy cyrk bez słów od belgijskiej Cie Modo Grosso na Festiwalu Korczak Dzisiaj: sob. 14:00 i 18:00, od 7 lat, Instytut Teatralny, Jazdów 1; 70 zł, rodzinny 52,50 zł od osoby @festiwal_korczak\n\n🏠 Spacer „Historyczne mieszkania na ulicy Stalowej” z Piotrem Stryczyńskim, do praskich mieszkań z oryginalnym wyposażeniem: sob. 11:00 i 13:00, start w Muzeum Warszawskiej Pragi, ul. Targowa 50/52; 5 zł @muzeum_pragi\n\n🎃 Dyniowe Pole pod Warszawą: dynie, słomiane konstrukcje, zamek i tyrolki; sob. i nd. 12–17, Mercure Wiązowna Brant, ul. Równa 20, Majdan; 30 zł od osoby, do 1 roku gratis @mercure_wiazowna_brant\n\n🖼️ Saturday ArtWalk w Zachęcie, oprowadzanie po angielsku po wszystkich wystawach: sob. 14:15, w cenie biletu (30/20 zł, rodzinny 40 zł, dzieci do 7 lat gratis) @galeria_zacheta\n\n🧛 „Niezwykła historia Sebastiana Van Pirka” według Marcina Wichy w Teatrze Guliwer, o wampirku bez kłów: nd. 16:00, od 5 lat, ul. Różana 16; 45–55 zł @teatrguliwer\n\n🎻 Markus Stenz i Simone Lamsma w Filharmonii Narodowej: Koncert skrzypcowy Sibeliusa i „Peleas i Melizanda” Schönberga; pt. 19:30 i sob. 18:00, ul. Jasna 5; 50–125 zł @warsawphil\n\n🚂 Otwarte wnętrza wagonów w Stacji Muzeum: salonka, wagon artyleryjski i wagon motorowy SN52; nd. 10–18, ul. Towarowa 3, w cenie biletu 25/16 zł @stacjamuzeum\n\n⚽ Legia – Lech Poznań na Łazienkowskiej: nd. 17:30, bilety na bilety.legia.com, jest sektor rodzinny @legiawarszawa\n\nW niedzielę przyjeżdżają koziołki z Poznania. Pyry niech zjedzą u siebie, ja kibicuję Legii. 👸\n\nThis weekend in Warsaw: the last weekend of a sculpture show at Królikarnia, wordless Belgian new circus for kids, a guided tour in English at Zachęta on Saturday, a pumpkin field, the Philharmonic and Legia at home.\n\n#warszawa #warszawaofficial"
+}

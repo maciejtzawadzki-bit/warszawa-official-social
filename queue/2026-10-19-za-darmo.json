@@ -1,0 +1,44 @@
+{
+  "id": "2026-10-19-za-darmo",
+  "date": "2026-10-19",
+  "time": "11:00",
+  "type": "carousel",
+  "status": "planned",
+  "rubric": "Za darmo, a z klasą",
+  "research": "research/2026-10-19.md",
+  "source": [
+    "https://www.mnw.art.pl/wizyta/",
+    "https://zacheta.art.pl/pl/wizyta",
+    "https://zacheta.art.pl/pl/kalendarz/czwartkowe-oprowadzania-po-aktualnych-wystawach-63",
+    "https://nowyteatr.org/pl/kalendarz/goscie-nowego-teatru-hisham-matar"
+  ],
+  "tags": [
+    "@nationalmuseuminwarsaw",
+    "@galeria_zacheta",
+    "@nowy_teatr"
+  ],
+  "collab": [
+    "@nowy_teatr",
+    "@galeria_zacheta"
+  ],
+  "slides": [
+    {
+      "layout": "cover",
+      "ig": "@galeria_zacheta/DebqpyXjTq6#2",
+      "tags": [
+        "@galeria_zacheta"
+      ],
+      "num": "3",
+      "title": "darmowe\nwyjścia\nz klasą\n19–25.10"
+    },
+    {
+      "layout": "repost",
+      "image": "https://nowyteatr.org/public/upload/events/medium/2820.jpg",
+      "credit": "@nowy_teatr · fot. Diana Matar",
+      "tags": [
+        "@nowy_teatr"
+      ]
+    }
+  ],
+  "caption": "Za darmo, a z klasą 👸\n\n🖼️ Darmowy wtorek w Muzeum Narodowym: wystawy stałe, w tym pokaz Olgi Boznańskiej; wt. 20.10, 10–18, Al. Jerozolimskie 3 @nationalmuseuminwarsaw\n\n🎨 Darmowy czwartek w Zachęcie: wszystkie wystawy, w tym Szapocznikow i Baghramian; czw. 22.10, 12–20, bezpłatne oprowadzanie o 12:15, pl. Małachowskiego 3 @galeria_zacheta\n\n📚 Hisham Matar, laureat Pulitzera, o powieści „Moi przyjaciele” w Nowym Teatrze; czw. 22.10, 19:00, ul. Madalińskiego 10/16, wstęp wolny, z tłumaczeniem @nowy_teatr\n\nNajlepsze rzeczy w życiu są za darmo. Te trzy akurat też.\n\nFree this week in Warsaw: free Tuesday at the National Museum, free Thursday at Zachęta and Pulitzer winner Hisham Matar at Nowy Teatr.\n\n#warszawa #warszawaofficial"
+}
