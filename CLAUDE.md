@@ -8,7 +8,7 @@ Strategia i ustalenia właściciela (Maciej, 14.10.2026): `docs/STRATEGIA.md`. K
 
 - Środowisko chmury `warszawa_official`. Zmienna `IG_ACCESS_TOKEN` to token użytkownika systemowego Meta (portfolio „warszawa_official”, nie wygasa). **Nie wypisuj go nigdzie**, nawet fragmentu.
 - Sieć: pełny dostęp (właściciel 14.10), część adresów (np. Supabase panelu KMZ) tylko przez proxy środowiska. Strony organizatorów czytaj przez `curl -sL` (narzędzie WebFetch w tym środowisku nie rozwiązuje adresów); wyszukiwarka WebSearch działa. Wbudowany `fetch` Node'a pomija proxy, więc każdy skrypt w `tools/` importuje najpierw `./siec.mjs` (włącza proxy); własne jednorazowe skrypty Node uruchamiaj z `NODE_USE_ENV_PROXY=1`. Bez CDN slajdy `repost` się nie wyrenderują: zgłoś to w odpowiedzi, nie zastępuj ich innymi zdjęciami.
-- Zmienna `KMZ_WARSZAWA_SEKRET`: klucz do reakcji właściciela z panelu KMZ (`tools/reakcje.mjs`, adres `mnpjvkieetcrqzswxwqt.supabase.co`). Też **nie wypisuj**. Bez niej reakcje są pomijane.
+- Zmienna `KMZ_WARSZAWA_SEKRET`: klucz do reakcji właściciela z panelu KMZ (`tools/reakcje.mjs`) i do wyniku trybu w biurze (`tools/biuro.mjs`), adres `mnpjvkieetcrqzswxwqt.supabase.co`. Też **nie wypisuj**. Bez niej reakcje i wynik są pomijane.
 - Instalacja: `cd tools && npm install --silent` (playwright-core; Chromium jest w `/opt/pw-browsers`).
 - Konto: Instagram `warszawa_official`, połączone ze stroną na Facebooku „Pierwsza Dama WWA”. Publikator sam znajduje ID konta z tokena.
 - To środowisko **nie ma** strażnika KMZ: automat wypycha na `main` tego repozytorium (tak działa hosting grafik). W innych repozytoriach niczego nie zmieniaj.
@@ -75,6 +75,9 @@ Przed uruchomieniem otwórz adresy z pola `source` postów na dziś: jeśli stro
 
 ### Tryb 3: rolki z modną muzyką (półautomat)
 Raz w tygodniu 1–2 rolki: pionowe klipy lub obrazy z napisem w stylu konta, gotowy opis i lista oznaczeń w `reels/RRRR-MM-DD-<slug>/`. Nie publikujesz ich: właściciel dodaje w aplikacji popularny utwór albo szablon i publikuje sam. W ostatniej odpowiedzi podaj link do katalogu.
+
+### Wynik do biura KMZ (ostatni krok trybów 1, 2 i 3)
+Na końcu każdego trybu, zawsze (także gdy nic nie opublikowano albo był błąd): `node tools/biuro.mjs <publikacja|plan|rolki> <ok|blad|czeka> "jedno zdanie: co zrobiono, z liczbami" [permalink]`. Panel KMZ i IGOR widzą wynik od razu (wcześniej dopiero rano). Zdanie bez danych osobowych; błąd: przyczyna i co zrobić.
 
 ## Weto
 
