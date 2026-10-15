@@ -8,7 +8,8 @@
 //            z polem `num` duża liczba po lewej i tekst obok („7 miejsc na listopad z dzieckiem”),
 //   place  — jedno miejsce lub wydarzenie (też klatki rolek): szeryf (Newsreader) na środku kadru,
 //   repost — grafika lub zdjęcie organizatora w całości na białym tle, pod spodem szary podpis `credit`
-//            (tak wyglądają środkowe slajdy przeglądów u wzoru); `crop: "3/2"` kadruje zbyt szerokie grafiki,
+//            (tak wyglądają środkowe slajdy przeglądów u wzoru); nad grafiką czarny podpis `title` (co to jest)
+//            i `sub` (kiedy, gdzie, za ile); `crop: "3/2"` kadruje zbyt szerokie grafiki,
 //   text   — sam napis na ciemnym tle (dni uroczyste),
 //   list   — ciemne tło, tytuł i lista pozycji [tytuł, opis] (rzadko; szczegóły zwykle idą do opisu).
 // Domyślnie: pierwszy slajd ze zdjęciem to `cover`, kolejne `repost`; bez zdjęcia `text`.
@@ -97,7 +98,10 @@ export function slideHtml(slide, format, index, total, image, { overlay = false 
   } else if (layout === "repost") {
     // `crop` (np. "3/2") kadruje zbyt szerokie albo wysokie grafiki; `focus` wskazuje, który fragment zostaje.
     const crop = slide.crop ? ` style="aspect-ratio:${esc(slide.crop)};object-fit:cover;object-position:${esc(slide.focus ?? "center")}"` : "";
-    body = `<div class="frame"><img src="${image}" alt=""${crop}>${slide.credit ? `<div class="credit">${esc(slide.credit)}</div>` : ""}</div>`;
+    // `title` (i opcjonalnie `sub`): krótki czarny podpis nad grafiką, czego dotyczy slajd (Maciej 15.10: „same plakaty
+    // bez podpisów mało mówią”); sama grafika zostaje nietknięta.
+    const podpis = slide.title ? `<div class="caption"><div class="ctitle">${rich(slide.title)}</div>${slide.sub ? `<div class="csub">${rich(slide.sub)}</div>` : ""}</div>` : "";
+    body = `<div class="frame${podpis ? " captioned" : ""}">${podpis}<img src="${image}" alt=""${crop}>${slide.credit ? `<div class="credit">${esc(slide.credit)}</div>` : ""}</div>`;
   } else if (layout === "list") {
     size = slide.size ?? 120;
     const items = (slide.items ?? [])
@@ -144,6 +148,10 @@ export function slideHtml(slide, format, index, total, image, { overlay = false 
   .numtext h1 { line-height: 1.0; }
   .frame { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 26px; }
   .frame img { width: ${W - 180}px; height: auto; max-height: ${H - 330}px; object-fit: contain; display: block; }
+  .captioned img { max-height: ${H - 500}px; }
+  .caption { max-width: ${W - 180}px; text-align: center; color: #111111; }
+  .ctitle { font: 400 66px/1.0 "League Gothic"; letter-spacing: 0.005em; }
+  .csub { margin-top: 10px; font: 400 30px/1.3 "Instrument Sans"; color: #3A3A3A; }
   .credit { max-width: ${W - 180}px; text-align: center; font: 400 26px/1.3 "Instrument Sans"; color: #BDBDBD; }
   ol { list-style: none; margin-top: 56px; display: grid; gap: ${story ? 34 : 28}px; }
   li { border-top: 1px solid rgba(255,255,255,.22); padding-top: ${story ? 26 : 22}px; display: grid; gap: 6px; }

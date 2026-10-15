@@ -67,10 +67,12 @@ export function uwagiPosta(post, wszystkie = []) {
   if (slajdy.length > 10) uwagi.push(`${slajdy.length} slajdów, Instagram przyjmie najwyżej 10`);
   slajdy.forEach((s, i) => {
     if (s.layout === "repost" && (!s.credit || !(s.tags ?? []).length)) uwagi.push(`slajd ${i + 1}: grafika bez podpisu autora albo oznaczenia`);
+    if (s.layout === "repost" && !String(s.title ?? "").trim()) uwagi.push(`slajd ${i + 1}: grafika bez czarnego podpisu (title: co to jest, sub: kiedy, gdzie, za ile)`);
   });
 
   if (feed && !start) {
-    const tegoDnia = wszystkie.filter((p) => p.id !== post.id && p.date === post.date && p.type !== "story" && p.rubric !== "Start konta" && ["planned", "published"].includes(p.status));
+    // Post zastępczy (pole `zastepuje`) i ten, który zastępuje, nie liczą się jako drugi post dnia.
+    const tegoDnia = wszystkie.filter((p) => p.id !== post.id && p.id !== post.zastepuje && p.zastapiony !== post.id && p.date === post.date && p.type !== "story" && p.rubric !== "Start konta" && ["planned", "published"].includes(p.status));
     if (tegoDnia.length) uwagi.push(`drugi post w feedzie tego dnia (rytm: jeden), razem z ${tegoDnia[0].id}`);
   }
   const dni = (Date.now() - Date.parse(`${post.date}T${post.time ?? "12:00"}:00+02:00`)) / 86_400_000;

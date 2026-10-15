@@ -29,7 +29,7 @@ Strategia i ustalenia właściciela (Maciej, 14.10.2026): `docs/STRATEGIA.md`. K
 |---|---|
 | pon. | „Za darmo, a z klasą”: 3 propozycje na tydzień (co jest za darmo, kiedy, czy wejściówka) |
 | wt. | „Z dzieckiem” albo „Miejsca” |
-| czw. | „Weekend u mnie”: karuzela, okładka (`cover`) + 5–9 slajdów `repost` z grafikami organizatorów (dorośli i rodziny na przemian); godziny i bilety w opisie |
+| czw. | „Weekend u mnie”: karuzela, okładka (`cover`) + 5–9 slajdów `repost` z grafikami organizatorów (dorośli i rodziny na przemian), każdy z czarnym podpisem `title`/`sub`; pełne godziny i bilety w opisie |
 | pt. | „Moje święta” (według kalendarza) albo „Miejsca” / „Wieczór bez dzieci” |
 | sob. lub nd. | „Z dzieckiem” albo „Warszawiacy” |
 
@@ -53,8 +53,9 @@ Relacje: według możliwości API (obraz bez naklejek), „Dziś u mnie”. W dz
 6. **Grafiki tylko z `tools/render.mjs`** (styl zmierzony na slajdach @projekt.miejski 14.10):
    - `cover`: zdjęcie „z życia” (ludzie, wnętrza, światło, nie pocztówka z zabytkiem), lekko przyciemnione, biały napis League Gothic małymi literami, wyrównany do lewej; data jako ostatnia linia tytułu („co się dzieje\nw Warszawie\n16.10–18.10”); z `num` duża liczba po lewej („9” + „pomysłów\nna weekend\nw Warszawie\n16–18.10”), to preferowany wariant okładki „Weekend u mnie”.
    - `repost`: grafika lub zdjęcie organizatora w całości na białym tle, pod spodem szary podpis `credit` z kontem; obraz z pola `ig` („@konto/SKRÓT”, listę daje `node tools/ig-media.mjs <konto>`), do tego `tags: ["@konto"]` (oznaczenie na zdjęciu).
+   - **Każdy slajd `repost` ma czarny podpis nad grafiką** (Maciej 15.10: „same plakaty bez podpisów mało mówią”): `title` mówi, co to jest („koncert familijny z lisem Fenkiem”, do ok. 38 znaków, małe litery poza nazwami własnymi), `sub` kiedy, gdzie i za ile („nd. 11:00 i 14:00 · Filharmonia Narodowa · 40–45 zł”, do ok. 55 znaków, części rozdzielone „ · ”). Bez okładki (`cover`), która ma własny tytuł. Kontrola zgłasza slajd bez podpisu.
    - `place`: jedno miejsce lub wydarzenie, Newsreader na środku kadru, małe litery poza nazwami własnymi.
-   - Na obrazie nigdy: nazwa naszego konta, numeracja slajdów, logo, ramki, kolory poza bielą. Nie zmieniaj cudzych grafik poza dopasowaniem do kadru.
+   - Na obrazie nigdy: nazwa naszego konta, numeracja slajdów, logo, ramki, kolory poza bielą, czernią i szarością napisów. Nie zmieniaj cudzych grafik poza dopasowaniem do kadru (podpis stoi obok grafiki, nie na niej).
 
 ## Tryby pracy
 
@@ -97,7 +98,7 @@ Na końcu każdego trybu, zawsze (także gdy nic nie opublikowano albo był bł�
   "collab": ["@organizator"],
   "slides": [
     { "layout": "cover", "image": "https://… albo media/zrodla/plik.jpg", "tags": ["@autor"], "title": "co się dzieje\nw Warszawie\n30.10–1.11" },
-    { "layout": "repost", "ig": "@organizator/SKRÓT", "credit": "@organizator", "tags": ["@organizator"] }
+    { "layout": "repost", "ig": "@organizator/SKRÓT", "credit": "@organizator", "tags": ["@organizator"], "title": "co to jest", "sub": "kiedy · gdzie · za ile" }
   ],
   "caption": "…"
 }
