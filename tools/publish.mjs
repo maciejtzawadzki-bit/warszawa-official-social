@@ -123,7 +123,18 @@ export async function publishPost(post, { dryRun = false } = {}) {
     ({ id: creationId } = await graph("POST", `${user}/media`, { image_url: urls[0], caption: post.caption, ...userTags(post.slides?.[0]), ...collaborators(post) }));
   }
   await waitReady(creationId);
-  const { id: mediaId } = await graph("POST", `${user}/media_publish`, { creation_id: creationId });
+  // Bywa, że kontener ma już FINISHED, a media_publish odpowiada 2207027 („jeszcze niegotowe”, 15.10.2026 przy
+  // karuzeli z 10 slajdami): Meta zaleca odczekać i ponowić. Ponawiamy tylko ten krok, do ok. 3 minut.
+  let mediaId;
+  for (let i = 0; ; i += 1) {
+    try {
+      ({ id: mediaId } = await graph("POST", `${user}/media_publish`, { creation_id: creationId }));
+      break;
+    } catch (error) {
+      if (i >= 11 || !String(error.message).includes("2207027")) throw error;
+      await new Promise((r) => setTimeout(r, 15000));
+    }
+  }
   const { permalink } = await graph("GET", mediaId, { fields: "permalink" });
   return { mediaId, permalink };
 }
