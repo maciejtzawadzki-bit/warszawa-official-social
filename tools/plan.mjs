@@ -38,7 +38,8 @@ export async function writePlan() {
   const files = (await readdir(QUEUE)).filter((f) => f.endsWith(".json")).sort();
   const kolejka = await Promise.all(files.map(async (f) => JSON.parse(await readFile(path.join(QUEUE, f), "utf8"))));
   const posty = [];
-  for (const p of kolejka) {
+  // Post usunięty w aplikacji (pole `usunieto`, np. zastąpiony poprawionym) znika z planu w panelu.
+  for (const p of kolejka.filter((x) => !x.usunieto)) {
     posty.push({
       id: p.id,
       date: p.date,
