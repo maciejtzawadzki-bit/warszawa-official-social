@@ -7,3 +7,4 @@
 - 2026-10-15 18:16 · carousel · 2026-10-15-weekend-u-mnie · https://www.instagram.com/p/DehXi-VDcWm/
 - 2026-10-15 19:00 · USUNIĘTY w aplikacji przez właściciela (zastępuje go 2026-10-15-weekend-u-mnie-2 z podpisami na slajdach) · 2026-10-15-weekend-u-mnie · https://www.instagram.com/p/DehXi-VDcWm/
 - 2026-10-15 19:41 · carousel · 2026-10-15-weekend-u-mnie-2 · https://www.instagram.com/p/DehhSAwl_i7/
+- 2026-10-19 11:07 · carousel · 2026-10-19-za-darmo · https://www.instagram.com/p/Deq5nVtl8__/
