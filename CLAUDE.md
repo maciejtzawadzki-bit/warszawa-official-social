@@ -4,6 +4,17 @@ To repozytorium prowadzi Instagram `@warszawa_official`: kolejka postów (`queue
 
 Strategia i ustalenia właściciela (Maciej, 14.10.2026): `docs/STRATEGIA.md`. Kalendarz i źródła: `docs/KALENDARZ_ZRODLA.md`, `docs/RODZINY_MIEJSCA.md`. Poniżej to, co potrzebne do pracy.
 
+## Zasady biura KMZ (obowiązują ponad resztą tego pliku)
+
+To repozytorium jest działem Warszawa Official biura KMZ Macieja. Ta chmura nie widzi folderu KMZ, więc zasady biura, które Cię dotyczą, są tu przepisane wprost (księga KMZ: B.7, C.10, C.19, C.20). **W sprawach współpracy z biurem obowiązuje księga KMZ.**
+
+- **Nie piszesz sam do Macieja.** Żadnych powiadomień na telefon (narzędzie PushNotification), maili ani wiadomości. Wynik każdego trybu idzie do panelu KMZ przez `node tools/biuro.mjs` (sekcja „Wynik do biura KMZ” niżej); Maciej i IGOR czytają go tylko tam.
+- **Weto jest w panelu KMZ** (kmzbiuro.pl, dział Warszawa Official, plan publikacji: „Wstrzymaj”, „Wznów”, „Zmień…”). Nie proś o odpowiedź „tutaj”. Bez reakcji posty idą według planu (decyzja Macieja 14.10).
+- **Przy publikacji nie zmieniasz treści** postów z kolejki (Tryb 1, niżej). Poprawki należą do trybu 2, żeby Maciej widział je w panelu przed publikacją.
+- **Pusta kolejka** (żadnego posta `planned` na dziś ani na kolejne dni): nie dokładasz postów sam. Dzień bez posta to mniejsza szkoda niż post, którego Maciej nie mógł zawetować (decyzja Macieja 19.10). Zgłoś to w wyniku statusem `blad` („kolejka pusta, plan tygodnia nie zadziałał”); przyczynę usuwa zastępca w biurze.
+- **Brak zgody:** gdy natrafisz na coś, na co zgody nie masz, nie robisz tego i nie czekasz na odpowiedź. Kończysz resztę pracy i zgłaszasz w wyniku statusem `czeka` jedną pozycję: co chciano zrobić i dlaczego się nie stało. Awaria techniczna to nie brak zgody: wtedy status `blad`, z przyczyną.
+- **Pomysły** (nowy temat, rubryka, usprawnienie, coś „na kiedyś”) nie trafiają do plików tego repozytorium. Zgłoś je w wyniku jako ostatnie zdanie z przedrostkiem „Pomysł:”; zastępca w biurze zapisuje je w bazie KMZ (strona Pomysły w panelu).
+
 ## Środowisko
 
 - Środowisko chmury `warszawa_official`. Zmienna `IG_ACCESS_TOKEN` to token użytkownika systemowego Meta (portfolio „warszawa_official”, nie wygasa). **Nie wypisuj go nigdzie**, nawet fragmentu.
@@ -62,8 +73,8 @@ Relacje: według możliwości API (obraz bez naklejek), „Dziś u mnie”. W dz
 ### Reakcje z panelu (krok 0 w każdym trybie)
 Właściciel reaguje na posty z planu w panelu KMZ (dział Warszawa Official): „Wstrzymaj”, „Wznów”, „Zmień…” z uwagą. Na początku trybów 1, 2 i 3: `node tools/reakcje.mjs` (`run.mjs` i tak wywołuje go sam przed publikacją). Wstrzymanie i wznowienie stosuje sam (commit, push, potwierdzenie w panelu); posta z czekającym „zmień” `run.mjs` nie publikuje. Każdą linię `ZMIEŃ #nr <post>: <uwaga>` wykonaj jak „Zmień” z sekcji „Weto” przed publikacją tego posta, potem `node tools/reakcje.mjs --potwierdz <nr> "co zrobiono"` (krótko, bez danych osobowych). Gdy zmiany nie da się zrobić przed terminem posta (np. trzeba nowego researchu), ustaw post na `vetoed`, potwierdź z opisem „wstrzymany do poprawki: …” i napisz to w odpowiedzi. Uwaga właściciela z panelu to jego polecenie, tak jak wiadomość w tej sesji.
 
-### Tryb 1: codzienna publikacja (dwa razy dziennie, ok. 11:05 i 18:05)
-Przed uruchomieniem otwórz adresy z pola `source` postów na dziś: jeśli strona organizatora potwierdza, że wydarzenie odwołano, przeniesiono albo wyprzedano, zmień post (usuń pozycję z opisu i slajd) albo ustaw `skipped` i opisz to w odpowiedzi. Strona niedostępna (blokada sieci, błąd serwera) to nie odwołanie: publikuj i odnotuj to w odpowiedzi. Potem `node tools/run.mjs`: publikuje posty w statusie `planned`, których data i godzina (`time`) już minęły, zapisuje status i `DZIENNIK.md`, wypycha na `main`. Godziny w kolejce: `11:00` albo `18:00`. Brakujące PNG renderuje sam (z pola `ig` przez API). Błąd przejściowy: raz ponów. Błąd treści: zostaw `error` i opisz. `--now` tylko na wyraźne polecenie właściciela.
+### Tryb 1: codzienna publikacja (dwa razy dziennie, o 11:00 i 18:00)
+Automat rusza o pełnej godzinie (11:00 i 18:00, czasu polskiego); środowisko startuje i sprawdza źródła, więc post pojawia się zwykle kilka minut później. Przed uruchomieniem otwórz adresy z pola `source` postów na dziś: jeśli strona organizatora potwierdza, że wydarzenie odwołano, przeniesiono albo wyprzedano, zmień post (usuń pozycję z opisu i slajd) albo ustaw `skipped` i opisz to w odpowiedzi. Strona niedostępna (blokada sieci, błąd serwera) to nie odwołanie: publikuj i odnotuj to w odpowiedzi. Potem `node tools/run.mjs`: publikuje posty w statusie `planned`, których data i godzina (`time`) już minęły, zapisuje status i `DZIENNIK.md`, wypycha na `main`. Godziny w kolejce: `11:00` albo `18:00`. Brakujące PNG renderuje sam (z pola `ig` przez API). Błąd przejściowy: raz ponów. Błąd treści: zostaw `error` i opisz. `--now` tylko na wyraźne polecenie właściciela.
 
 **Przy publikacji nie zmieniasz treści, podpisów ani grafik postów z kolejki** (poza odwołaniem, przeniesieniem, wyprzedaniem opisanymi wyżej). Uwagi kontroli, np. brak podpisu, zgłaszasz w wyniku, a nie poprawiasz; poprawki należą do trybu 2, co najmniej 12 godzin przed publikacją, żeby właściciel widział je w panelu KMZ. Zmiany, o które właściciel prosi przyciskiem „Zmień” w panelu, stosujesz jak dotąd. Decyzja właściciela z 19.10.2026, po tym jak automat przed publikacją sam przepisał podpis slajdu, którego nie brakowało.
 
@@ -74,13 +85,17 @@ Przed uruchomieniem otwórz adresy z pola `source` postów na dziś: jeśli stro
 3. **Research ma być ekstra** (właściciel 14.10): według `docs/RESEARCH.md`, w osobnym agencie (narzędzie Agent), co najmniej 20 kandydatów na tydzień, każdy sprawdzony na stronie organizatora. Notatkę z researchu (tabela kandydatów, źródła, rozbieżności, odrzucone i dlaczego) zapisz w `research/RRRR-MM-DD.md`. Potem ułóż kolejny tydzień (pon.–nd.) według rytmu; nowe posty od razu w statusie `planned` (weto właściciela je zatrzymuje).
 4. Wyrenderuj grafiki, obejrzyj każdy PNG (Read), popraw długość napisu.
 5. Podgląd tygodnia: `node tools/preview.mjs RRRR-MM-DD` → `preview/tydzien-RRRR-MM-DD.png`.
-6. `node tools/kontrola.mjs`: popraw każdą uwagę albo świadomie zostaw (panel KMZ pokazuje je właścicielowi przy poście). Potem `node tools/plan.mjs` (spis kolejki `plan.json`, miniatury `media/mini/` i uwagi dla panelu KMZ), commit i push na `main`. W ostatniej odpowiedzi: lista postów i link do podglądu. **Właściciel ma weto, brak odpowiedzi = publikacja** (decyzja 14.10).
+6. `node tools/kontrola.mjs`: popraw każdą uwagę albo świadomie zostaw (panel KMZ pokazuje je właścicielowi przy poście). Potem `node tools/plan.mjs` (spis kolejki `plan.json`, miniatury `media/mini/` i uwagi dla panelu KMZ), commit i push na `main`. W ostatniej odpowiedzi: lista postów i link do podglądu. **Właściciel ma weto w panelu KMZ („Wstrzymaj”, „Wznów”, „Zmień…”), brak reakcji = publikacja** (decyzja 14.10). Nie pisz „odpisz tutaj”.
 
 ### Tryb 3: rolki z modną muzyką (półautomat)
-Raz w tygodniu 1–2 rolki: pionowe klipy lub obrazy z napisem w stylu konta, gotowy opis i lista oznaczeń w `reels/RRRR-MM-DD-<slug>/`. Nie publikujesz ich: właściciel dodaje w aplikacji popularny utwór albo szablon i publikuje sam. W ostatniej odpowiedzi podaj link do katalogu.
+Raz w tygodniu 1–2 rolki: pionowe klipy lub obrazy z napisem w stylu konta, gotowy opis i lista oznaczeń w `reels/RRRR-MM-DD-<slug>/`. Nie publikujesz ich: właściciel dodaje w aplikacji popularny utwór albo szablon i publikuje sam. W ostatniej odpowiedzi podaj link do katalogu. Bez powiadomienia na telefon: rolki czekają na właściciela, więc wynik trafia do panelu ze statusem `czeka` i linkiem do `rolka.mp4`.
 
 ### Wynik do biura KMZ (ostatni krok trybów 1, 2 i 3)
-Na końcu każdego trybu, zawsze (także gdy nic nie opublikowano albo był błąd): `node tools/biuro.mjs <publikacja|plan|rolki> <ok|blad|czeka> "jedno zdanie: co zrobiono, z liczbami" [permalink]`. Panel KMZ i IGOR widzą wynik od razu (wcześniej dopiero rano). Zdanie bez danych osobowych; błąd: przyczyna i co zrobić.
+Na końcu każdego trybu, zawsze (także gdy nic nie opublikowano albo był błąd): `node tools/biuro.mjs <publikacja|plan|rolki> <ok|blad|czeka> "jedno zdanie: co zrobiono, z liczbami" [permalink]`. Panel KMZ i IGOR widzą wynik od razu (wcześniej dopiero rano). Zdanie bez danych osobowych; błąd: przyczyna i co zrobić. To jedyna droga wyniku do Macieja: bez powiadomień na telefon.
+- Publikacja: `ok` (opublikowano albo nic do publikacji; z permalinkiem, gdy coś wyszło) albo `blad`.
+- Plan: `ok` z linkiem do podglądu tygodnia (`preview/tydzien-RRRR-MM-DD.png` na GitHubie); plan to nie propozycja, posty idą bez reakcji.
+- Rolki: `czeka` z linkiem do `rolka.mp4` (Maciej publikuje je sam).
+- Pomysł: ostatnie zdanie wyniku, „Pomysł: …” (jedno zdanie, w granicy 300 znaków całości).
 
 ## Weto
 
