@@ -10,6 +10,7 @@ Właściciel 14.10.2026: „chcę, żeby te wydarzenia były naprawdę dobrze i 
 4. **Przegląd instytucji** (kalendarze na stronach): Zachęta, MSN, MNW i Muzeum Plakatu, Muzeum Warszawy z oddziałami (Praga, Wola, Pracownie), Wilanów, Łazienki, Zamek, POLIN, Muzeum Powstania, Kopernik, Filharmonia Narodowa, Teatr Wielki, Nowy Teatr, Teatr Studio, Teatr Baj, Teatr Lalka, Teatr Guliwer, Opera Królewska, CSW Zamek Ujazdowski, Koneser, Elektrownia Powiśle, Hala Koszyki, ZOO, Ogród Botaniczny, Wola Jazz i kluby muzyczne.
 5. **Co najmniej 20 kandydatów** (mniej więcej po połowie dla dorosłych i rodzin, w tym 2–3 sezonowe), z nich wybór 8–9 do karuzeli.
 6. **Zapisy z wyprzedzeniem:** przejrzyj też zapowiedzi na 4 tygodnie naprzód i wypisz wydarzenia z zapisami (zasady niżej).
+7. **Lista do panelu:** wszyscy kandydaci także w `research/RRRR-MM-DD.json` (tryb 2a w `CLAUDE.md`): w środę właściciel wybiera albo skreśla ich w panelu KMZ, w czwartek plan bierze to pod uwagę.
 
 ## Weryfikacja każdego kandydata (na stronie organizatora)
 
