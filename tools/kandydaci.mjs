@@ -19,6 +19,8 @@ const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const QUEUE = path.join(ROOT, "queue");
 const ADRES = "https://mnpjvkieetcrqzswxwqt.supabase.co/functions/v1/panel?warszawa_kandydaci";
 const MAKS = 60;
+// Dzień kandydata: pierwszy termin nie wcześniej niż poniedziałek tygodnia; zapisy z wyprzedzeniem do 4 tygodni później.
+const DNI_NAPRZOD = 34;
 
 const WARTOSCI = {
   dla_kogo: ["dorosli", "rodziny", "wszyscy"],
@@ -30,6 +32,7 @@ const WARTOSCI = {
 const TEKSTY = { co: [true, 120], kiedy: [true, 120], gdzie: [true, 160], cena: [false, 120], powod: [false, 160], zapisy: [false, 160] };
 
 const plikTygodnia = (tydzien) => path.join(ROOT, "research", `${tydzien}.json`);
+const dzienPo = (dzien, dni) => new Date(Date.parse(`${dzien}T12:00:00Z`) + dni * 86_400_000).toISOString().slice(0, 10);
 
 /** Klucz stały między wgraniami: nazwa bez polskich znaków i pierwszy dzień (decyzja właściciela trzyma się klucza). */
 export function kluczZ(k) {
@@ -62,13 +65,15 @@ export function sprawdz(dane, tydzien) {
       else if (v.length > max) bledy.push(`${gdzie}: ${pole} dłuższe niż ${max} znaków`);
     }
     if (!/^\d{4}-\d{2}-\d{2}$/.test(String(k.dzien ?? ""))) bledy.push(`${gdzie}: dzien ma być RRRR-MM-DD (pierwszy termin)`);
+    else if (k.dzien < tydzien || k.dzien > dzienPo(tydzien, DNI_NAPRZOD))
+      bledy.push(`${gdzie}: dzien ma być od ${tydzien} do ${dzienPo(tydzien, DNI_NAPRZOD)} (wydarzenie trwające: pierwszy dzień w tym tygodniu)`);
     for (const [pole, dozwolone] of Object.entries(WARTOSCI))
       if (!dozwolone.includes(k[pole])) bledy.push(`${gdzie}: ${pole} ma być jednym z: ${dozwolone.join(", ")}`);
     if (!/^https:\/\/\S+$/.test(String(k.zrodlo ?? "")) || String(k.zrodlo).length > 300)
       bledy.push(`${gdzie}: zrodlo ma być adresem https strony organizatora (do 300 znaków)`);
     if (k.ocena === "do_planu" && k.pewnosc !== "potwierdzone") bledy.push(`${gdzie}: do planu idzie tylko kandydat potwierdzony`);
     if (!k.klucz) k.klucz = kluczZ(k);
-    if (!/^[a-z0-9-]{1,80}$/.test(k.klucz)) bledy.push(`${gdzie}: klucz tylko z małych liter, cyfr i „-”`);
+    if (!/^[a-z0-9][a-z0-9-]{2,99}$/.test(k.klucz)) bledy.push(`${gdzie}: klucz: 3–100 znaków, małe litery, cyfry i „-”, na początku litera albo cyfra`);
     if (klucze.has(k.klucz)) bledy.push(`${gdzie}: klucz ${k.klucz} się powtarza`);
     klucze.add(k.klucz);
   });
@@ -124,7 +129,7 @@ const zapisz = (plik, dane) => writeFile(plik, `${JSON.stringify(dane, null, 2)}
 
 /** Posty z kolejki z datą w tygodniu od poniedziałku `tydzien` (pon.–nd.). */
 async function postyTygodnia(tydzien) {
-  const koniec = new Date(Date.parse(`${tydzien}T12:00:00Z`) + 6 * 86_400_000).toISOString().slice(0, 10);
+  const koniec = dzienPo(tydzien, 6);
   const posty = [];
   for (const f of (await readdir(QUEUE)).filter((f) => f.endsWith(".json"))) {
     const post = JSON.parse(await readFile(path.join(QUEUE, f), "utf8"));
@@ -147,9 +152,10 @@ async function main() {
     console.log(`Kandydaci ${tydzien}: plik w porządku (${ile}).`);
   } else if (polecenie === "wgraj") {
     await zapisz(plik, dane);
-    const kandydaci = dane.kandydaci.map((k) => Object.fromEntries(POLA.map((p) => [p, k[p] ?? null])));
+    // Puste pola jako null (tak przyjmuje je baza).
+    const kandydaci = dane.kandydaci.map((k) => Object.fromEntries(POLA.map((p) => [p, k[p] === "" ? null : (k[p] ?? null)])));
     const d = await doPanelu("POST", { body: { tydzien, kandydaci } }, "wgranie listy");
-    if (d) console.log(`Kandydaci ${tydzien}: wgrani do panelu (${d.zapisane ?? ile}).`);
+    if (d) console.log(`Kandydaci ${tydzien}: wgrani do panelu (zapisane ${d.zapisane ?? "?"}, usunięte ${d.usuniete ?? 0}).`);
   } else if (polecenie === "decyzje") {
     const d = await doPanelu("GET", { query: `&tydzien=${tydzien}` }, "odbiór wyborów");
     if (!d) return console.log("Plan układasz bez wyborów właściciela; napisz to w wyniku.");
@@ -184,7 +190,7 @@ async function main() {
     console.log(`Kandydaci ${tydzien}: w planie ${w_planie.length} z ${ile}.`);
     if (pominieci.length) console.log(`Wybrani przez właściciela, a nie w planie (napisz w wyniku dlaczego): ${pominieci.map((k) => k.klucz).join(", ")}`);
     const d = await doPanelu("POST", { body: { tydzien, w_planie } }, "zapis w_planie");
-    if (d) console.log("Kandydaci: w_planie zapisane w panelu.");
+    if (d) console.log(`Kandydaci: w_planie w panelu (ustawione ${d.ustawione ?? "?"}, pominięte ${d.pominiete ?? 0}).`);
   }
 }
 
