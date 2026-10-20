@@ -1,0 +1,58 @@
+{
+  "tydzien": "2026-10-19",
+  "kandydaci": [
+    {
+      "co": "„Sklep z pamiątkami / Souvenirshop”, taniec dla najmłodszych bez słów (Korczak Dzisiaj)",
+      "kiedy": "sob. 24.10, 10:00 i 13:00; 40 min",
+      "dzien": "2026-10-24",
+      "gdzie": "CSW Zamek Ujazdowski, Scena Laboratorium, Jazdów 2a",
+      "cena": "70 zł, rodzinny 52,50 zł/os.",
+      "dla_kogo": "rodziny",
+      "rubryka": "z_dzieckiem",
+      "zrodlo": "https://korczak-festival.pl/events/sklep-z-pamiatkami-souvenirshop/",
+      "pewnosc": "potwierdzone",
+      "ocena": "do_planu",
+      "powod": "bez słów, więc dobre dla rodzin cudzoziemców; od 4 lat"
+    },
+    {
+      "co": "Legia – Lech Poznań",
+      "kiedy": "nd. 25.10, 17:30",
+      "dzien": "2026-10-25",
+      "gdzie": "Stadion Legii, Łazienkowska 3",
+      "cena": "bilety.legia.com (ceny niepodane), sektor rodzinny",
+      "dla_kogo": "wszyscy",
+      "rubryka": "sport",
+      "zrodlo": "https://legia.com/articles/trwa-otwarta-sprzedaz-biletow-na-mecz-legia-warszawa-lech-poznan",
+      "pewnosc": "potwierdzone",
+      "ocena": "do_planu",
+      "powod": "mecz u siebie"
+    },
+    {
+      "co": "Motoryzacyjna wystawa LEGO: Ferrari F1 i Koenigsegg z klocków w skali 1:1",
+      "kiedy": "sob. 24.10 13–22, nd. 25.10 11–22, pon. 26.10 13–20",
+      "dzien": "2026-10-24",
+      "gdzie": "CSW Zamek Ujazdowski, Jazdów 2",
+      "cena": "wstęp wolny po rejestracji",
+      "dla_kogo": "dorosli",
+      "rubryka": "zapisy",
+      "zrodlo": "https://www.lego.com/pl-pl/dorosli-mile-widziani",
+      "pewnosc": "potwierdzone",
+      "ocena": "odrzucony",
+      "powod": "brak wolnych terminów na weekend (20.10)",
+      "zapisy": "od 10.10; 20.10 wolny tylko pon. 26.10, 15:00"
+    },
+    {
+      "co": "Kopernik, Wieczór dla dorosłych „Świadomość”",
+      "kiedy": "czw. 22.10, 19–22",
+      "dzien": "2026-10-22",
+      "gdzie": "Centrum Nauki Kopernik",
+      "cena": "55 zł, 18+",
+      "dla_kogo": "dorosli",
+      "rubryka": "wieczor",
+      "zrodlo": "https://kopernik.org.pl/wydarzenia/wieczory-dla-doroslych",
+      "pewnosc": "potwierdzone",
+      "ocena": "rezerwa",
+      "powod": "w researchu 19–25.10 w rezerwie"
+    }
+  ]
+}

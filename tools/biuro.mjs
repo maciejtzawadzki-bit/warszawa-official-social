@@ -1,7 +1,7 @@
 // Wynik trybu do biura KMZ (jeden stan, D-111 biura, 15.10.2026): po każdym trybie 1, 2 i 3 automat zapisuje w panelu
 // KMZ, co zrobił, zaraz po przebiegu (wcześniej panel i IGOR widzieli to dopiero rano, ze zbiórki o 8:53).
 // Użycie (ostatni krok każdego trybu, zawsze, także gdy nic nie opublikowano albo był błąd):
-//   node tools/biuro.mjs <publikacja|plan|rolki> <ok|blad|czeka> "jedno zdanie po polsku, z liczbami" [link https]
+//   node tools/biuro.mjs <publikacja|research|plan|rolki> <ok|blad|czeka> "jedno zdanie po polsku, z liczbami" [link https]
 // Klucz w KMZ_WARSZAWA_SEKRET (nigdy go nie wypisuj); bez niego, bez sieci albo przy złych argumentach skrypt tylko to
 // zgłasza i kończy z kodem 0, żeby nie zatrzymać trybu. Bez danych osobowych w zdaniu.
 import "./siec.mjs";
@@ -9,13 +9,14 @@ import "./siec.mjs";
 const ADRES = "https://mnpjvkieetcrqzswxwqt.supabase.co/functions/v1/panel?automat_wynik";
 const ZADANIA = {
   publikacja: "warszawa_official: publikacja",
+  research: "warszawa_official: research",
   plan: "warszawa_official: plan tygodnia",
   rolki: "warszawa_official: rolki",
 };
 
 const [co, status, podsumowanie, link] = process.argv.slice(2);
 if (!ZADANIA[co] || !["ok", "blad", "czeka"].includes(status) || !podsumowanie) {
-  console.log('Biuro KMZ: użycie: node tools/biuro.mjs <publikacja|plan|rolki> <ok|blad|czeka> "zdanie" [link]; wyniku nie zapisano.');
+  console.log('Biuro KMZ: użycie: node tools/biuro.mjs <publikacja|research|plan|rolki> <ok|blad|czeka> "zdanie" [link]; wyniku nie zapisano.');
   process.exit(0);
 }
 if (!process.env.KMZ_WARSZAWA_SEKRET) {
