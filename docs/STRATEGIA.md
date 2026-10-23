@@ -32,7 +32,7 @@ Ustalenia właściciela z 14.10.2026. Zasady pracy automatu są w `CLAUDE.md`. T
 ## Rytm i narzędzie
 
 - 5 postów tygodniowo (rubryki w `CLAUDE.md`), 1–2 rolki tygodniowo w półautomacie (właściciel dodaje modną muzykę w aplikacji, bo API jej nie dodaje).
-- Automat: research w środę (właściciel wybiera albo skreśla kandydatów w panelu KMZ), plan tygodnia w czwartek z jego wyborami i prawem weta właściciela (brak odpowiedzi oznacza publikację), publikacja codziennie przez API.
+- Automat: codziennie rano research i plan kroczący na około 5 publikacji do przodu (agent wybiera, podmienia i przesuwa posty, gdy znajdzie coś lepszego, najpóźniej 12 godzin przed publikacją; decyzja właściciela 23.10.2026), prawo weta właściciela w panelu KMZ (brak odpowiedzi oznacza publikację), publikacja codziennie przez API o 11:00 i 18:00.
 - Więcej postów dopiero wtedy, gdy jakość i statystyki się utrzymają. Jedna pomyłka w dacie albo w „za darmo” kosztuje zaufanie.
 
 ## Opis profilu
