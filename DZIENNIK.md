@@ -11,3 +11,4 @@
 - 2026-10-20 18:09 · feed · 2026-10-20-z-dzieckiem · https://www.instagram.com/p/DeuOqcgHIki/
 - 2026-10-23 12:32 · carousel · 2026-10-22-weekend-u-mnie · https://www.instagram.com/p/De1WmqnF1XY/
 - 2026-10-23 12:32 · feed · 2026-10-23-wieczor-bez-dzieci · https://www.instagram.com/p/De1WpNgmtvz/
+- 2026-10-24 11:07 · feed · 2026-10-24-z-dzieckiem · https://www.instagram.com/p/De3xj6BF6Hg/
