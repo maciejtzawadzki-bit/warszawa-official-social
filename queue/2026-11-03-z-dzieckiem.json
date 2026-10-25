@@ -2,23 +2,19 @@
   "id": "2026-11-03-z-dzieckiem",
   "date": "2026-11-03",
   "time": "18:00",
-  "type": "carousel",
+  "type": "feed",
   "status": "planned",
   "rubric": "Z dzieckiem",
   "research": "research/2026-10-24.md",
   "source": [
-    "https://www.mnw.art.pl/wydarzenia/pierwsze-kroki-w-muzeum/pierwsze-kroki-w-muzeum/kolorowy-zawrot-glowy-8",
-    "https://www.mnw.art.pl/wydarzenia/pierwsze-kroki-w-muzeum/pierwsze-kroki-w-muzeum/kolorowy-zawrot-glowy-9",
     "https://filharmonia.pl/repertuar/czasomierz-kompozytora",
     "https://filharmonia.pl/repertuar/czasomierz-kompozytora-206602286"
   ],
   "tags": [
-    "@nationalmuseuminwarsaw",
     "@warsawphil"
   ],
   "collab": [
-    "@warsawphil",
-    "@nationalmuseuminwarsaw"
+    "@warsawphil"
   ],
   "slides": [
     {
@@ -30,17 +26,7 @@
       ],
       "title": "FeNek szuka czasomierza kompozytora",
       "sub": "nd. 8.11, 11:00 i 14:00 · Filharmonia · 40–45 zł"
-    },
-    {
-      "layout": "repost",
-      "image": "https://mnw.pl/wp-content/uploads/2026/07/DZIECI-RODZINY_PIERWSZE-KROKI-W-MUZEUM.png",
-      "credit": "@nationalmuseuminwarsaw",
-      "tags": [
-        "@nationalmuseuminwarsaw"
-      ],
-      "title": "sztuka dla maluchów w Muzeum Narodowym",
-      "sub": "wt. 10:15 i 11:45 · MNW · 1,5–3 lata"
     }
   ],
-  "caption": "Muzyka i sztuka od pieluch 🧒\n\n🎻 „Czasomierz kompozytora”, koncert familijny z lisem FeNkiem w Filharmonii Narodowej: nd. 8.11, 11:00 dla 3–6 lat i 14:00 dla 7–12 lat, Sala Koncertowa, ul. Jasna 5, 40–45 zł @warsawphil\n\n🎨 „Pierwsze kroki w muzeum: Kolorowy zawrót głowy”, zajęcia dla maluchów od 1,5 do 3 lat z rodzicem w Muzeum Narodowym: wt. 3.11, 10:15 i 11:45, al. Jerozolimskie 3; bilety w systemie muzeum @nationalmuseuminwarsaw\n\nNa koncert wystarczy dobry humor, na zajęcia w muzeum zapasowe body.\n\nFor families: a Philharmonic family concert on Sunday 8.11 and art classes for toddlers aged 1.5–3 at the National Museum on Tuesday 3.11.\n\n#warszawa #warszawaofficial"
+  "caption": "W niedzielę zegar tyka po dziecięcemu 🧒\n\n🎻 „Czasomierz kompozytora”, koncert familijny z lisem FeNkiem w Filharmonii Narodowej: nd. 8.11, 11:00 dla 3–6 lat i 14:00 dla 7–12 lat, Sala Koncertowa, ul. Jasna 5, 40–45 zł @warsawphil\n\nNajlepsza lekcja punktualności, jaką znam.\n\nA family concert at the National Philharmonic on Sunday 8.11: 11 am for ages 3–6 and 2 pm for ages 7–12.\n\n#warszawa #warszawaofficial"
 }
