@@ -1,0 +1,54 @@
+# Po scaleniu PR-a od dyżuru biura KMZ (decyzja D-197, 26.10.2026): grafiki zmienionych postów od nowa, plan.json
+# i miniatury dla panelu KMZ, żeby Maciej widział w panelu nową wersję posta przed publikacją (zasada 12 godzin).
+# Uruchamia się tylko przy commicie „Dyżur: …” (tytuł PR-a od dyspozytora, scalanie squash); własne zmiany agenta
+# Warszawy (tryb 2: render, plan.mjs, push) go nie wywołują, więc oba nie zapisują plan.json naraz.
+# Zapis z pull --rebase i ponowieniami; commit z GITHUB_TOKEN nie uruchamia kolejnych przebiegów.
+name: po-dyzurze
+on:
+  push:
+    branches: [main]
+    paths: ["queue/**"]
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: po-dyzurze
+  cancel-in-progress: false
+jobs:
+  plan:
+    if: github.event_name == 'workflow_dispatch' || startsWith(github.event.head_commit.message, 'Dyżur:')
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 2
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - name: Zależności renderera
+        run: npm ci --prefix tools --silent
+      - name: Grafiki zmienionych postów
+        env:
+          CHROMIUM_PATH: /usr/bin/google-chrome
+        run: |
+          zmienione=$(git diff --name-only HEAD~1 HEAD -- 'queue/*.json' || true)
+          for f in $zmienione; do
+            [ -f "$f" ] || continue
+            id=$(basename "$f" .json)
+            rm -f media/"$id"-[0-9][0-9].png
+            node tools/render.mjs "$f" media
+          done
+      - name: Plan i miniatury dla panelu KMZ
+        env:
+          CHROMIUM_PATH: /usr/bin/google-chrome
+        run: node tools/plan.mjs
+      - name: Zapis do main
+        run: |
+          git add -A plan.json media
+          if git diff --cached --quiet; then echo "Bez zmian"; exit 0; fi
+          git -c user.name="github-actions[bot]" -c user.email="41898282+github-actions[bot]@users.noreply.github.com" commit -q -m "plan: po zmianie z dyżuru (panel KMZ)"
+          for i in 1 2 3 4 5; do
+            git pull --rebase -q origin main && git push -q origin HEAD:main && exit 0
+            sleep $((i * 4))
+          done
+          exit 1
