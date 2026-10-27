@@ -13,3 +13,4 @@
 - 2026-10-23 12:32 · feed · 2026-10-23-wieczor-bez-dzieci · https://www.instagram.com/p/De1WpNgmtvz/
 - 2026-10-24 11:07 · feed · 2026-10-24-z-dzieckiem · https://www.instagram.com/p/De3xj6BF6Hg/
 - 2026-10-26 11:10 · carousel · 2026-10-26-za-darmo · https://www.instagram.com/p/De9CU3Jlz7p/
+- 2026-10-27 18:09 · feed · 2026-10-27-z-dzieckiem · https://www.instagram.com/p/DfAXC1rF-Y6/
