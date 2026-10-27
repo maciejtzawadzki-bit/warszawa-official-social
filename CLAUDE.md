@@ -38,7 +38,7 @@ To repozytorium jest działem Warszawa Official biura KMZ Macieja. Ta chmura nie
 
 | Dzień | Post (feed lub karuzela) |
 |---|---|
-| pon. | „Za darmo, a z klasą”: 3 propozycje na tydzień (co jest za darmo, kiedy, czy wejściówka) |
+| pon. | „Za darmo”: 3 propozycje na tydzień (co jest za darmo, kiedy, czy wejściówka) |
 | wt. | „Z dzieckiem” albo „Miejsca” |
 | czw. | „Weekend u mnie”: karuzela, okładka (`cover`) + 5–9 slajdów `repost` z grafikami organizatorów (dorośli i rodziny na przemian), każdy z czarnym podpisem `title`/`sub`; pełne godziny i bilety w opisie |
 | pt. | „Moje święta” (według kalendarza) albo „Miejsca” / „Wieczór bez dzieci” |
@@ -51,7 +51,8 @@ Relacje: według możliwości API (obraz bez naklejek), „Dziś u mnie”. W dz
 1. **Każde wydarzenie sprawdzone u źródła** (strona organizatora albo instytucji) przy przygotowaniu posta: data, godzina, miejsce, cena, czy za darmo, wiek. Bez źródła nie publikujemy. Źródło zapisz w polu `source` posta.
 2. **Nie obiecuj angielskiego prowadzenia**, jeśli nie jest potwierdzone.
 3. **Opis** (układ wzoru @projekt.miejski, głos Warszawy):
-   - pierwsza linia: krótki nagłówek w głosie Warszawy, często z emotką na końcu („Co u mnie w weekend? ✨”),
+   - pierwsza linia: krótki nagłówek w głosie Warszawy, często z emotką na końcu, wzięty z konkretu tego posta: najciekawsza pozycja, liczba albo data („W sobotę przebrani mają u mnie lepiej 🧛”, „Cały listopad pałace bez biletów 🏛️”),
+   - **nagłówek i zdanie z pazurem za każdym razem nowe** (Maciej 27.10: „co chwila posty nie [mogą] mieć podobnych opisów”). Nazwa rubryki to etykieta w panelu, nie nagłówek. Przed napisaniem przeczytaj nagłówki i puenty z kolejki i ostatnich publikacji i nie powtarzaj ich zwrotów ani motywów (np. dwa razy „listopad ciemnieje o czwartej” w jednym tygodniu). Zużyte, nie używamy: „z klasą”, „Co u mnie w weekend?”. Kontrola zgłasza powtórzenia w postach z ±3 tygodni,
    - pusta linia, potem lista: każda pozycja w osobnym akapicie, zaczyna się emotką tematyczną (🎺 🧘 🎨 🧒 🎭), ma co, gdzie, kiedy i `@organizatora`; pozycje w kolejności slajdów,
    - opcjonalnie jedno zdanie z pazurem na koniec listy,
    - pusta linia, 1–2 zdania po angielsku („This weekend in Warsaw: …”),

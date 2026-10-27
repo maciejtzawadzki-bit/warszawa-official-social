@@ -27,14 +27,14 @@ Pewność: **potwierdzone** (wszystko u organizatora) może iść na slajd; **cz
 Miejsca często kończą się, zanim wydarzenie trafi do planu swojego tygodnia. Wystawa LEGO w Zamku Ujazdowskim (24–26.10.2026): wstęp wolny po rejestracji, zapisy od 10.10, a 20.10 system rezerwacji pokazywał już tylko jeden termin w poniedziałek. Dlatego:
 
 - W notatce researchu osobna sekcja **„Zapisy z wyprzedzeniem”** (4 tygodnie naprzód): co, kiedy, od kiedy zapisy, stan miejsc w dniu researchu, źródło.
-- Wydarzenie, na które zapisy już trwają albo ruszą przed następnym planem, idzie do **najbliższego planu tygodnia**, nawet gdy samo jest później: do pierwszego pasującego posta (bezpłatne: poniedziałkowe „Za darmo, a z klasą”), z datą wydarzenia i miejscem zapisów (strona organizatora).
+- Wydarzenie, na które zapisy już trwają albo ruszą przed następnym planem, idzie do **najbliższego planu tygodnia**, nawet gdy samo jest później: do pierwszego pasującego posta (bezpłatne: poniedziałkowe „Za darmo”), z datą wydarzenia i miejscem zapisów (strona organizatora).
 - Przed wpisaniem do planu sprawdź wolne terminy w systemie rezerwacji: sam podgląd kalendarza, bez rezerwacji i bez wpisywania danych. Brak wolnych terminów oznacza wyprzedane: nie idzie. Gdy systemu nie da się sprawdzić (strona w JS, blokada automatów), zapisz w notatce „dostępności nie sprawdzono”.
 - W karuzeli swojego tygodnia takie wydarzenie pokazujemy ponownie tylko wtedy, gdy w dniu researchu są jeszcze wolne miejsca.
 
 ## Co jest „ekstra”
 
 - premiera, pierwszy weekend wystawy, ostatnia szansa, jedyne takie w Polsce,
-- za darmo, ale z klasą (oprowadzania kuratorskie, otwarte pracownie, pokazy),
+- za darmo i warte wyjścia (oprowadzania kuratorskie, otwarte pracownie, pokazy),
 - coś po angielsku albo z napisami,
 - wyjątkowe miejsce (planetarium, dawna drukarnia, pracownia artysty),
 - dopasowane do pogody i sezonu (dynie w październiku, iluminacje w grudniu, plenery latem),
