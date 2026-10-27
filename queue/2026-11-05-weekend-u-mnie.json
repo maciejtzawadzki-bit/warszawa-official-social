@@ -1,0 +1,121 @@
+{
+  "id": "2026-11-05-weekend-u-mnie",
+  "date": "2026-11-05",
+  "time": "18:00",
+  "type": "carousel",
+  "status": "planned",
+  "rubric": "Weekend u mnie",
+  "research": "research/2026-10-27.md",
+  "source": [
+    "https://filharmonia.pl/repertuar/koncert-symfoniczny-337507716",
+    "https://filharmonia.pl/repertuar/koncert-symfoniczny-493254796",
+    "https://www.ogrod.uw.edu.pl/magicznybotaniczny-powraca-z-zupelnie-nowa-iluminacja/",
+    "https://lumagica.pl/bilety/",
+    "https://zacheta.art.pl/pl/kalendarz/saturday-artwalk-39",
+    "https://teatrguliwer.pl/spektakl/czy-umiesz-gwizdac-joanno/",
+    "https://teatrguliwer.pl/2026/10/15/zaciesniamy-wiezi-przyjdz-na-spektakl-z-wnukami/",
+    "https://muzeumfarmacji.muzeumwarszawy.pl/wydarzenia/spacer-po-starych-powazkach/",
+    "https://stacjamuzeum.pl/wydarzenia/gielda-modeli-kolejowych-67/",
+    "https://stacjamuzeum.pl/wydarzenia/otwarcie-nowej-makiety-kolejowej-h0/",
+    "https://www.ekstraklasa.org/terminarz/2026-2027/kolejka-14/",
+    "https://legia.com/articles/ruszyla-otwarta-sprzedaz-biletow-na-mecz-legia-warszawa-rakow-czestochowa"
+  ],
+  "tags": [
+    "@lumagica_warszawa",
+    "@warsawphil",
+    "@ogrodbotanicznyuw",
+    "@galeria_zacheta",
+    "@teatrguliwer",
+    "@muzeumfarmacji",
+    "@stacjamuzeum",
+    "@legiawarszawa"
+  ],
+  "collab": [
+    "@lumagica_warszawa",
+    "@teatrguliwer",
+    "@stacjamuzeum"
+  ],
+  "slides": [
+    {
+      "layout": "cover",
+      "image": "https://lumagica.pl/wp-content/uploads/2026/09/s22.jpg",
+      "tags": [
+        "@lumagica_warszawa"
+      ],
+      "num": "7",
+      "title": "pomysłów\nna weekend\nw Warszawie\n6–8.11"
+    },
+    {
+      "layout": "repost",
+      "image": "https://filharmonia.pl/upload/thumb/2026/05/fn_www_symfoniczne11_auto_1800x1200.jpg",
+      "credit": "@warsawphil",
+      "tags": [
+        "@warsawphil"
+      ],
+      "title": "V Symfonia Beethovena i prawykonanie",
+      "sub": "pt. 19:30, sob. 18:00 · Filharmonia · 70–175 zł"
+    },
+    {
+      "layout": "repost",
+      "image": "https://www.ogrod.uw.edu.pl/wp-content/uploads/2026/10/magicznybotaniczny2026biuro-prasowe1920x1080px-1024x576.jpg",
+      "credit": "@ogrodbotanicznyuw",
+      "tags": [
+        "@ogrodbotanicznyuw",
+        "@lumagica_warszawa"
+      ],
+      "title": "MagicznyBotaniczny: ogród świateł",
+      "sub": "od sob. 7.11, 16:00–21:00 · Ogród Botaniczny UW · 47 zł"
+    },
+    {
+      "layout": "repost",
+      "image": "https://zacheta.art.pl/public/upload/events/medium/68382f479924c.jpg",
+      "credit": "@galeria_zacheta",
+      "tags": [
+        "@galeria_zacheta"
+      ],
+      "title": "oprowadzanie po angielsku w Zachęcie",
+      "sub": "sob. 14:15 · Zachęta · w cenie biletu, 30 zł"
+    },
+    {
+      "layout": "repost",
+      "image": "https://teatrguliwer.pl/wp-content/uploads/2019/11/INTERNET_fot_Bartek_Warzecha_%E2%94%ACe_DSCF2188.jpg",
+      "credit": "@teatrguliwer · fot. Bartek Warzecha",
+      "tags": [
+        "@teatrguliwer"
+      ],
+      "title": "spektakl dla wnuków i dziadków",
+      "sub": "sob. 11:00 i 13:00, nd. 16:00 · Guliwer · 35–50 zł"
+    },
+    {
+      "layout": "repost",
+      "image": "https://muzeumfarmacji.muzeumwarszawy.pl/wp-content/uploads/sites/16/2026/10/SPACER_Stare_Powazki_AN-26711-t-scaled.jpg",
+      "credit": "@muzeumfarmacji",
+      "tags": [
+        "@muzeumfarmacji"
+      ],
+      "title": "spacer po Starych Powązkach",
+      "sub": "sob. 15:00 · zbiórka: brama św. Honoraty · 20 zł"
+    },
+    {
+      "layout": "repost",
+      "image": "https://stacjamuzeum.pl/wp-content/uploads/2026/10/5G8A0484-scaled.jpg",
+      "credit": "@stacjamuzeum",
+      "tags": [
+        "@stacjamuzeum"
+      ],
+      "title": "nowa makieta kolejowa i giełda modeli",
+      "sub": "nd. 10:00–14:00 · Stacja Muzeum · 16 zł"
+    },
+    {
+      "layout": "repost",
+      "image": "https://d1hema0blvqofo.cloudfront.net/pilka-nozna/1080x1350_SM_cennik_mecz_RAKOW.webp",
+      "credit": "@legiawarszawa",
+      "tags": [
+        "@legiawarszawa"
+      ],
+      "title": "Legia – Raków na Łazienkowskiej",
+      "sub": "nd. 17:30 · Stadion Legii · 70–145 zł, dziecko 40 zł"
+    }
+  ],
+  "caption": "Co u mnie w weekend? ✨\n\n🎻 V Symfonia Beethovena i prawykonanie „Polaris” Pstrokońskiej-Nawratil na 125-lecie Filharmonii Narodowej: pt. 6.11, 19:30 (o 18:30 bezpłatne wprowadzenie) i sob. 7.11, 18:00, ul. Jasna 5, 70–175 zł @warsawphil\n\n✨ MagicznyBotaniczny „Barwy Egzotyki”: ogród świateł w Ogrodzie Botanicznym UW, Al. Ujazdowskie 4, od sob. 7.11, codziennie poza czwartkami 16:00–21:00; 47 zł, ulgowy 35 zł, bilet na 4 osoby 140 zł, dzieci do 6 lat gratis, gra terenowa dla 4–12 lat @lumagica_warszawa @ogrodbotanicznyuw\n\n🖼️ Saturday ArtWalk w Zachęcie, oprowadzanie po angielsku po wystawach Susan Hiller, Grzywnowicza oraz Szapocznikow i Baghramian: sob. 7.11, 14:15, w cenie biletu (30/20 zł, rodzinny 40 zł) @galeria_zacheta\n\n🧒 „Czy umiesz gwizdać, Joanno?” w Teatrze Guliwer, spektakl dla wnuków i dziadków: sob. 7.11, 11:00 i 13:00, nd. 8.11, 16:00, Scena Liliput, ul. Różana 16, od 5 lat; 50 zł, a dziadkowie z wnukami 35 zł w kasie z hasłem „WIEZI” @teatrguliwer\n\n🕯️ Spacer z Muzeum Farmacji po Starych Powązkach: sob. 7.11, 15:00–16:30, zbiórka przy Bramie św. Honoraty, 20 zł, liczba miejsc ograniczona @muzeumfarmacji\n\n🚂 Nowa makieta kolejowa H0 i giełda modeli w Stacji Muzeum, ul. Towarowa 3: nd. 8.11, 10:00–14:00, tego dnia 16 zł, dzieci do 7 lat gratis @stacjamuzeum\n\n⚽ Legia – Raków na Łazienkowskiej: nd. 8.11, 17:30, bilety 70–145 zł, w strefie rodzinnej 95/80 zł i 40 zł dla dziecka do 13 lat @legiawarszawa\n\nListopad gasi światło o czwartej, ja zapalam swoje.\n\nThis weekend in Warsaw: Beethoven and a world premiere at the Philharmonic, a new light garden at the University Botanical Garden, an English-language tour at Zachęta, a grandparents-and-grandkids play, a walk through Old Powązki, a new model railway and Legia at home.\n\n#warszawa #warszawaofficial"
+}
