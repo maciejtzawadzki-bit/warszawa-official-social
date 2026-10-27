@@ -13,7 +13,7 @@ const ZARTOBLIWE = /👸|😂|🤣|😜|😉|🎉|🥳|🍾|😎|🤪|💃/u;
 const ZAKAZANE = [
   [/link w bio/i, "„link w bio”"], [/udostępnij/i, "„udostępnij”"], [/\bzapisz(cie)?\b(?! się)/i, "„zapisz”"],
   [/słoik/i, "„słoiki” (bez wyśmiewania przyjezdnych)"], [/kliknij/i, "„kliknij”"],
-  [/z klasą/i, "„z klasą” (zużyte, Maciej 27.10)"], [/co u mnie w weekend/i, "„Co u mnie w weekend?” (zużyte, Maciej 27.10)"],
+  [/z klasą/i, "„z klasą” (zużyte, Maciej 27.10)"]
 ];
 const PROMOCJE = /promocj|rabat|zniżk|wyprzedaż|-\d{2}\s?%|otwarcie (sklepu|marketu|galerii handlowej)/i;
 const EMOTKA_NA_POCZATKU = /^\p{Extended_Pictographic}/u;
@@ -33,12 +33,14 @@ const pary = (t) => {
   return s.slice(1).map((w, i) => [s[i], w]).filter(([a, b]) => !(FUNKCYJNE.has(a) && FUNKCYJNE.has(b))).map((x) => x.join(" "));
 };
 const wspolne = (a, b) => { const B = new Set(pary(b)); return pary(a).find((x) => B.has(x)); };
+// Seria „Weekend u mnie” zaczyna się zawsze tak samo (Maciej 27.10: „to była jakby seria”); porównujemy to, co po niej.
+const SERIA = /^co u mnie w weekend\?\s*/i;
 // Puenta: ostatni akapit przed angielskim, który nie jest pozycją listy.
 const puenta = (akapity, en) => akapity.slice(1, en < 0 ? undefined : en).filter((a) => !EMOTKA_NA_POCZATKU.test(a)).at(-1) ?? "";
 const czesci = (p) => {
   const akapity = String(p.caption ?? "").split(/\n\s*\n/).map((a) => a.trim()).filter(Boolean);
   const en = akapity.findIndex((a, i) => i > 0 && !a.startsWith("#") && poAngielsku(a));
-  return { naglowek: String(p.caption ?? "").split("\n")[0].trim(), puenta: puenta(akapity, en) };
+  return { naglowek: String(p.caption ?? "").split("\n")[0].trim().replace(SERIA, ""), puenta: puenta(akapity, en) };
 };
 
 const krotko = (t, n = 40) => (t.length > n ? `${t.slice(0, n - 1)}…` : t);
@@ -65,6 +67,7 @@ export function uwagiPosta(post, wszystkie = []) {
   if (feed && !start) {
     const moje = czesci(post);
     const t0 = Date.parse(post.date);
+    if (SERIA.test(naglowek) && !moje.naglowek.replace(/\p{Extended_Pictographic}/gu, "").trim()) uwagi.push("seria „Co u mnie w weekend?”: dopisz w tej linii, co w tym weekendzie najciekawsze");
     const sasiednie = wszystkie.filter((p) => p.id !== post.id && p.id !== post.zastepuje && p.zastapiony !== post.id && p.type !== "story" && p.rubric !== "Start konta" && ["planned", "published"].includes(p.status) && Math.abs(Date.parse(p.date) - t0) <= 21 * 86_400_000);
     for (const [co, tekst] of [["nagłówek", moje.naglowek], ["puenta", moje.puenta]]) {
       if (!tekst) continue;
