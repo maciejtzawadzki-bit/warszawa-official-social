@@ -97,7 +97,8 @@ Raz w tygodniu 1–2 rolki: pionowe klipy lub obrazy z napisem w stylu konta, go
 Na końcu każdego trybu, zawsze (także gdy nic nie opublikowano albo był błąd): `node tools/biuro.mjs <publikacja|research|plan|rolki> <ok|blad|czeka> "jedno zdanie: co zrobiono, z liczbami" [permalink]`. Panel KMZ i IGOR widzą wynik od razu (wcześniej dopiero rano). Zdanie bez danych osobowych; błąd: przyczyna i co zrobić. To jedyna droga wyniku do Macieja: bez powiadomień na telefon.
 - Publikacja: `ok` (opublikowano albo nic do publikacji; z permalinkiem, gdy coś wyszło) albo `blad`.
 - Plan: `ok` z liczbą nowych i zmienionych postów i najważniejszą zmianą; plan to nie propozycja, posty idą bez reakcji.
-- Rolki: `czeka` z linkiem do `rolka.mp4` (Maciej publikuje je sam).
+- Rolki: `czeka` z linkiem do `rolka.mp4` (Maciej publikuje je sam), bez `--krok` („Tak” w panelu otwiera `rolka.mp4`).
+- Brak zgody (`czeka`, zasada „Brak zgody” wyżej): dopisz `--pytanie "Czy <to, na co brak zgody>?" --krok "Warszawa <zrobi to po zgodzie, jednym zdaniem>"`, żeby Maciej mógł zgodzić się jednym kliknięciem w panelu (z krokiem „Tak” zleca go działowi Warszawa).
 - Pomysł: ostatnie zdanie wyniku, „Pomysł: …” (jedno zdanie, w granicy 300 znaków całości).
 
 ## Weto
