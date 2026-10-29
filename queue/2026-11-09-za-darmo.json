@@ -1,0 +1,43 @@
+{
+  "id": "2026-11-09-za-darmo",
+  "date": "2026-11-09",
+  "time": "11:00",
+  "type": "carousel",
+  "status": "planned",
+  "rubric": "Za darmo",
+  "research": "research/2026-10-29.md",
+  "source": [
+    "https://muzhp.pl/wydarzenia/swietujmy-niepodleglosc-razem-wspolna-niepodlegla-2026",
+    "https://www.kopernik.org.pl/wydarzenia/jak-uchwycic-ruch-elektronu-wyklad-noblistki-prof-anne-lhuillier",
+    "https://www.wilanow-palac.pl/wydarzenie/drukarnia-krolewska"
+  ],
+  "tags": ["@muzeumhistoriipolski", "@centrum.nauki.kopernik", "@wilanowpalac"],
+  "collab": ["@muzeumhistoriipolski", "@centrum.nauki.kopernik", "@wilanowpalac"],
+  "slides": [
+    {
+      "layout": "repost",
+      "image": "https://muzhp.pl/uploads/thumbs/2026-10/6ad2079ac606b020174198.jpg",
+      "credit": "@muzeumhistoriipolski",
+      "tags": ["@muzeumhistoriipolski"],
+      "title": "święto Niepodległości na Cytadeli",
+      "sub": "śr. 11.11, 10–21 · Muzeum Historii Polski · wstęp wolny"
+    },
+    {
+      "layout": "repost",
+      "image": "https://www.kopernik.org.pl/sites/default/files/2026-10/AnneL'Huillier_jak%20uchwycic%20ruch%20elektronow.png",
+      "credit": "@centrum.nauki.kopernik",
+      "tags": ["@centrum.nauki.kopernik"],
+      "title": "noblistka Anne L'Huillier po angielsku",
+      "sub": "sob. 14.11, 11:00 · Centrum Nauki Kopernik · wstęp wolny"
+    },
+    {
+      "layout": "repost",
+      "image": "https://wilanow-palac.pl/uploads/thumbs/6a33f73b00cf0622348006.jpg",
+      "credit": "@wilanowpalac",
+      "tags": ["@wilanowpalac"],
+      "title": "pokazy w Drukarni Królewskiej",
+      "sub": "sob.–nd. 14–15.11, 10–14 · Wilanów · wstęp wolny"
+    }
+  ],
+  "caption": "Noblistka w Koperniku i biało-czerwona Cytadela 🇵🇱\n\n🇵🇱 Festiwal „Wspólna Niepodległa” w Muzeum Historii Polski na Cytadeli: śr. 11.11, 10–21, wstęp wolny bez zapisów. Dla rodzin 10–17 warsztaty biało-czerwonych ozdób, przymierzanie strojów prababć i gra terenowa w Parku Edukacyjnym, o 11:00 spektakl „Bohaterski miś”, o 12:00 hymn, o 16:35 polonez. Tego dnia za darmo także Muzeum Wojska Polskiego, Muzeum Katyńskie i X Pawilon @muzeumhistoriipolski\n\n🔬 „Jak uchwycić ruch elektronu?”, wykład noblistki prof. Anne L'Huillier w Centrum Nauki Kopernik (centrum konferencyjne, wejście środkowe), Wybrzeże Kościuszkowskie 20: sob. 14.11, 11:00, wstęp wolny, po angielsku z tłumaczeniem symultanicznym na polski @centrum.nauki.kopernik\n\n🖨️ Królewski Print Club w Drukarni Królewskiej w Wilanowie: pokazy dawnego druku na zabytkowej prasie dla małych i dużych, sob.–nd. 14–15.11, 10–14, wstęp wolny (także 7–8 i 21–22.11) @wilanowpalac\n\nZ wykładu wyjdziecie mądrzejsi, z drukarni z zapachem farby, a z Cytadeli z chorągiewką.\n\nFree in Warsaw this week: an Independence Day festival at the Citadel on 11.11, a lecture in English by Nobel laureate Anne L'Huillier at the Copernicus Science Centre on 14.11 and historic printing demos at Wilanów Palace.\n\n#warszawa #warszawaofficial"
+}
