@@ -91,8 +91,8 @@ export function uwagiPosta(post, wszystkie = []) {
   // Rolka o 3–5 wydarzeniach (Maciej 30.10: „na jedno są wtedy nudne”): pozycje opisu i klatki po zapowiedzi.
   if (post.type === "reel") {
     const klatki = (post.slides ?? []).filter((s) => s.image || s.ig).length - 1;
-    if (lista.length < 3 || lista.length > 5) uwagi.push(`rolka: ${lista.length} wydarzeń w opisie, ma być 3–5`);
-    else if (klatki !== lista.length) uwagi.push(`rolka: ${lista.length} wydarzeń w opisie, a klatek po zapowiedzi ${Math.max(klatki, 0)}`);
+    if (lista.length < 3 || lista.length > 5) uwagi.push(`rolka: wydarzenia w opisie: ${lista.length}, ma być 3–5`);
+    else if (klatki !== lista.length) uwagi.push(`rolka: wydarzenia w opisie: ${lista.length}, klatki po zapowiedzi: ${Math.max(klatki, 0)}`);
   }
 
   const dzien = String(post.date ?? "").slice(5);
