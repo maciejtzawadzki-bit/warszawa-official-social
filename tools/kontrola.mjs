@@ -2,6 +2,7 @@
 // przy postach z planu (Maciej 14.10: „będę w panelu zaglądał”). Tylko ostrzega, niczego nie blokuje. Sprawdza to, co
 // da się zmierzyć; gustu i trafności doboru nie oceni.
 // Użycie: node tools/kontrola.mjs   (uwagi dla wszystkich niepublikowanych postów z kolejki)
+//         node tools/kontrola.mjs reels/<katalog>/rolka.json   (tylko podane pliki, np. rolka z trybu 3)
 import "./siec.mjs";
 import { readdir, readFile } from "node:fs/promises";
 import path from "node:path";
@@ -62,7 +63,7 @@ export function uwagiPosta(post, wszystkie = []) {
   if (!/#warszawa\s+#warszawaofficial/i.test(opis)) uwagi.push("brak hasztagów #warszawa #warszawaofficial");
   if (opis.length > 2200) uwagi.push(`opis za długi dla Instagrama (${opis.length}/2200)`);
   if ((opis.match(/#\w+/g) ?? []).length > 30) uwagi.push("ponad 30 hasztagów");
-  if (post.type === "reel" && opis.length > 600) uwagi.push("rolka: opis ma być krótki (150–250 znaków + EN)");
+  if (post.type === "reel" && opis.length > 800) uwagi.push(`rolka: opis za długi (${opis.length}/800: nagłówek, 3–5 krótkich pozycji, EN)`);
 
   if (feed && !start) {
     const moje = czesci(post);
@@ -87,6 +88,12 @@ export function uwagiPosta(post, wszystkie = []) {
   // Pozycje listy: akapity od emotki przed częścią angielską; każda z @organizatorem.
   const lista = akapity.slice(1, en < 0 ? undefined : en).filter((a) => EMOTKA_NA_POCZATKU.test(a));
   for (const a of lista) if (!a.includes("@")) uwagi.push(`pozycja bez @organizatora: ${krotko(a.replace(EMOTKA_NA_POCZATKU, "").trim())}`);
+  // Rolka o 3–5 wydarzeniach (Maciej 30.10: „na jedno są wtedy nudne”): pozycje opisu i klatki po zapowiedzi.
+  if (post.type === "reel") {
+    const klatki = (post.slides ?? []).filter((s) => s.image || s.ig).length - 1;
+    if (lista.length < 3 || lista.length > 5) uwagi.push(`rolka: wydarzenia w opisie: ${lista.length}, ma być 3–5`);
+    else if (klatki !== lista.length) uwagi.push(`rolka: wydarzenia w opisie: ${lista.length}, klatki po zapowiedzi: ${Math.max(klatki, 0)}`);
+  }
 
   const dzien = String(post.date ?? "").slice(5);
   if (UROCZYSTE[dzien]) {
@@ -124,7 +131,10 @@ export function uwagiPosta(post, wszystkie = []) {
 if (import.meta.url === `file://${process.argv[1]}`) {
   const QUEUE = path.join(path.dirname(fileURLToPath(import.meta.url)), "..", "queue");
   const posty = await Promise.all((await readdir(QUEUE)).filter((f) => f.endsWith(".json")).sort().map(async (f) => JSON.parse(await readFile(path.join(QUEUE, f), "utf8"))));
-  for (const p of posty.filter((x) => x.status !== "published")) {
+  // Z plikami w argumentach (np. rolka: reels/<katalog>/rolka.json) sprawdza tylko je, na tle kolejki.
+  const pliki = process.argv.slice(2);
+  const sprawdzane = pliki.length ? await Promise.all(pliki.map(async (f) => JSON.parse(await readFile(f, "utf8")))) : posty.filter((x) => x.status !== "published");
+  for (const p of sprawdzane) {
     const u = uwagiPosta(p, posty);
     console.log(`${p.id}: ${u.length ? "" : "zgodny z zasadami"}`);
     for (const x of u) console.log(`  ⚠ ${x}`);

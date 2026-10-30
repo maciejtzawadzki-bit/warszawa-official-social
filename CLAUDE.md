@@ -57,7 +57,7 @@ Relacje: według możliwości API (obraz bez naklejek), „Dziś u mnie”. W dz
    - opcjonalnie jedno zdanie z pazurem na koniec listy,
    - pusta linia, 1–2 zdania po angielsku („This weekend in Warsaw: …”),
    - na końcu `#warszawa #warszawaofficial`. Bez „zapisz”, „udostępnij”, „link w bio”.
-   - Rolka: nagłówek z emotką i 1–2 zdania (150–250 znaków), potem EN i hasztagi.
+   - Rolka: nagłówek z emotką, potem lista 3–5 wydarzeń z rolki jak wyżej (w kolejności klatek, krócej niż w karuzeli: co, gdzie, kiedy, `@organizatora`), bez puenty, potem EN i hasztagi; razem do ok. 800 znaków.
    - Jak u wzoru: każde konto z „@” (klikalne, powiadamia organizatora, a ten często udostępnia post w relacji). Uwaga: Business Discovery usuwa „@” z cudzych opisów, więc w danych z API konta wzoru wyglądają na gołe nazwy.
 4. **Materiały innych profili** (decyzja właściciela 14.10): zdjęcia i grafiki organizatora z oznaczeniem autora w opisie i na zdjęciu; gdy organizator się sprzeciwi, post znika tego samego dnia. Nie przerabiaj cudzych grafik poza kadrowaniem i napisem.
    - **Współautorstwo** (właściciel 14.10: „jak nie przyjmą, co nam to szkodzi”): pole `collab` posta, do 3 kont organizatorów, których materiał jest w poście (najciekawsze najpierw). Instagram wysyła im zaproszenie; przyjęte pokazuje post także na ich profilu, nieprzyjęte wygasa bez śladu. Nie dla relacji i nie w dni uroczyste. Pozostałe konta tylko oznaczamy.
@@ -91,7 +91,17 @@ Właściciel 23.10.2026: „reaserchujemy wszystko, wybieramy najbardziej pasuj�
 7. Wynik: `node tools/biuro.mjs plan ok "Plan na 5 publikacji do DD.MM gotowy: <ile nowych>, <ile zmienionych>; <najważniejsza zmiana>"`. **Właściciel ma weto w panelu KMZ („Wstrzymaj”, „Wznów”, „Zmień…”), brak reakcji = publikacja** (decyzja 14.10). Nie pisz „odpisz tutaj”.
 
 ### Tryb 3: rolki z modną muzyką (półautomat)
-Raz w tygodniu 1–2 rolki: pionowe klipy lub obrazy z napisem w stylu konta, gotowy opis i lista oznaczeń w `reels/RRRR-MM-DD-<slug>/`. Nie publikujesz ich: właściciel dodaje w aplikacji popularny utwór albo szablon i publikuje sam. W ostatniej odpowiedzi podaj link do katalogu. Bez powiadomienia na telefon: rolki czekają na właściciela, więc wynik trafia do panelu ze statusem `czeka` i linkiem do `rolka.mp4`.
+Raz w tygodniu 1–2 rolki: pionowe klipy lub obrazy z napisem w stylu konta, gotowy opis i lista oznaczeń w `reels/RRRR-MM-DD-<slug>/`.
+
+**Rolka pokazuje 3–5 różnych wydarzeń, nigdy jedno** (Maciej 30.10: „rolki powinny być na kilka wydarzeń, nie na jedno bo są wtedy nudne”):
+- pierwsza klatka to zapowiedź z liczbą i datą: `title` „4 pomysły\nna weekend”, `sub` „31.10–1.11”, na zdjęciu najciekawszego z wydarzeń,
+- potem po jednej klatce na wydarzenie: obraz organizatora (`image` albo `ig`), `title` co to jest („wampir w Teatrze Guliwer”), `sub` kiedy i gdzie („sob. 14:00 · ul. Różana”); w kolejności pozycji w opisie,
+- wydarzenia różne (dorośli i rodziny na przemian, różne dzielnice), każde potwierdzone u organizatora; przy dwóch rolkach w tygodniu żadne wydarzenie nie powtarza się w obu,
+- mniej niż 3 potwierdzone wydarzenia na weekend: rolki nie robisz i piszesz to w wyniku,
+- przed commitem `node tools/kontrola.mjs reels/<katalog>/rolka.json` i popraw uwagi,
+- rolki z wcześniejszych tygodni (jedno wydarzenie w kilku ujęciach) nie są już wzorem.
+
+Nie publikujesz rolek: właściciel dodaje w aplikacji popularny utwór albo szablon i publikuje sam. W ostatniej odpowiedzi podaj link do katalogu. Bez powiadomienia na telefon: rolki czekają na właściciela, więc wynik trafia do panelu ze statusem `czeka` i linkiem do `rolka.mp4`.
 
 ### Wynik do biura KMZ (ostatni krok trybów 1, 2 i 3)
 Na końcu każdego trybu, zawsze (także gdy nic nie opublikowano albo był błąd): `node tools/biuro.mjs <publikacja|research|plan|rolki> <ok|blad|czeka> "jedno zdanie: co zrobiono, z liczbami" [permalink]`. Panel KMZ i IGOR widzą wynik od razu (wcześniej dopiero rano). Zdanie bez danych osobowych; błąd: przyczyna i co zrobić. To jedyna droga wyniku do Macieja: bez powiadomień na telefon.
