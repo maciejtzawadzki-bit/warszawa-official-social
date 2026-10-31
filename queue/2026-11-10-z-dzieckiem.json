@@ -1,0 +1,36 @@
+{
+  "id": "2026-11-10-z-dzieckiem",
+  "date": "2026-11-10",
+  "time": "18:00",
+  "type": "carousel",
+  "status": "planned",
+  "rubric": "Z dzieckiem",
+  "research": "research/2026-10-31.md",
+  "source": [
+    "https://teatrlalka.pl/pl/spektakle/krol-macius-i",
+    "https://teatrlalka.pl/pl/bilety",
+    "https://teatrbaj.pl/repertuar/niesamowite-przygody-skarpetek/",
+    "https://teatrbaj.pl/bilety/"
+  ],
+  "tags": ["@teatr_lalka", "@teatrbaj"],
+  "collab": ["@teatr_lalka", "@teatrbaj"],
+  "slides": [
+    {
+      "layout": "repost",
+      "image": "https://teatrlalka.pl/public/upload/plays/gallery/desktop/699c7424aa1b5.jpg",
+      "credit": "@teatr_lalka",
+      "tags": ["@teatr_lalka"],
+      "title": "„Król Maciuś I” w Teatrze Lalka",
+      "sub": "sob. 17:00, nd. 12:00 · PKiN · 60 zł · od 6 lat"
+    },
+    {
+      "layout": "repost",
+      "image": "https://teatrbaj.pl/wp-content/uploads/2021/10/Niesamowite-przygody-Skarpetek-fot.-Albert-Roca-Macia-6-1536x1019.jpg",
+      "credit": "@teatrbaj · fot. Albert Roca Macià",
+      "tags": ["@teatrbaj"],
+      "title": "skarpetki uciekają z pralki",
+      "sub": "sob. 15:30 i 17:30, nd. 11:00 · Teatr Baj · 49 zł"
+    }
+  ],
+  "caption": "Mały król i skarpetki detektywi 🧦\n\n👑 „Król Maciuś I” według Korczaka w Teatrze Lalka, Pałac Kultury i Nauki, pl. Defilad 1: chłopiec, który zamiast się bawić, musi rządzić krajem; o odwadze, sprawiedliwości i odpowiedzialności. Sob. 14.11, 17:00 i nd. 15.11, 12:00, 90 minut z przerwą, 60 zł, od 6 lat @teatr_lalka\n\n🧦 „Niesamowite przygody Skarpetek” według Justyny Bednarek w Teatrze Baj, ul. Jagiellońska 28: skarpetki uciekają przez dziurę pod pralką i zostają detektywami, gwiazdami filmu i doradcami króla. Sob. 14.11, 15:30 i 17:30, nd. 15.11, 11:00, godzina, 49 zł, od 5 lat @teatrbaj\n\nWreszcie wiem, gdzie się podziewają te od pary.\n\nFor families on 14–15 November: Korczak's „King Matt the First” at Teatr Lalka in the Palace of Culture and a play about runaway socks at Teatr Baj in Praga.\n\n#warszawa #warszawaofficial"
+}

@@ -1,5 +1,5 @@
 {
-  "zaktualizowano": "2026-10-30T10:14:44.921Z",
+  "zaktualizowano": "2026-10-31T07:00:37.481Z",
   "posty": [
     {
       "id": "2026-10-15-wrocilam",
@@ -75,9 +75,7 @@
       "status": "published",
       "naglowek": "Dziś wieczór bez dzieci, za to z jazzem 🎷",
       "podpis": "Dziś wieczór bez dzieci, za to z jazzem 🎷\n\n🎷 Jazz Jamboree, dzień pierwszy: Wojciech Jachna Squad, Marcin Masecki Trio z Beethovenem i Adam Bałdych European Quartet. Pt. 23.10, 19:00, Klub Stodoła, ul. Batorego 10; bilet jednodniowy 220–330 zł, karnet na trzy dni 520–720 zł @jazzjamboree\n\nMasecki gra Beethovena po swojemu. Ludwig by się zdziwił, ja się cieszę.\n\nTonight in Warsaw: day one of Jazz Jamboree at Klub Stodoła, 7 pm.\n\n#warszawa #warszawaofficial",
-      "obrazy": [
-        "https://raw.githubusercontent.com/maciejtzawadzki-bit/warszawa-official-social/main/media/mini/2026-10-23-wieczor-bez-dzieci-01-2c8690c1.jpg"
-      ],
+      "obrazy": [],
       "permalink": "https://www.instagram.com/p/De1WpNgmtvz/",
       "uwagi": []
     },
@@ -266,6 +264,22 @@
         "https://raw.githubusercontent.com/maciejtzawadzki-bit/warszawa-official-social/main/media/mini/2026-11-09-za-darmo-01-ba7b6572.jpg",
         "https://raw.githubusercontent.com/maciejtzawadzki-bit/warszawa-official-social/main/media/mini/2026-11-09-za-darmo-02-28bfab0a.jpg",
         "https://raw.githubusercontent.com/maciejtzawadzki-bit/warszawa-official-social/main/media/mini/2026-11-09-za-darmo-03-913da268.jpg"
+      ],
+      "permalink": null,
+      "uwagi": []
+    },
+    {
+      "id": "2026-11-10-z-dzieckiem",
+      "date": "2026-11-10",
+      "time": "18:00",
+      "type": "carousel",
+      "rubric": "Z dzieckiem",
+      "status": "planned",
+      "naglowek": "Mały król i skarpetki detektywi 🧦",
+      "podpis": "Mały król i skarpetki detektywi 🧦\n\n👑 „Król Maciuś I” według Korczaka w Teatrze Lalka, Pałac Kultury i Nauki, pl. Defilad 1: chłopiec, który zamiast się bawić, musi rządzić krajem; o odwadze, sprawiedliwości i odpowiedzialności. Sob. 14.11, 17:00 i nd. 15.11, 12:00, 90 minut z przerwą, 60 zł, od 6 lat @teatr_lalka\n\n🧦 „Niesamowite przygody Skarpetek” według Justyny Bednarek w Teatrze Baj, ul. Jagiellońska 28: skarpetki uciekają przez dziurę pod pralką i zostają detektywami, gwiazdami filmu i doradcami króla. Sob. 14.11, 15:30 i 17:30, nd. 15.11, 11:00, godzina, 49 zł, od 5 lat @teatrbaj\n\nWreszcie wiem, gdzie się podziewają te od pary.\n\nFor families on 14–15 November: Korczak's „King Matt the First” at Teatr Lalka in the Palace of Culture and a play about runaway socks at Teatr Baj in Praga.\n\n#warszawa #warszawaofficial",
+      "obrazy": [
+        "https://raw.githubusercontent.com/maciejtzawadzki-bit/warszawa-official-social/main/media/mini/2026-11-10-z-dzieckiem-01-bd66e05f.jpg",
+        "https://raw.githubusercontent.com/maciejtzawadzki-bit/warszawa-official-social/main/media/mini/2026-11-10-z-dzieckiem-02-e1b18d2d.jpg"
       ],
       "permalink": null,
       "uwagi": []
