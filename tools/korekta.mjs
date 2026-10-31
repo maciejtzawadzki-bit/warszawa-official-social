@@ -1,7 +1,8 @@
 // Nieaktualna informacja w poście, który już wyszedł (z:727 biura KMZ, 31.10.2026; księga C.20: korekta po publikacji to
 // osobne działanie za zgodą Macieja): automat nie poprawia posta i nie zostawia samej uwagi w wyniku, tylko zakłada zadanie
 // działu Warszawa „przygotuj korektę do zgody Macieja”. Dział (dyżur w biurze) sprawdza stan u organizatora i daje Maciejowi
-// kartę z gotowym zdaniem do podmiany w aplikacji. Jedno zadanie na post: biuro samo łączy powtórne zgłoszenia.
+// kartę z gotowym zdaniem do podmiany w aplikacji. Biuro samo łączy zgłoszenia: ta sama informacja raz, nowa informacja
+// w tym samym poście do jego otwartego zadania; tylko post z planu konta, najwyżej 3 zadania na post i 5 dziennie.
 // Użycie:
 //   node tools/korekta.mjs <id posta z queue/> "co jest nieaktualne i jak jest teraz, jedno zdanie" [adres źródła https]
 //     [--do RRRR-MM-DD]   (ostatni dzień, w którym korekta ma sens, np. dzień wydarzenia; bez niego biuro daje 2 dni)

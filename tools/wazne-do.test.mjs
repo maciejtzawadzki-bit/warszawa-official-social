@@ -15,6 +15,8 @@ test("czas polski na UTC: zima +1, lato +2, dzień zmiany czasu", () => {
 test("pełna chwila ze strefą bez zmian; zły zapis: null", () => {
   assert.equal(naChwile("2026-11-01T15:00:00+01:00"), "2026-11-01T14:00:00.000Z");
   assert.equal(naChwile("2026-11-01T14:00Z"), "2026-11-01T14:00:00.000Z");
+  assert.equal(naChwile("2026-11-31T18:00:00+01:00"), null); // nie 1 grudnia
+  assert.equal(naChwile("2026-11-01T24:30:00+01:00"), null);
   for (const zly of ["", null, "jutro", "1.11 15:00", "2026-11-31 10:00", "2026-11-01 25:00", "2026-11-01"]) assert.equal(naChwile(zly), null, String(zly));
 });
 

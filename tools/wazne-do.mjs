@@ -18,6 +18,10 @@ const przesuniecie = (ms) => {
 export const naChwile = (tekst) => {
   const t = String(tekst ?? "").trim();
   if (/^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}(:\d{2}(\.\d{1,3})?)?(Z|[+-]\d{2}:\d{2})$/.test(t)) {
+    // Date.parse przesuwa 31.11 na 1.12 (atak Codexa 31.10): dzień i godzina muszą istnieć w kalendarzu.
+    const [r, mies, d, g, min] = [t.slice(0, 4), t.slice(5, 7), t.slice(8, 10), t.slice(11, 13), t.slice(14, 16)].map(Number);
+    const k = new Date(Date.UTC(r, mies - 1, d, g, min));
+    if (k.getUTCMonth() !== mies - 1 || k.getUTCDate() !== d || k.getUTCHours() !== g || k.getUTCMinutes() !== min) return null;
     const ms = Date.parse(t);
     return Number.isFinite(ms) ? new Date(ms).toISOString() : null;
   }
