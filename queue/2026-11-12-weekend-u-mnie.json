@@ -1,0 +1,70 @@
+{
+  "id": "2026-11-12-weekend-u-mnie",
+  "date": "2026-11-12",
+  "time": "18:00",
+  "type": "carousel",
+  "status": "planned",
+  "rubric": "Weekend u mnie",
+  "research": "research/2026-11-02.md",
+  "source": [
+    "https://www.muzeumazji.pl/fla/edycje/program/",
+    "https://teatrguliwer.pl/spektakl/ucho/",
+    "https://filharmonia.pl/repertuar/koncert-kameralny-496843422",
+    "https://koneser.eu/wydarzenia/targowisko-sztuki-sztuka-i-design/",
+    "https://www.instagram.com/p/DfOnO_fE4by/",
+    "https://filharmonia.pl/repertuar/koncert-oratoryjny-99656683",
+    "https://filharmonia.pl/repertuar/koncert-oratoryjny-200593816"
+  ],
+  "tags": ["@muzeumazji", "@maip_czyta", "@teatrguliwer", "@warsawphil", "@targowiskosztuki.warszawa", "@centrum_praskie_koneser"],
+  "collab": ["@warsawphil", "@targowiskosztuki.warszawa", "@teatrguliwer"],
+  "slides": [
+    {
+      "layout": "cover",
+      "ig": "@targowiskosztuki.warszawa/Dey7vdiFIDT#2",
+      "tags": ["@targowiskosztuki.warszawa"],
+      "num": "5",
+      "title": "pomysłów\nna weekend\nw Warszawie\n13–15.11"
+    },
+    {
+      "layout": "repost",
+      "ig": "@maip_czyta/DemYr46DeBB",
+      "credit": "@maip_czyta",
+      "tags": ["@muzeumazji", "@maip_czyta"],
+      "title": "Festiwal Literatury Azjatyckiej",
+      "sub": "sob.–nd. 11–18 · Muzeum Azji i Pacyfiku · wstęp wolny"
+    },
+    {
+      "layout": "repost",
+      "image": "https://teatrguliwer.pl/wp-content/uploads/2026/01/UCHO-fot-marek-zimakiewicz-MALE-78.jpg",
+      "credit": "@teatrguliwer · fot. Marek Zimakiewicz",
+      "tags": ["@teatrguliwer"],
+      "title": "„Ucho”, spektakl od 4 lat",
+      "sub": "sob.–nd. 11:00 i 13:00 · Teatr Guliwer · 51 zł"
+    },
+    {
+      "layout": "repost",
+      "image": "https://image.bilety24.pl/original/dealer-default/388/jussen1.jpg",
+      "credit": "@warsawphil · fot. Marco Borggreve",
+      "tags": ["@warsawphil"],
+      "title": "duet fortepianowy braci Jussen",
+      "sub": "nd. 18:00 · Filharmonia Narodowa · 110–210 zł"
+    },
+    {
+      "layout": "repost",
+      "ig": "@targowiskosztuki.warszawa/Dey7vdiFIDT#6",
+      "credit": "@targowiskosztuki.warszawa",
+      "tags": ["@targowiskosztuki.warszawa"],
+      "title": "Targowisko Sztuki: 92 twórców",
+      "sub": "sob.–nd. 11–18 · Koneser, Butelkownia · wstęp wolny"
+    },
+    {
+      "layout": "repost",
+      "image": "https://filharmonia.pl/upload/thumb/2026/05/fn_www_symfoniczne12_auto_1800x1200.jpg",
+      "credit": "@warsawphil · fot. Dario Acosta",
+      "tags": ["@warsawphil"],
+      "title": "oratorium Händla z McGeganem",
+      "sub": "pt. 19:30, sob. 18:00 · Filharmonia · 60–145 zł"
+    }
+  ],
+  "caption": "Co u mnie w weekend? Bracia Jussen, Händel i japońskie demony 🎹\n\n📚 4. Festiwal Literatury Azjatyckiej w Muzeum Azji i Pacyfiku, ul. Solec 24: sob. 14.11, 11–18 rozmowy o japońskim kryminale, koreańskich pisarkach i Kōbō Abe, nd. 15.11 od 11:00 Iran, Palestyna i o 16:00 yōkai, do tego kiermasz książek; wstęp wolny, liczba miejsc ograniczona. Dla rodzin w nd. o 14:00 warsztat pisma tajskiego, 20 zł od osoby @muzeumazji @maip_czyta\n\n👂 „Ucho” według Piret Raud w Teatrze Guliwer, Scena Liliput, ul. Różana 16: sob. i nd. 14–15.11, 11:00 i 13:00, 55 minut i rozmowa z aktorem po spektaklu, 51 zł, od 4 lat @teatrguliwer\n\n🎹 Lucas i Arthur Jussen, duet fortepianowy w Filharmonii Narodowej, ul. Jasna 5: nd. 15.11, 18:00; Brahms, Lutosławski, Ravel i na koniec „Rhapsody in Blue” Gershwina; 110–210 zł @warsawphil\n\n🎨 Targowisko Sztuki w Centrum Praskim Koneser, Butelkownia, pl. Konesera 3: sob. i nd. 14–15.11, 11–18, 78 artystów i 14 pracowni designu, malarstwo, grafika, plakat, ceramika i biżuteria; ostatnia edycja w tym roku, wstęp wolny @targowiskosztuki.warszawa @centrum_praskie_koneser\n\n🎶 „L'Allegro, il Penseroso ed il Moderato” Händla, Orkiestra i Chór Filharmonii Narodowej pod batutą Nicholasa McGegana: pt. 13.11, 19:30 (o 18:30 bezpłatne wprowadzenie) i sob. 14.11, 18:00, ul. Jasna 5, 60–145 zł @warsawphil\n\nOd yōkai do Gershwina w dwa dni: tak się u mnie spędza listopad.\n\nThis weekend in Warsaw: a free Asian literature festival, a children's play at Teatr Guliwer, the Jussen piano duo and a Händel oratorio at the Philharmonic, and a free art fair at Koneser.\n\n#warszawa #warszawaofficial"
+}
