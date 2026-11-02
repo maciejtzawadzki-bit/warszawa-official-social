@@ -2,6 +2,32 @@
 
 Najnowszy na górze. Liczby z Instagram Graph API (`node tools/stats.mjs --write`).
 
+## 2026-10-26 – 2026-11-02
+
+Obserwujący: **6991** (+4 od poprzedniego raportu; API follows_and_unfollows: FOLLOWER 8, NON_FOLLOWER 3), postów łącznie 237.
+
+| Konto, ostatnie dni | wartość |
+|---|---|
+| zasięg (konta) | 387 |
+| wyświetlenia | 1253 |
+| konta zaangażowane | 9 |
+| interakcje | 28 |
+| wejścia na profil | 28 |
+
+| data | typ | początek opisu | ❤️ | 💬 | zapisy | udost. | zasięg | ER | post |
+|---|---|---|---|---|---|---|---|---|---|
+| 2026-10-31 | image | Kapelusz na sobotę 🎩 | 2 | 0 | 0 | 0 | 52 | 0,03% | [link](https://www.instagram.com/p/DfJ593xl5cG/) |
+| 2026-10-30 | image | Dziś w Muzeum Narodowym straszą obrazy 🖤 | 2 | 0 | 0 | 0 | 83 | 0,03% | [link](https://www.instagram.com/p/DfHV9mcl9gO/) |
+| 2026-10-29 | carousel_album | Co u mnie w weekend? Wampir w Guliwerze i derby na | 5 | 2 | 0 | 2 | 187 | 0,10% | [link](https://www.instagram.com/p/DfFg9qhDTDl/) |
+| 2026-10-27 | image | Lampion na listopadowe wieczory 🕯️ | 1 | 0 | 0 | 0 | 79 | 0,01% | [link](https://www.instagram.com/p/DfAXC1rF-Y6/) |
+| 2026-10-26 | carousel_album | Za darmo, a z klasą 👸 | 2 | 0 | 0 | 0 | 94 | 0,03% | [link](https://www.instagram.com/p/De9CU3Jlz7p/) |
+
+Publiczność zaangażowana: niedostępna (Instagram pokazuje ją od 100 zaangażowanych osób).
+
+ER = (polubienia + komentarze) / obserwujący. Wnioski dopisz pod tabelą, oddzielając je od liczb.
+
+**Wnioski** (wniosek, nie liczba): drugi tydzień z rzędu najlepiej wypadła karuzela „Weekend u mnie” (29.10: 2 udostępnienia, 2 komentarze, zasięg 187), a cztery pojedyncze obrazy dotarły tylko do 52–83 kont; dlatego cała kolejka od 2.11 to karuzele. Zasięg konta spadł o ponad połowę (387 kont wobec 950), a poniedziałkowa karuzela 26.10 dotarła do 94 kont wobec 535 tydzień wcześniej; przyczyny dane z API nie pokazują (hipoteza: mniej karuzel w tygodniu i brak przyjętych współautorstw, które wcześniej niosły posty dalej). Zapisów nadal zero przy wszystkich postach: w karuzelach warto dawać więcej treści „na później” (terminy z zapisami, listy na cały miesiąc), bo to je ludzie zapisują.
+
 ## 2026-10-19 – 2026-10-26
 
 Obserwujący: **6987** (+3 od poprzedniego raportu; API follows_and_unfollows: FOLLOWER 6, NON_FOLLOWER 3), postów łącznie 232.
