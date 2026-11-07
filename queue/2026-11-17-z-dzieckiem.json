@@ -1,0 +1,35 @@
+{
+  "id": "2026-11-17-z-dzieckiem",
+  "date": "2026-11-17",
+  "time": "18:00",
+  "type": "carousel",
+  "status": "planned",
+  "rubric": "Z dzieckiem",
+  "research": "research/2026-11-07.md",
+  "source": [
+    "https://teatrguliwer.pl/spektakl/orecchio-brat-pinokia/",
+    "https://teatrbaj.pl/repertuar/hokus-pokus-czary-mary-i-krol/",
+    "https://teatrbaj.pl/bilety/"
+  ],
+  "tags": ["@teatrguliwer", "@teatrbaj"],
+  "collab": ["@teatrguliwer", "@teatrbaj"],
+  "slides": [
+    {
+      "layout": "repost",
+      "image": "https://teatrguliwer.pl/wp-content/uploads/2023/02/INTERNET_fot_Bartek_Warzecha_%E2%94%ACe_DSCF1171-1920x1280.jpg",
+      "credit": "@teatrguliwer · fot. Bartek Warzecha",
+      "tags": ["@teatrguliwer"],
+      "title": "„Orecchio, brat Pinokia”",
+      "sub": "sob. 17:00, nd. 11:00 i 13:00 · Guliwer · 45–55 zł"
+    },
+    {
+      "layout": "repost",
+      "image": "https://teatrbaj.pl/wp-content/uploads/2026/04/HokusPokus_PolaKardas15-scaled.jpg",
+      "credit": "@teatrbaj",
+      "tags": ["@teatrbaj"],
+      "title": "„Hokus Pokus, Czary Mary… i Król”",
+      "sub": "sob. 17:00, nd. 11:30 · Teatr Baj · 49 zł"
+    }
+  ],
+  "caption": "Brat Pinokia i król od czarów 🎭\n\n🪵 „Orecchio, brat Pinokia” Merlina Vervaeta w reżyserii Ady Tabisz w Teatrze Guliwer, Scena Duża, ul. Różana 16: sob. 21.11, 17:00, nd. 22.11, 11:00 i 13:00, 70 minut z przerwą, 45–55 zł, od 5 lat @teatrguliwer\n\n👑 „Hokus Pokus, Czary Mary… i Król” w Teatrze Baj, ul. Jagiellońska 28: baśń o dorastaniu i szukaniu własnej drogi; sob. 21.11, 17:00 i nd. 22.11, 11:30, 60 minut, 49 zł, od 5 lat @teatrbaj\n\nNos Pinokia rośnie od kłamstw, mój od dumy z tych scen.\n\nFor families on 21–22 November: Pinocchio's brother at Teatr Guliwer and a fairy tale about a king and magic at Teatr Baj in Praga.\n\n#warszawa #warszawaofficial"
+}
