@@ -98,6 +98,7 @@ Raz w tygodniu 1–2 rolki: pionowe klipy lub obrazy z napisem w stylu konta, go
 - pierwsza klatka to zapowiedź z liczbą i datą: `title` „4 pomysły\nna weekend”, `sub` „31.10–1.11”, na zdjęciu najciekawszego z wydarzeń,
 - potem po jednej klatce na wydarzenie: obraz organizatora (`image` albo `ig`), `title` co to jest („wampir w Teatrze Guliwer”), `sub` kiedy i gdzie („sob. 14:00 · ul. Różana”); w kolejności pozycji w opisie,
 - wydarzenia różne (dorośli i rodziny na przemian, różne dzielnice), każde potwierdzone u organizatora; przy dwóch rolkach w tygodniu żadne wydarzenie nie powtarza się w obu,
+- **co najmniej 3 z 5 wydarzeń spoza postów z tego tygodnia** (Maciej 13.11: rolka „5 pomysłów na weekend” powtarzała karuzelę „6 pomysłów na weekend”): karuzela daje najważniejsze, rolka drugi zestaw pomysłów, więc w piątek research szuka nowych pozycji na ten weekend; kontrola liczy powtórki z postami z 7 dni przed rolką,
 - mniej niż 3 potwierdzone wydarzenia na weekend: rolki nie robisz i piszesz to w wyniku,
 - przed commitem `node tools/kontrola.mjs reels/<katalog>/rolka.json` i popraw uwagi,
 - rolki z wcześniejszych tygodni (jedno wydarzenie w kilku ujęciach) nie są już wzorem.

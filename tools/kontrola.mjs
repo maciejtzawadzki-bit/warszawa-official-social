@@ -44,6 +44,26 @@ const czesci = (p) => {
   return { naglowek: String(p.caption ?? "").split("\n")[0].trim().replace(SERIA, ""), puenta: puenta(akapity, en) };
 };
 
+// Pozycje listy opisu (akapity od emotki przed częścią angielską) i klucze wydarzenia do porównań rolek z postami:
+// tytuły w cudzysłowie i pary słów z wielkiej litery (nazwy własne), bez nazw miejsc, które wracają przy różnych wydarzeniach.
+const pozycje = (p) => {
+  const akapity = String(p.caption ?? "").split(/\n\s*\n/).map((a) => a.trim()).filter(Boolean);
+  const en = akapity.findIndex((a, i) => i > 0 && !a.startsWith("#") && poAngielsku(a));
+  return akapity.slice(1, en < 0 ? undefined : en).filter((a) => EMOTKA_NA_POCZATKU.test(a));
+};
+const MIEJSCA = /filharmoni|teatr|muzeum|pałac|centrum|hal[ia]|scen|sal[ia]|galeri|ogrod|instytut|ul\b|al\b|pl\b|stadion|warszaw/i;
+const klucze = (a) => {
+  const k = new Set([...a.matchAll(/„([^”]{3,})”/g)].map((m) => m[1].toLowerCase()));
+  const slowa = a.replace(/@\S+/g, " ").split(/[\s,.:;()–-]+/).filter(Boolean);
+  slowa.slice(1).forEach((w, i) => {
+    const v = slowa[i];
+    if (/^\p{Lu}\p{Ll}{2,}/u.test(v) && /^\p{Lu}\p{Ll}{2,}/u.test(w) && !MIEJSCA.test(v) && !MIEJSCA.test(w)) k.add(`${v} ${w}`.toLowerCase());
+    // Pojedyncza nazwa własna (bez pierwszego słowa pozycji): „MagicznyBotaniczny”, „Zachęcie”/„Zachęta” (rdzeń 6 liter).
+    if (/^\p{Lu}[\p{L}]{5,}/u.test(w) && !MIEJSCA.test(w)) k.add(w.slice(0, 6).toLowerCase());
+  });
+  return k;
+};
+
 const krotko = (t, n = 40) => (t.length > n ? `${t.slice(0, n - 1)}…` : t);
 
 export function uwagiPosta(post, wszystkie = []) {
@@ -93,6 +113,12 @@ export function uwagiPosta(post, wszystkie = []) {
     const klatki = (post.slides ?? []).filter((s) => s.image || s.ig).length - 1;
     if (lista.length < 3 || lista.length > 5) uwagi.push(`rolka: wydarzenia w opisie: ${lista.length}, ma być 3–5`);
     else if (klatki !== lista.length) uwagi.push(`rolka: wydarzenia w opisie: ${lista.length}, klatki po zapowiedzi: ${Math.max(klatki, 0)}`);
+    // Co najmniej 3 z 5 wydarzeń spoza postów z tego tygodnia (Maciej 13.11: rolka „5 pomysłów” powtarzała karuzelę
+    // „6 pomysłów”): porównujemy tytuły w cudzysłowie i nazwy własne z pozycjami postów z 7 dni przed rolką i 3 po niej.
+    const t0 = Date.parse(post.date ?? String(post.id).slice(0, 10));
+    const tydzien = wszystkie.filter((p) => p.type !== "reel" && ["planned", "published"].includes(p.status) && Date.parse(p.date) >= t0 - 7 * 86_400_000 && Date.parse(p.date) <= t0 + 3 * 86_400_000);
+    const powtorki = lista.filter((a) => tydzien.some((p) => pozycje(p).some((b) => [...klucze(a)].some((k) => klucze(b).has(k)))));
+    if (lista.length && lista.length - powtorki.length < 3) uwagi.push(`rolka: ${powtorki.length} z ${lista.length} wydarzeń już w postach z tego tygodnia, nowych ma być co najmniej 3`);
   }
 
   const dzien = String(post.date ?? "").slice(5);
