@@ -22,6 +22,19 @@ Właściciel 14.10.2026: „chcę, żeby te wydarzenia były naprawdę dobrze i 
 
 Pewność: **potwierdzone** (wszystko u organizatora) może iść na slajd; **częściowo** tylko do opisu i bez niepotwierdzonych szczegółów (np. bez ceny, jeśli organizator jej nie podaje); **niepotwierdzone** nie idzie nigdzie.
 
+## Społeczności i wydarzenia oddolne (źródło inspiracji)
+
+Właściciel 11.11.2026: „Tego typu wydarzenia, które mają znacznik Warszawa czy jakiś hashtag, trzeba też obserwować. Jeśli to legalne oczywiście. To też są fajne rzeczy do podawania dalej.” Chodzi o wydarzenia robione przez społeczności i małych organizatorów (spotkania, zloty, targi, biegi, sąsiedzkie i hobbystyczne), których nie ma w kalendarzach instytucji.
+
+- **Skąd tropy** (tylko trop, nigdy potwierdzenie): wyszukiwarka z frazami hashtagów (`#warsawevents`, `#wydarzeniawarszawa`, `#warszawawydarzenia`, `#warszawanocą`, `#warsawcommunity`, „Warszawa” + rodzaj wydarzenia + miesiąc), konta społeczności znalezione w researchu (`node tools/ig-media.mjs <konto>`), link albo zrzut ekranu od właściciela. Stron hashtagów i znacznika lokalizacji na Instagramie nie da się czytać bez logowania: nie próbuj, nie loguj się.
+- **Trzy pytania przed wpisaniem na listę kandydatów:**
+  1. Jest strona albo wpis organizatora z terminem, miejscem i zasadami wejścia? Nie ma: pomijamy.
+  2. Jest legalne: w lokalu albo ze zgodą miasta, bez wyścigów ulicznych i zlotów bez zgody? Wątpliwość: pomijamy.
+  3. Pasuje do konta (dorośli z większym portfelem, rodziny, cudzoziemcy)?
+- **Podawanie dalej:** nazwa, termin, miejsce, link organizatora, w naszej grafice. Cudze zdjęcia i plakaty tylko za zgodą autora, z podpisem (zasady jak przy `repost`).
+- **Ile:** najwyżej jedno takie wydarzenie w tygodniu, w istniejących rubrykach (zwykle „Weekend u mnie”), i tylko gdy przechodzi weryfikację z sekcji wyżej. Brak dobrego kandydata to nie brak w planie.
+- W notatce researchu jedna linijka: co sprawdzone z tego źródła i z jakim wynikiem (także „nic wartego uwagi”).
+
 ## Wydarzenia z zapisami (rejestracja, bezpłatne wejściówki, limit miejsc)
 
 Miejsca często kończą się, zanim wydarzenie trafi do planu swojego tygodnia. Wystawa LEGO w Zamku Ujazdowskim (24–26.10.2026): wstęp wolny po rejestracji, zapisy od 10.10, a 20.10 system rezerwacji pokazywał już tylko jeden termin w poniedziałek. Dlatego:
