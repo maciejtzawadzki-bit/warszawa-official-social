@@ -183,7 +183,9 @@ export function chromiumPath() {
   if (process.env.CHROMIUM_PATH) return process.env.CHROMIUM_PATH;
   const base = process.env.PLAYWRIGHT_BROWSERS_PATH ?? "/opt/pw-browsers";
   const dir = existsSync(base) ? readdirSync(base).find((d) => /^chromium-\d+$/.test(d)) : null;
-  return dir ? path.join(base, dir, "chrome-linux", "chrome") : undefined;
+  if (!dir) return undefined;
+  // Nowsze wydania Chromium dla Playwrighta mają katalog chrome-linux64 zamiast chrome-linux (14.11.2026).
+  return ["chrome-linux64", "chrome-linux"].map((d) => path.join(base, dir, d, "chrome")).find((f) => existsSync(f));
 }
 
 // Pole `ig` slajdu (grafika organizatora z Instagrama) zamieniane na aktualny adres obrazu przez API.

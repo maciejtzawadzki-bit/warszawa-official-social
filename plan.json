@@ -1,5 +1,5 @@
 {
-  "zaktualizowano": "2026-11-13T10:08:36.844Z",
+  "zaktualizowano": "2026-11-14T06:58:34.637Z",
   "posty": [
     {
       "id": "2026-10-15-wrocilam",
@@ -205,9 +205,7 @@
       "status": "published",
       "naglowek": "Orkiestra zamieszkała w dawnym Instytucie Weterynaryjnym 🎻",
       "podpis": "Orkiestra zamieszkała w dawnym Instytucie Weterynaryjnym 🎻\n\n🎻 „Polifonie”, wystawa w nowej siedzibie Sinfonii Varsovii, ul. Grochowska 272: trzy odnowione budynki dawnego Instytutu Weterynaryjnego, przebudowane według projektu Atelier Thomas Pucher, a w nich instalacje dźwiękowe Daniela Brożka, fotografie Agnieszki Rayss i dwudziestokrotnie powiększone fragmenty obrazu Tymka Borowskiego na sufitach; pt.–nd. 6–8.11, 12–21, wstęp wolny @sinfonia_varsovia\n\nKiedyś operowano tu duże zwierzęta, dziś operuje się światłem i dźwiękiem.\n\nThis weekend in Warsaw: Sinfonia Varsovia's new home on Grochowska Street, a former veterinary institute, shows the free exhibition Polifonie.\n\n#warszawa #warszawaofficial",
-      "obrazy": [
-        "https://raw.githubusercontent.com/maciejtzawadzki-bit/warszawa-official-social/main/media/mini/2026-11-06-miejsca-01-ec191bc9.jpg"
-      ],
+      "obrazy": [],
       "permalink": "https://www.instagram.com/p/DfZWwgxkUD_/",
       "uwagi": []
     },
@@ -365,6 +363,23 @@
         "https://raw.githubusercontent.com/maciejtzawadzki-bit/warszawa-official-social/main/media/mini/2026-11-23-za-darmo-01-4f71c87b.jpg",
         "https://raw.githubusercontent.com/maciejtzawadzki-bit/warszawa-official-social/main/media/mini/2026-11-23-za-darmo-02-da9282ce.jpg",
         "https://raw.githubusercontent.com/maciejtzawadzki-bit/warszawa-official-social/main/media/mini/2026-11-23-za-darmo-03-f3f13069.jpg"
+      ],
+      "permalink": null,
+      "uwagi": []
+    },
+    {
+      "id": "2026-11-24-z-dzieckiem",
+      "date": "2026-11-24",
+      "time": "18:00",
+      "type": "carousel",
+      "rubric": "Z dzieckiem",
+      "status": "planned",
+      "naglowek": "Mikołajki z biletem w kieszeni 🎁",
+      "podpis": "Mikołajki z biletem w kieszeni 🎁\n\n🎻 „Grudniowe zagadki”, mikołajkowy koncert z lisem FeNkiem, Warszawską Orkiestrą Smyczkową i chórem Voci di Bambini w Filharmonii Narodowej, ul. Jasna 5: nd. 6.12, 11:00 dla 3–6 lat i 14:00 dla 7–12 lat, 40–45 zł @warsawphil\n\n🪆 „Dziadek do orzechów” w Teatrze Baj, ul. Jagiellońska 28: nd. 6.12, 11:00 i 13:00, 65 minut, 49 zł, od 7 lat @teatrbaj\n\n🎅 „Prawdziwa historia świętego Mikołaja”, rodzinne zajęcia w Muzeum Narodowym, Al. Jerozolimskie 3: nd. 6.12, 10:15, 80 minut, dziecko 25 zł, każde kolejne 10 zł, dorosły 25 zł, dla dzieci w wieku szkolnym z opiekunem; sprzedaż rusza dziś, miejsc jest niewiele @nationalmuseuminwarsaw\n\nMikołaj w tym roku woli bilety niż skarpety.\n\nFor families on 6 December: a Christmas concert at the Philharmonic, „The Nutcracker” at Teatr Baj and a St Nicholas workshop at the National Museum, with tickets on sale now.\n\n#warszawa #warszawaofficial",
+      "obrazy": [
+        "https://raw.githubusercontent.com/maciejtzawadzki-bit/warszawa-official-social/main/media/mini/2026-11-24-z-dzieckiem-01-26e50e77.jpg",
+        "https://raw.githubusercontent.com/maciejtzawadzki-bit/warszawa-official-social/main/media/mini/2026-11-24-z-dzieckiem-02-2d8dd6d1.jpg",
+        "https://raw.githubusercontent.com/maciejtzawadzki-bit/warszawa-official-social/main/media/mini/2026-11-24-z-dzieckiem-03-415abbba.jpg"
       ],
       "permalink": null,
       "uwagi": []
