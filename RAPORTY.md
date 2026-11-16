@@ -2,6 +2,33 @@
 
 Najnowszy na górze. Liczby z Instagram Graph API (`node tools/stats.mjs --write`).
 
+## 2026-11-09 – 2026-11-16
+
+Obserwujący: **6996** (+5 od poprzedniego raportu; API follows_and_unfollows: FOLLOWER 6, NON_FOLLOWER 7), postów łącznie 247.
+
+| Konto, ostatnie dni | wartość |
+|---|---|
+| zasięg (konta) | 667 |
+| wyświetlenia | 2268 |
+| konta zaangażowane | 14 |
+| interakcje | 28 |
+| wejścia na profil | 34 |
+
+| data | typ | początek opisu | ❤️ | 💬 | zapisy | udost. | zasięg | ER | post |
+|---|---|---|---|---|---|---|---|---|---|
+| 2026-11-13 | image | Ostatni raz „Bolero” w Teatrze Wielkim w tej serii | 3 | 0 | 0 | 0 | 100 | 0,04% | [link](https://www.instagram.com/p/DfrYY88l1Bs/) |
+| 2026-11-13 | rolka | Pięć pomysłów na weekend 14–15.11 🎨 | 1 | 0 | 0 | 0 | 48 | 0,01% | [link](https://www.instagram.com/reel/DfrTkmUI8q0/) |
+| 2026-11-12 | carousel_album | Co u mnie w weekend? Bracia Jussen, Händel i japoń | 6 | 0 | 1 | 3 | 235 | 0,09% | [link](https://www.instagram.com/p/DfpjwM7F64x/) |
+| 2026-11-11 | carousel_album | Mały król i skarpetki detektywi 🧦 | 3 | 1 | 0 | 0 | 86 | 0,06% | [link](https://www.instagram.com/p/DfmO8Gql1fU/) |
+| 2026-11-11 | carousel_album | Noblistka w Koperniku i druk na królewskiej prasie | 2 | 0 | 0 | 0 | 126 | 0,03% | [link](https://www.instagram.com/p/DfmO4S7HNst/) |
+| 2026-11-11 | carousel_album | 108 lat niepodległości i trzy miejsca, w których ś | 3 | 0 | 0 | 0 | 220 | 0,04% | [link](https://www.instagram.com/p/DfmHOXvDa02/) |
+
+Publiczność zaangażowana: niedostępna (Instagram pokazuje ją od 100 zaangażowanych osób).
+
+ER = (polubienia + komentarze) / obserwujący. Wnioski dopisz pod tabelą, oddzielając je od liczb.
+
+**Wnioski** (wniosek, nie liczba): czwarty tydzień z rzędu najlepsza jest czwartkowa karuzela „Weekend u mnie” (12.11: 3 udostępnienia i pierwszy w historii raportów zapis, zasięg 235), więc zostaje rdzeniem tygodnia. Rolka „Pięć pomysłów na weekend” dotarła do 48 kont, pięć razy mniej niż karuzela o tym samym weekendzie; hipoteza: powtarzała pozycje z karuzeli (stąd reguła z 13.11, że rolka ma co najmniej 3 nowe wydarzenia), ale jedna rolka to za mało, by ocenić format. Dwa posty opublikowane z opóźnieniem po awarii (9 i 10.11, wyszły 11.11 razem) miały 86–126 kont: dwie publikacje jednego dnia raczej dzielą zasięg. Raportu za 2–9.11 brak (awaria środowiska 7–11.11), więc zasięg konta 667 porównuję z 387 sprzed dwóch tygodni.
+
 ## 2026-10-26 – 2026-11-02
 
 Obserwujący: **6991** (+4 od poprzedniego raportu; API follows_and_unfollows: FOLLOWER 8, NON_FOLLOWER 3), postów łącznie 237.
