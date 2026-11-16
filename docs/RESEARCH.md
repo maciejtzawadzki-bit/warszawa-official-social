@@ -12,6 +12,19 @@ Właściciel 14.10.2026: „chcę, żeby te wydarzenia były naprawdę dobrze i 
 6. **Zapisy z wyprzedzeniem:** przejrzyj też zapowiedzi na 4 tygodnie naprzód i wypisz wydarzenia z zapisami (zasady niżej).
 7. **Wybór robi agent** (właściciel 23.10.2026: „reaserchujemy wszystko, wybieramy najbardziej pasujące zgodnie z naszymi zasadami”): research jest codziennie, w trybie 2 z `CLAUDE.md` (plan kroczący na około 5 publikacji); właściciel nie wybiera kandydatów, ma tylko weto przy gotowych postach w panelu KMZ.
 
+## Domy kultury i mali organizatorzy (od 16.11.2026)
+
+Maciej 16.11: „do filharmonii się chodzi raz na rok, a mniejsze rzeczy są w cenie”. Codzienny research zaczyna od mniejszych miejsc, a wielkie instytucje z punktu 4 są uzupełnieniem (najwyżej 2 pozycje na karuzelę, reguła w `CLAUDE.md`).
+
+- **Dzielnicowe domy kultury i centra kultury**, wszystkie dzielnice po kolei (rotacja, żeby nie zawsze te same). Sprawdzone 13.11.2026 jako dobre źródła z aktualnym kalendarzem: Dzielnicowy Ośrodek Kultury Ursynów (dokursynow.pl, dane w JSON), Ursynowskie Centrum Kultury „Alternatywy” (alternatywy.art), Dom Sztuki SMB „Jary” (domsztuki.art.pl, także kino), Centrum Kultury Wilanów (kulturawilanow.pl). Do dopisania przy kolejnych researchach: domy kultury Mokotowa, Żoliborza, Bielan, Woli, Pragi, Ochoty, Białołęki, Wawra, Bemowa, Targówka.
+- **Biblioteki publiczne dzielnic** (warsztaty dla dzieci, spotkania, pokazy; zwykle za darmo, często z zapisami).
+- **Pracownie i małe sceny:** pracownie ceramiki, grafiki, druku, pracownie rodzinne, małe kina studyjne (seanse dla dzieci, poranki), małe teatry.
+- **Darmowe pokazy i otwarte zajęcia:** pokazy w planetariach i obserwatoriach, otwarte pracownie uczelni artystycznych, pokazy filmów z dyskusją, oprowadzania.
+- **Systemy zapisów organizatorów** (np. Strefa Zajęć): tylko jako trop do strony organizatora.
+- Bileterie (Biletyna, eBilet, Going) przeważnie powtarzają strony organizatorów, więc nie są źródłem pierwszego wyboru.
+
+W notatce researchu osobna linijka: ile kandydatów z domów kultury i od małych organizatorów, ile od dużych instytucji.
+
 ## Weryfikacja każdego kandydata (na stronie organizatora)
 
 - data **z rokiem** (strona bez roku: sprawdź zgodność dni tygodnia), godziny, adres i dzielnica,

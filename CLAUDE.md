@@ -45,6 +45,13 @@ To repozytorium jest działem Warszawa Official biura KMZ Macieja. Ta chmura nie
 | pt. | „Moje święta” (według kalendarza) albo „Miejsca” / „Wieczór bez dzieci” |
 | sob. lub nd. | „Z dzieckiem” albo „Warszawiacy” |
 
+**Zmiana strategii od 16.11.2026** (decyzja Macieja po pierwszym miesiącu; liczby i uzasadnienie: `docs/STRATEGIA.md`, sekcja „Pierwszy miesiąc”):
+- **Każdy post to karuzela z co najmniej 3 pozycjami.** Pojedynczy obraz z jednym wydarzeniem tylko w dzień uroczysty (materiał pamięci). Piątkowe „Miejsca” i „Wieczór bez dzieci” to 3–5 propozycji, nie jedna.
+- **Mniejsze rzeczy przed dużymi instytucjami** (Maciej: „do filharmonii się chodzi raz na rok, a mniejsze rzeczy są w cenie”): warsztaty, darmowe pokazy, pracownie, dzielnicowe domy kultury, biblioteki, małe kina i teatry, inicjatywy sąsiedzkie. Duża instytucja (Filharmonia, Teatr Wielki, Zachęta, MNW, Kopernik) najwyżej 2 pozycje na karuzelę i tylko z czymś wyjątkowym (premiera, ostatni raz, za darmo). Źródła: `docs/RESEARCH.md`, „Domy kultury i mali organizatorzy”.
+- **Raz w miesiącu karuzela „cały miesiąc”** (lista na kilka tygodni, np. darmowe wejścia, zapisy, cykle): to jedyna treść, którą ludzie zapisywali.
+- **„Weekend u mnie” zostaje rdzeniem** (10 z 12 udostępnień w pierwszym miesiącu).
+- **Rolki 1–2 w tygodniu przez 4 tygodnie** (do 14.12), potem ocena w raporcie; jedna rolka to za mało, by oceniać format.
+
 Relacje: według możliwości API (obraz bez naklejek), „Dziś u mnie”. W dzień uroczysty rubryka ustępuje materiałowi pamięci.
 
 ## Zasady treści
@@ -61,7 +68,7 @@ Relacje: według możliwości API (obraz bez naklejek), „Dziś u mnie”. W dz
    - Rolka: nagłówek z emotką, potem lista 3–5 wydarzeń z rolki jak wyżej (w kolejności klatek, krócej niż w karuzeli: co, gdzie, kiedy, `@organizatora`), bez puenty, potem EN i hasztagi; razem do ok. 800 znaków.
    - Jak u wzoru: każde konto z „@” (klikalne, powiadamia organizatora, a ten często udostępnia post w relacji). Uwaga: Business Discovery usuwa „@” z cudzych opisów, więc w danych z API konta wzoru wyglądają na gołe nazwy.
 4. **Materiały innych profili** (decyzja właściciela 14.10): zdjęcia i grafiki organizatora z oznaczeniem autora w opisie i na zdjęciu; gdy organizator się sprzeciwi, post znika tego samego dnia. Nie przerabiaj cudzych grafik poza kadrowaniem i napisem.
-   - **Współautorstwo** (właściciel 14.10: „jak nie przyjmą, co nam to szkodzi”): pole `collab` posta, do 3 kont organizatorów, których materiał jest w poście (najciekawsze najpierw). Instagram wysyła im zaproszenie; przyjęte pokazuje post także na ich profilu, nieprzyjęte wygasa bez śladu. Nie dla relacji i nie w dni uroczyste. Pozostałe konta tylko oznaczamy.
+   - **Współautorstwo** (właściciel 14.10: „jak nie przyjmą, co nam to szkodzi”): pole `collab` posta, do 3 kont organizatorów, których materiał jest w poście. **Kolejność od 16.11: najpierw mniejsze, aktywne konta** (pracownia, dom kultury, mały teatr), potem duże instytucje; duże zapraszamy nadal (Maciej 16.11: „nic nam to nie szkodzi”). W pierwszym miesiącu na 37 zaproszeń przyjęło jedno konto (@ogrodbotanicznyuw), a ten post dotarł do 1110 kont, czterokrotnie dalej niż inne. Gdy post ma więcej organizatorów niż 3, w `collab` idą te, które z większą szansą przyjmą. Instagram wysyła im zaproszenie; przyjęte pokazuje post także na ich profilu, nieprzyjęte wygasa bez śladu. Nie dla relacji i nie w dni uroczyste. Pozostałe konta tylko oznaczamy.
 5. **Treść przed zdjęciem** (Maciej 14.10): obserwujących przynosi wartość informacji, zdjęcie jest tłem. Tytuł duży (renderer sam dopasowuje go prawie do szerokości kadru), konkretny i z liczbą albo datą, gdy się da („9 pomysłów na weekend 16–18.10”); druga linijka mówi kiedy, gdzie i za ile. Bez przesady z efektami. Własne nagrania właściciela mają pierwszeństwo przed każdym innym materiałem.
 6. **Grafiki tylko z `tools/render.mjs`** (styl zmierzony na slajdach @projekt.miejski 14.10):
    - `cover`: zdjęcie „z życia” (ludzie, wnętrza, światło, nie pocztówka z zabytkiem), lekko przyciemnione, biały napis League Gothic małymi literami, wyrównany do lewej; data jako ostatnia linia tytułu („co się dzieje\nw Warszawie\n16.10–18.10”); z `num` duża liczba po lewej („9” + „pomysłów\nna weekend\nw Warszawie\n16–18.10”), to preferowany wariant okładki „Weekend u mnie”.

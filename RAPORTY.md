@@ -2,6 +2,22 @@
 
 Najnowszy na górze. Liczby z Instagram Graph API (`node tools/stats.mjs --write`).
 
+## Miesiąc 15.10–16.11 (podsumowanie)
+
+Liczby narastające z API 16.11.2026 dla wszystkich 23 postów (w raportach tygodniowych posty mierzone były po kilku godzinach, a tydzień 2–9.11 nie miał raportu). Obserwujący 6987 → 6996.
+
+| forma | postów | zasięg (mediana) | zapisy | udost. | ❤️ na post |
+|---|---|---|---|---|---|
+| karuzela „Weekend u mnie” | 5 | 264 | 3 | 10 | 7,4 |
+| inne karuzele | 7 | 204 | 4 | 1 | 4,0 |
+| pojedynczy obraz | 8 | 96 | 0 | 1 | 2,8 |
+| rolka | 1 | 48 | 0 | 0 | 1,0 |
+| „Wróciłam” (start) | 1 | 689 | 0 | 0 | 22 |
+
+Zasięg konta w kolejnych tygodniach (od 12.10): 1161, 559, 412, 1292, 625. Najlepszy post: 3.11 „Zegar tyka, ogród świeci” (zasięg 1110, jedyne przyjęte współautorstwo: @ogrodbotanicznyuw; 37 zaproszeń w miesiącu). Najwięcej zapisów: 2.11 „Cały listopad pałace bez biletów” (3).
+
+**Wnioski** (wniosek, nie liczba): przyjęte współautorstwo to jedyny czynnik, który dał kilkukrotny zasięg (jeden przypadek, więc hipoteza). „Weekend u mnie” regularnie się udostępnia, listy na cały miesiąc się zapisują, pojedyncze obrazy nie niosą się wcale. Wniosek z raportu 26.10, że spadek zasięgu wziął się z „braku przyjętych współautorstw, które wcześniej niosły posty”, był błędny: przed 3.11 nie przyjęto żadnego. Decyzje z 16.11: `docs/STRATEGIA.md`, „Pierwszy miesiąc”.
+
 ## 2026-11-09 – 2026-11-16
 
 Obserwujący: **6996** (+5 od poprzedniego raportu; API follows_and_unfollows: FOLLOWER 6, NON_FOLLOWER 7), postów łącznie 247.

@@ -1,5 +1,7 @@
 // Cotygodniowy raport statystyk @warszawa_official z Instagram Graph API (tylko odczyt).
-// Użycie: node tools/stats.mjs [--days 7] [--write]
+// Użycie: node tools/stats.mjs [--days 7] [--back 21] [--write]
+//   --back: z ilu dni pokazać posty (liczby narastające). Posty sprzed tygodnia mierzymy ponownie,
+//   bo raport z 7 dni pomijał posty z przerw (np. awaria 7–11.11 i najlepszy post miesiąca z 3.11).
 //   bez --write wypisuje raport, z --write dopisuje go na początku RAPORTY.md (najnowszy na górze).
 // Liczby z API idą do tabel bez interpretacji; wnioski dopisuje człowiek albo agent pod tabelą.
 import "./siec.mjs";
@@ -14,6 +16,7 @@ const REPORT = path.join(ROOT, "RAPORTY.md");
 
 const args = process.argv.slice(2);
 const days = Number(args.includes("--days") ? args[args.indexOf("--days") + 1] : 7);
+const back = Number(args.includes("--back") ? args[args.indexOf("--back") + 1] : 21);
 const write = args.includes("--write");
 
 const day = (d) => new Date(d).toLocaleDateString("sv-SE", { timeZone: "Europe/Warsaw" });
@@ -71,13 +74,13 @@ export async function buildReport() {
     fields: "id,caption,media_type,media_product_type,timestamp,permalink,like_count,comments_count",
     limit: "25",
   });
-  const recent = media.filter((m) => Date.parse(m.timestamp) / 1000 >= since);
+  const recent = media.filter((m) => Date.parse(m.timestamp) / 1000 >= until - back * 86_400);
   const rows = [];
   for (const m of recent) {
     const ins = await mediaMetrics(m.id);
     const engaged = (m.like_count ?? 0) + (m.comments_count ?? 0);
     rows.push(
-      `| ${day(m.timestamp)} | ${m.media_product_type === "REELS" ? "rolka" : m.media_type.toLowerCase()} | ` +
+      `| ${day(m.timestamp)}${Date.parse(m.timestamp) / 1000 < since ? " ↺" : until - Date.parse(m.timestamp) / 1000 < 86_400 ? " ⏳" : ""} | ${m.media_product_type === "REELS" ? "rolka" : m.media_type.toLowerCase()} | ` +
       `${(m.caption ?? "").split("\n")[0].replace(/\|/g, "/").slice(0, 50)} | ${m.like_count ?? "–"} | ${m.comments_count ?? "–"} | ` +
       `${ins.saved ?? "–"} | ${ins.shares ?? "–"} | ${ins.reach ?? "–"} | ${pct(engaged, account.followers_count)} | [link](${m.permalink}) |`,
     );
@@ -117,6 +120,8 @@ export async function buildReport() {
       : "Brak postów w tym okresie.",
     "",
     `Publiczność zaangażowana: ${audience}.`,
+    "",
+    `Tabela postów obejmuje ${back} dni, liczby narastające: ↺ post sprzed tego tygodnia (zmierzony ponownie), ⏳ post młodszy niż doba (liczby jeszcze rosną).`,
     "",
     "ER = (polubienia + komentarze) / obserwujący. Wnioski dopisz pod tabelą, oddzielając je od liczb.",
     "",

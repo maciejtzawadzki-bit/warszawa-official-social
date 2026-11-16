@@ -35,6 +35,24 @@ Ustalenia właściciela z 14.10.2026. Zasady pracy automatu są w `CLAUDE.md`. T
 - Automat: codziennie rano research i plan kroczący na około 5 publikacji do przodu (agent wybiera, podmienia i przesuwa posty, gdy znajdzie coś lepszego, najpóźniej 12 godzin przed publikacją; decyzja właściciela 23.10.2026), prawo weta właściciela w panelu KMZ (brak odpowiedzi oznacza publikację), publikacja codziennie przez API o 11:00 i 18:00.
 - Więcej postów dopiero wtedy, gdy jakość i statystyki się utrzymają. Jedna pomyłka w dacie albo w „za darmo” kosztuje zaufanie.
 
+## Pierwszy miesiąc: wyniki i zmiana strategii (16.11.2026)
+
+Liczby z Instagram Graph API 16.11.2026, narastające, 23 posty z 15.10–16.11 (szczegóły: `RAPORTY.md`, „Miesiąc 15.10–16.11”).
+
+**Fakty:**
+- Obserwujący 6987 → 6996 (+9 w miesiąc). Post dociera zwykle do 100–250 kont (2–4% obserwujących), 3–7 polubień.
+- Zasięg (mediana): karuzela „Weekend u mnie” 264 (5 postów), inne karuzele 204 (7), pojedynczy obraz 96 (8), rolka 48 (1).
+- Udostępnienia: 12 w miesiącu, z tego 10 przy „Weekend u mnie”. Zapisy: 7, najwięcej (3) przy liście na cały miesiąc („Cały listopad pałace bez biletów”, 2.11).
+- Współautorstwo: 37 zaproszeń, przyjęte 1 (@ogrodbotanicznyuw, post 3.11), ten post: zasięg 1110. Filharmonia zaproszona 6 razy, Zachęta 3, bez przyjęcia.
+
+**Wnioski i hipotezy:**
+- Hipoteza: przyjęte współautorstwo daje kilkukrotny zasięg (jeden przypadek, ale żaden inny czynnik nie dał podobnego skoku). Hipoteza: duże instytucje nie przyjmują zaproszeń od nieznanego konta, mniejsze organizatorki z aktywnym Instagramem częściej.
+- Pojedyncze obrazy nie niosą się (zasięg o połowę niższy, prawie bez zapisów i udostępnień).
+- Hipoteza: duża część bazy z lat 2018–2023 jest nieaktywna, więc wzrost musi przyjść od nieobserwujących (współautorstwa, udostępnienia, rolki), nie z częstszych postów do obecnej bazy.
+- Godziny 11:00 i 18:00 nie dają się porównać: o 18:00 wychodzi prawie tylko czwartkowa karuzela.
+
+**Decyzje Macieja z 16.11.2026** (reguły w `CLAUDE.md`, „Zmiana strategii od 16.11.2026”): każdy post to karuzela z co najmniej 3 pozycjami (obraz tylko w dzień uroczysty); mniejsze wydarzenia (warsztaty, darmowe pokazy, domy kultury, pracownie) przed dużymi instytucjami („do filharmonii się chodzi raz na rok, a mniejsze rzeczy są w cenie”); w `collab` najpierw mniejsze konta, duże zapraszamy nadal; raz w miesiącu lista na cały miesiąc; rolki oceniamy po 4 tygodniach. Raport tygodnia mierzy od teraz posty z 3 tygodni, bo wcześniejszy pokazywał tylko 7 dni i pominął najlepszy post miesiąca.
+
 ## Opis profilu
 
 Zostaje obecny: „PIERWSZA DAMA WWA👸 |#warszawaofficial” (decyzja właściciela 14.10; wcześniejszy pomysł opisu po angielsku odłożony).
