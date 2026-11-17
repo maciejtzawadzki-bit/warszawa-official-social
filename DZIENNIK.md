@@ -27,3 +27,4 @@
 - 2026-11-12 18:08 · carousel · 2026-11-12-weekend-u-mnie · https://www.instagram.com/p/DfpjwM7F64x/
 - 2026-11-13 11:08 · feed · 2026-11-13-wieczor-bez-dzieci · https://www.instagram.com/p/DfrYY88l1Bs/
 - 2026-11-16 11:07 · feed · 2026-11-16-pamiec · https://www.instagram.com/p/DfzGsGNHfGS/
+- 2026-11-17 18:07 · carousel · 2026-11-17-z-dzieckiem · https://www.instagram.com/p/Df2bl9Hm-uX/
