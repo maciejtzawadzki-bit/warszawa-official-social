@@ -1,0 +1,28 @@
+{
+  "id": "2026-11-30-za-darmo",
+  "date": "2026-11-30",
+  "time": "11:00",
+  "type": "carousel",
+  "status": "planned",
+  "rubric": "Za darmo",
+  "research": "research/2026-11-17.md",
+  "source": [
+    "https://domsztuki.art.pl/kino/seans/280-winda-na-szafot",
+    "https://domsztuki.art.pl/kino/seans/276-smashing-machine",
+    "https://www.muzeumazji.pl/wydarzenia/orientalny-bazar-swiateczny-2026/",
+    "https://ethnomuseum.pl/cennik/",
+    "https://zacheta.art.pl/pl/wystawy/tobias-zielony-jak-widziec-w-ciemnosci",
+    "https://www.sinfoniavarsovia.org/wydarzenia/polifonie-wystawa/"
+  ],
+  "tags": ["@dom.sztuki.ursynow", "@muzeumazji", "@ethnomuseuminwarsaw", "@galeria_zacheta", "@sinfonia_varsovia"],
+  "collab": ["@dom.sztuki.ursynow", "@ethnomuseuminwarsaw", "@muzeumazji"],
+  "slides": [
+    { "layout": "cover", "image": "https://www.sinfoniavarsovia.org/wp-content/uploads/2026/10/fot.-Miroslaw-Pietruszynski-8234-2048x2048.jpg", "tags": ["@sinfonia_varsovia"], "num": "5", "title": "rzeczy\nza darmo\nw Warszawie\ncały grudzień" },
+    { "layout": "repost", "ig": "@dom.sztuki.ursynow/De_47wNitT7", "credit": "@dom.sztuki.ursynow", "tags": ["@dom.sztuki.ursynow"], "title": "darmowe kino na Ursynowie", "sub": "wt. 1.12 i śr. 9.12, 19:00 · Dom Sztuki · wstęp wolny" },
+    { "layout": "repost", "ig": "@muzeumazji/DfzlokKjNDh", "credit": "@muzeumazji", "tags": ["@muzeumazji"], "title": "orientalny bazar na prezenty", "sub": "5–6.12, 10–18 · Muzeum Azji · wstęp wolny" },
+    { "layout": "repost", "image": "media/zrodla/2026-11-30-pme.jpg", "credit": "@ethnomuseuminwarsaw", "tags": ["@ethnomuseuminwarsaw"], "title": "bezpłatne czwartki w Etnograficznym", "sub": "każdy czwartek · Kredytowa 1 · wszystkie wystawy" },
+    { "layout": "repost", "image": "media/zrodla/2026-11-26-zacheta.jpg", "credit": "@galeria_zacheta", "tags": ["@galeria_zacheta"], "title": "Tobias Zielony w czwartki za darmo", "sub": "czwartki, 12–20 · Zachęta · wstęp wolny" },
+    { "layout": "repost", "image": "https://www.sinfoniavarsovia.org/wp-content/uploads/2026/10/fot.-Miroslaw-Pietruszynski-8234-2048x2048.jpg", "credit": "@sinfonia_varsovia · fot. Mirosław Pietruszyński", "tags": ["@sinfonia_varsovia"], "title": "„Polifonie” do 20 grudnia", "sub": "weekendy 12–21 · Grochowska 272 · wstęp wolny" }
+  ],
+  "caption": "Grudzień za zero złotych: kino, bazar, trzy wystawy 🎁\n\n🎬 Darmowe kino w Domu Sztuki na Ursynowie, ul. Wiolinowa 14: wt. 1.12, 19:00 „Windą na szafot” Louisa Malle’a w cyklu „Andrzej Bukowiecki przedstawia” i śr. 9.12, 19:00 „Smashing Machine” w cyklu „Oscarowe środy”; wstęp wolny @dom.sztuki.ursynow\n\n🏮 Orientalny Bazar Świąteczny w Muzeum Azji i Pacyfiku, ul. Solec 24: sob.–nd. 5–6.12, 10–18, 22 wystawców z prezentami, wstęp wolny @muzeumazji\n\n🧺 Bezpłatne czwartki w Państwowym Muzeum Etnograficznym, ul. Kredytowa 1: w każdy czwartek wszystkie aktualne wystawy bez biletu, także rodzinna „Domy wspólne” @ethnomuseuminwarsaw\n\n📷 „Tobias Zielony. Jak widzieć w ciemności?” w Zachęcie, pl. Małachowskiego 3: wystawa do 14.02.2027, w czwartki 12–20 wstęp wolny @galeria_zacheta\n\n🔊 „Polifonie”, wystawa w nowej siedzibie Sinfonii Varsovii, ul. Grochowska 272: w grudniu w weekendy 4–6, 11–13 i 18–20.12, pt.–nd. 12–21, ostatni dzień 20.12, wstęp wolny @sinfonia_varsovia\n\nPrezentów za was nie kupię, ale adresy na cały miesiąc mam.\n\nFree in Warsaw all December: free film nights in Ursynów, an Asian Christmas bazaar, free Thursdays at the Ethnographic Museum and Zachęta, and the Polifonie exhibition at Sinfonia Varsovia.\n\n#warszawa #warszawaofficial"
+}

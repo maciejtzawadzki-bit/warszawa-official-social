@@ -5,28 +5,28 @@
   "type": "carousel",
   "status": "planned",
   "rubric": "Weekend u mnie",
-  "research": "research/2026-11-12.md",
+  "research": "research/2026-11-17.md",
   "source": [
     "https://jarmarkwarszawski.pl",
     "https://pkin.pl/aktualnosci-i-wydarzenia/jarmark-warszawski-2026/",
     "https://filharmonia.pl/repertuar/koncert-symfoniczny-822722532",
     "https://filharmonia.pl/repertuar/koncert-symfoniczny-263451320",
     "https://teatrlalka.pl/pl/spektakle/spiaca-krolewna",
-    "https://www.kopernik.org.pl/koncerty-pod-gwiazdami/orbita-jazzu-ikigai",
-    "https://teatrwielki.pl/kalendarium/2026-2027/juvenalia-5/",
-    "https://www.sinfoniavarsovia.org/wydarzenia/polifonie-wystawa/"
+    "https://www.sinfoniavarsovia.org/wydarzenia/polifonie-wystawa/",
+    "https://kulturawilanow.pl/events/mottainai-warsztaty-dbania-i-naprawiania-ubran-inspirowane-japonska-filozofia-niemarnowania/",
+    "https://bok.waw.pl/wydarzenia/europejski-dzien-kina-artystycznego"
   ],
   "tags": [
     "@jarmarkwarszawski",
     "@warsawphil",
     "@teatr_lalka",
-    "@centrum.nauki.kopernik",
-    "@operanarodowa",
+    "@centrumkulturywilanow",
+    "@bialoleckiosrodekkultury",
     "@sinfonia_varsovia"
   ],
   "collab": [
+    "@bialoleckiosrodekkultury",
     "@jarmarkwarszawski",
-    "@warsawphil",
     "@teatr_lalka"
   ],
   "slides": [
@@ -71,23 +71,23 @@
     },
     {
       "layout": "repost",
-      "ig": "@centrum.nauki.kopernik/DeRSS-Kigx8",
-      "credit": "@centrum.nauki.kopernik",
+      "image": "media/zrodla/2026-11-19-mottainai.jpg",
+      "credit": "@centrumkulturywilanow",
       "tags": [
-        "@centrum.nauki.kopernik"
+        "@centrumkulturywilanow"
       ],
-      "title": "jazz pod kopułą planetarium",
-      "sub": "pt. 20:00 · Planetarium Kopernika · 55 zł"
+      "title": "naprawiamy ubrania po japońsku",
+      "sub": "sob. 13:00 · Stacja Wilanów · 60 zł, zapisy"
     },
     {
       "layout": "repost",
-      "image": "https://teatrwielki.pl//fileadmin/import/media/img/Sezon_2026_27/Juvenalia_5_kwadrat_26_27.jpg",
-      "credit": "@operanarodowa",
+      "image": "media/zrodla/2026-11-19-bok-ptaki.jpg",
+      "credit": "@bialoleckiosrodekkultury",
       "tags": [
-        "@operanarodowa"
+        "@bialoleckiosrodekkultury"
       ],
-      "title": "młody balet: „Juvenalia 5”",
-      "sub": "sob. 12:00 i 18:00 · Teatr Wielki · od 115 zł"
+      "title": "papierowa animacja na Dzień Kina",
+      "sub": "nd. 13:00 i 14:30 · kina BOK, Białołęka · 18–21 zł"
     },
     {
       "layout": "repost",
@@ -100,5 +100,5 @@
       "sub": "pt.–nd. 12–21 · Grochowska 272 · wstęp wolny"
     }
   ],
-  "caption": "Co u mnie w weekend? Jarmark pod Pałacem i Brahms z Dueñas 🎄\n\n🎄 Jarmark Warszawski, druga edycja, pl. Defilad przy Pałacu Kultury: od pt. 20.11 do 6.01, codziennie 11–22, ponad 200 stoisk, karuzela i wieża widokowa, labirynt elfów, chatka Mikołaja; wstęp wolny, atrakcje płatne @jarmarkwarszawski\n\n🎻 María Dueñas gra Koncert skrzypcowy D-dur Brahmsa, a orkiestra Filharmonii Narodowej pod batutą Krzysztofa Urbańskiego II Symfonię: pt. 20.11, 19:30 i sob. 21.11, 18:00, ul. Jasna 5, 70–175 zł @warsawphil\n\n🧸 „Śpiąca królewna” według Perraulta z muzyką Jerzego Wasowskiego w Teatrze Lalka w Pałacu Kultury: sob. 21.11, 12:00 i 17:00, nd. 22.11, 12:00, 50 minut, 60 zł, od 4 lat @teatr_lalka\n\n🎷 „Orbita jazzu: IKIGAI”, Anna Szczygieł na wiolonczeli elektrycznej i Dominik Rosłon na malletKAT w Planetarium Centrum Nauki Kopernik: pt. 20.11, 20:00, 45 minut, 55 zł, od 15 lat @centrum.nauki.kopernik\n\n🩰 „Juvenalia 5”, Polski Balet Narodowy Junior w Sali Młynarskiego Teatru Wielkiego, pl. Teatralny 1: sob. 21.11, 12:00 i 18:00, 115–184 zł (wieczorem tylko po 115 zł) @operanarodowa\n\n🔊 „Polifonie”, wystawa w trzech budynkach dawnego Instytutu Weterynaryjnego, nowej siedzibie Sinfonii Varsovii, ul. Grochowska 272: pt.–nd. 20–22.11, 12–21, wstęp wolny @sinfonia_varsovia\n\nGrzaniec pod Pałacem, Brahms na Jasnej, a na deser jazz pod gwiazdami.\n\nThis weekend in Warsaw: the Christmas market opens at the Palace of Culture, María Dueñas plays Brahms at the Philharmonic, a puppet Sleeping Beauty, jazz in the planetarium, the junior ballet and a free art show at Sinfonia Varsovia.\n\n#warszawa #warszawaofficial"
+  "caption": "Co u mnie w weekend? Jarmark pod Pałacem i Brahms z Dueñas 🎄\n\n🎄 Jarmark Warszawski, druga edycja, pl. Defilad przy Pałacu Kultury: od pt. 20.11 do 6.01, codziennie 11–22, ponad 200 stoisk, karuzela i wieża widokowa, labirynt elfów, chatka Mikołaja; wstęp wolny, atrakcje płatne @jarmarkwarszawski\n\n🎻 María Dueñas gra Koncert skrzypcowy D-dur Brahmsa, a orkiestra Filharmonii Narodowej pod batutą Krzysztofa Urbańskiego II Symfonię: pt. 20.11, 19:30 i sob. 21.11, 18:00, ul. Jasna 5, 70–175 zł @warsawphil\n\n🧸 „Śpiąca królewna” według Perraulta z muzyką Jerzego Wasowskiego w Teatrze Lalka w Pałacu Kultury: sob. 21.11, 12:00 i 17:00, nd. 22.11, 12:00, 50 minut, 60 zł, od 4 lat @teatr_lalka\n\n🧵 „Mottainai!”, warsztaty dbania o ubrania i ich naprawiania w duchu japońskiego niemarnowania, prowadzi Basia Trojanowska: sob. 21.11, 13:00–15:00, Stacja Wilanów, ul. Potockiego 31, od 15 lat, 60 zł, zapisy w Centrum Kultury Wilanów i online @centrumkulturywilanow\n\n🐦 „Tajemnica śpiewających ptaków”, francuska animacja z postaciami wyciętymi z papieru i tkanin, premiera na Europejski Dzień Kina Artystycznego: nd. 22.11, 13:00 i 14:30 w kinach Białołęckiego Ośrodka Kultury (Kino na boku, ul. van Gogha 1, i Kino Głębocka 66), 77 minut, od 7 lat, 18–21 zł @bialoleckiosrodekkultury\n\n🔊 „Polifonie”, wystawa w trzech budynkach dawnego Instytutu Weterynaryjnego, nowej siedzibie Sinfonii Varsovii, ul. Grochowska 272: pt.–nd. 20–22.11, 12–21, wstęp wolny @sinfonia_varsovia\n\nGrzaniec pod Pałacem, Brahms na Jasnej, a w Wilanowie igła i nitka idą w ruch.\n\nThis weekend in Warsaw: the Christmas market opens at the Palace of Culture, María Dueñas plays Brahms, a puppet Sleeping Beauty, a Japanese-style clothes mending workshop, a paper-cut animated film for kids in Białołęka and a free art show at Sinfonia Varsovia.\n\n#warszawa #warszawaofficial"
 }
