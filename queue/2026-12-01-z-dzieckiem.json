@@ -1,0 +1,27 @@
+{
+  "id": "2026-12-01-z-dzieckiem",
+  "date": "2026-12-01",
+  "time": "18:00",
+  "type": "carousel",
+  "status": "planned",
+  "rubric": "Z dzieckiem",
+  "research": "research/2026-11-19.md",
+  "source": [
+    "https://www.maskarada.waw.pl/t/repertuar.html",
+    "https://www.maskarada.waw.pl/t/bilety.html",
+    "https://teatrlalka.pl/pl/spektakle/kubus",
+    "https://bilety.teatrlalka.pl/rezerwacja/terminy.html?id=154",
+    "https://dkswit.com.pl/wydarzenia/dziadek-do-orzechow-spektakl-baletowy-dla-dzieci/",
+    "https://www.wck-wawer.pl/wck-murowanka/aktualnosci/archiwum-2026/czarny-was-i-zwierzeta"
+  ],
+  "tags": ["@teatr.maskarada", "@teatr_lalka", "@domkulturyswit", "@wawerskiecentrumkultury"],
+  "collab": ["@teatr.maskarada", "@domkulturyswit", "@wawerskiecentrumkultury"],
+  "slides": [
+    { "layout": "cover", "image": "media/zrodla/2026-12-01-swit-dziadek.jpg", "tags": ["@domkulturyswit"], "num": "4", "title": "pomysły\nna grudzień\nz dzieckiem\n5–19.12" },
+    { "layout": "repost", "ig": "@teatr.maskarada/Df2oHiAlBij#3", "credit": "@teatr.maskarada", "tags": ["@teatr.maskarada"], "title": "elfy ratują święta w Pałacu Staszica", "sub": "sob. 5 i 19.12 · Nowy Świat 72 · 70 zł" },
+    { "layout": "repost", "image": "media/zrodla/2026-12-01-murowanka.jpg", "credit": "@wawerskiecentrumkultury", "tags": ["@wawerskiecentrumkultury"], "title": "bajka i warsztaty z kotem z Wawra", "sub": "sob. 12.12, 12:00 · Murowanka · wstęp wolny" },
+    { "layout": "repost", "image": "https://teatrlalka.pl/public/upload/plays/gallery/desktop/6758414360a47.jpg", "credit": "@teatr_lalka · fot. Bartek Warzecha", "tags": ["@teatr_lalka"], "title": "zupełnie inne święta w Lalce", "sub": "sob. 12.12 17:00, nd. 12:00 · PKiN · 60 zł" },
+    { "layout": "repost", "image": "media/zrodla/2026-12-01-swit-dziadek.jpg", "credit": "@domkulturyswit", "tags": ["@domkulturyswit"], "title": "Dziadek do orzechów na Bródnie", "sub": "nd. 13.12, 13:00 · DK Świt · 60–70 zł" }
+  ],
+  "caption": "Elfy w Pałacu Staszica i balet pod choinką na Bródnie 🎄\n\n🧝 „Elfy i magia świąt” w Teatrze Maskarada, Pałac Staszica, Sala pod Kopułą, ul. Nowy Świat 72: sob. 5.12, 12:30 i sob. 19.12, 12:00, od 3,5 roku, ok. 50 minut, 70 zł, bilet potrzebny i dziecku, i dorosłemu; dla młodszych (od 2,5 roku) „Elfy i fabryka prezentów” w niedziele 6, 13 i 20.12 o 12:00 @teatr.maskarada\n\n🐈 „Zwierzęta wawerskiego lasu z kotem Czarnym Wąsem”, czytanie bajek i warsztaty plastyczne dla rodzin z dziećmi 5–10 lat w WCK Filia Murowanka, ul. Płowiecka 77: sob. 12.12, 12:00, wstęp wolny @wawerskiecentrumkultury\n\n🧸 „Zupełnie inne Święta” w Teatrze Lalka w Pałacu Kultury: sob. 12.12, 17:00 i nd. 13.12, 12:00, od 8 lat, 70 minut, 60 zł (ulgowy 55) @teatr_lalka\n\n🩰 „Dziadek do orzechów”, balet dla dzieci i początkujących widzów w Domu Kultury Świt, ul. Wysockiego 11: nd. 13.12, 13:00, 60–70 zł @domkulturyswit\n\nGrudzień szybko się wyprzedaje, a ja wolę bilety kupione przed Mikołajem.\n\nChristmas with kids in Warsaw: an elf show in Staszic Palace, free storytime and art workshop in Wawer, a puppet Christmas story at Teatr Lalka and a children's Nutcracker ballet in Bródno.\n\n#warszawa #warszawaofficial"
+}
