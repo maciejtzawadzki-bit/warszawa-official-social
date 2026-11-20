@@ -51,7 +51,7 @@ const pozycje = (p) => {
   const en = akapity.findIndex((a, i) => i > 0 && !a.startsWith("#") && poAngielsku(a));
   return akapity.slice(1, en < 0 ? undefined : en).filter((a) => EMOTKA_NA_POCZATKU.test(a));
 };
-const MIEJSCA = /filharmoni|teatr|muzeum|pałac|centrum|hal[ia]|scen|sal[ia]|galeri|ogrod|instytut|ul\b|al\b|pl\b|stadion|warszaw/i;
+const MIEJSCA = /filharmoni|teatr|muzeum|pałac|centrum|kultur|ośrod|kin[oa]\b|dom[u]?\b|hal[ia]|scen|sal[ia]|galeri|ogrod|instytut|ul\b|al\b|pl\b|stadion|warszaw/i;
 const klucze = (a) => {
   const k = new Set([...a.matchAll(/„([^”]{3,})”/g)].map((m) => m[1].toLowerCase()));
   const slowa = a.replace(/@\S+/g, " ").split(/[\s,.:;()–-]+/).filter(Boolean);
