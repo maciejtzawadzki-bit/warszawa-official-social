@@ -1,5 +1,5 @@
 {
-  "zaktualizowano": "2026-11-20T07:02:55.604Z",
+  "zaktualizowano": "2026-11-22T06:56:54.903Z",
   "posty": [
     {
       "id": "2026-10-15-wrocilam",
@@ -270,9 +270,7 @@
       "status": "published",
       "naglowek": "Ostatni raz „Bolero” w Teatrze Wielkim w tej serii 🩰",
       "podpis": "Ostatni raz „Bolero” w Teatrze Wielkim w tej serii 🩰\n\n🩰 „Symfonia tańca bis” Polskiego Baletu Narodowego: „Symphony in C” Balanchine’a do muzyki Bizeta, „Ssss…” Edwarda Cluga do nokturnów Chopina i „Bolero” Krzysztofa Pastora do Ravela, z orkiestrą Teatru Wielkiego. Sob. 14.11, 19:00, Sala Moniuszki, pl. Teatralny 1, około 2 godzin 15 minut z dwiema przerwami, bilety 242–386 zł (tańsze strefy już prawie wyprzedane) @operanarodowa\n\nW sobotę wieczorem tańczę tylko oczami.\n\nSaturday night in Warsaw: the last performance of the Polish National Ballet's triple bill with Balanchine, Clug and Pastor's „Bolero” at the Grand Theatre.\n\n#warszawa #warszawaofficial",
-      "obrazy": [
-        "https://raw.githubusercontent.com/maciejtzawadzki-bit/warszawa-official-social/main/media/mini/2026-11-13-wieczor-bez-dzieci-01-336d79ad.jpg"
-      ],
+      "obrazy": [],
       "permalink": "https://www.instagram.com/p/DfrYY88l1Bs/",
       "uwagi": []
     },
@@ -418,6 +416,26 @@
         "https://raw.githubusercontent.com/maciejtzawadzki-bit/warszawa-official-social/main/media/mini/2026-12-01-z-dzieckiem-03-84d7191e.jpg",
         "https://raw.githubusercontent.com/maciejtzawadzki-bit/warszawa-official-social/main/media/mini/2026-12-01-z-dzieckiem-04-4117bc6b.jpg",
         "https://raw.githubusercontent.com/maciejtzawadzki-bit/warszawa-official-social/main/media/mini/2026-12-01-z-dzieckiem-05-211473f6.jpg"
+      ],
+      "permalink": null,
+      "uwagi": []
+    },
+    {
+      "id": "2026-12-03-weekend-u-mnie",
+      "date": "2026-12-03",
+      "time": "18:00",
+      "type": "carousel",
+      "rubric": "Weekend u mnie",
+      "status": "planned",
+      "naglowek": "Co u mnie w weekend? Sinatra na Białołęce i Mikołaj o 9:30 🎅",
+      "podpis": "Co u mnie w weekend? Sinatra na Białołęce i Mikołaj o 9:30 🎅\n\n🎬 „Dziki Koń Dziewięć” Martina McDonagha w cyklu „Wieczory filmowe na boku”, po seansie rozmowa prowadzona przez Beatę Kwiatkowską: pt. 4.12, 18:00, Białołęcki Ośrodek Kultury, ul. van Gogha 1, 20 zł @bialoleckiosrodekkultury\n\n🎁 „Zrób sobie prezent” w Muzeum Warszawskiej Pragi, ul. Targowa 50/52: sob. 5.12, 11:00–16:00, darmowe warsztaty dla dorosłych i dzieci (gwiazdki z drewna, bombki, praskie desenie, breloki), część z ograniczoną liczbą miejsc @muzeumwarszawy\n\n🎄 Świąteczne Targi w Fabryce Norblina, budynek Plater, ul. Żelazna 51/53: czw.–nd. 3–6.12 (i dwa kolejne weekendy), lokalne marki i rękodzieło, wstęp wolny @targisploty @fabrykanorblina\n\n🎅 Rodzinny poranek mikołajkowy w Domu Kultury Świt, ul. Wysockiego 11: nd. 6.12, 9:30, spektakl „Zima w Cynamonowej Dolinie” Teatru Kwatera i spotkanie z Mikołajem, ok. 50 minut, 30 zł; zapakowany prezent dla dziecka rodzice zostawiają w kasie 3–4.12 @domkulturyswit\n\n🎷 Krzysztof Kiljański „Swing Time”, największe przeboje Franka Sinatry: sob. 5.12, 19:00, Białołęcki Ośrodek Kultury, ul. van Gogha 1, 70 zł parter, 40 zł balkon @bialoleckiosrodekkultury\n\nPrezenty z Norblina, gwiazdki z Pragi, a wieczorem swing: tak zaczynam grudzień.\n\nThis weekend in Warsaw: a McDonagh film with a talk, free gift-making workshops at the Praga Museum, a Christmas fair of local brands at Norblin Factory, Santa in Bródno and Sinatra songs in Białołęka.\n\n#warszawa #warszawaofficial",
+      "obrazy": [
+        "https://raw.githubusercontent.com/maciejtzawadzki-bit/warszawa-official-social/main/media/mini/2026-12-03-weekend-u-mnie-01-65b884a7.jpg",
+        "https://raw.githubusercontent.com/maciejtzawadzki-bit/warszawa-official-social/main/media/mini/2026-12-03-weekend-u-mnie-02-40e29a9c.jpg",
+        "https://raw.githubusercontent.com/maciejtzawadzki-bit/warszawa-official-social/main/media/mini/2026-12-03-weekend-u-mnie-03-b731c329.jpg",
+        "https://raw.githubusercontent.com/maciejtzawadzki-bit/warszawa-official-social/main/media/mini/2026-12-03-weekend-u-mnie-04-9aa92df2.jpg",
+        "https://raw.githubusercontent.com/maciejtzawadzki-bit/warszawa-official-social/main/media/mini/2026-12-03-weekend-u-mnie-05-48e26505.jpg",
+        "https://raw.githubusercontent.com/maciejtzawadzki-bit/warszawa-official-social/main/media/mini/2026-12-03-weekend-u-mnie-06-614bc511.jpg"
       ],
       "permalink": null,
       "uwagi": []
