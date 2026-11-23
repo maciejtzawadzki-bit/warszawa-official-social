@@ -2,6 +2,42 @@
 
 Najnowszy na górze. Liczby z Instagram Graph API (`node tools/stats.mjs --write`).
 
+## 2026-11-16 – 2026-11-23
+
+Obserwujący: **6991** (-5 od poprzedniego raportu; API follows_and_unfollows: FOLLOWER 3, NON_FOLLOWER 5), postów łącznie 250.
+
+| Konto, ostatnie dni | wartość |
+|---|---|
+| zasięg (konta) | 475 |
+| wyświetlenia | 1306 |
+| konta zaangażowane | 11 |
+| interakcje | 16 |
+| wejścia na profil | 30 |
+
+| data | typ | początek opisu | ❤️ | 💬 | zapisy | udost. | zasięg | ER | post |
+|---|---|---|---|---|---|---|---|---|---|
+| 2026-11-19 | carousel_album | Co u mnie w weekend? Jarmark pod Pałacem i Brahms  | 3 | 1 | 0 | 0 | 236 | 0,06% | [link](https://www.instagram.com/p/Df7lOPclw0F/) |
+| 2026-11-17 | carousel_album | Brat Pinokia i król od czarów 🎭 | 4 | 1 | 0 | 1 | 154 | 0,07% | [link](https://www.instagram.com/p/Df2bl9Hm-uX/) |
+| 2026-11-16 | image | 86 lat temu zamknięto mur getta 🕯 | 1 | 0 | 0 | 0 | 106 | 0,01% | [link](https://www.instagram.com/p/DfzGsGNHfGS/) |
+| 2026-11-13 ↺ | image | Ostatni raz „Bolero” w Teatrze Wielkim w tej serii | 3 | 0 | 0 | 0 | 131 | 0,04% | [link](https://www.instagram.com/p/DfrYY88l1Bs/) |
+| 2026-11-13 ↺ | rolka | Pięć pomysłów na weekend 14–15.11 🎨 | 2 | 0 | 0 | 0 | 60 | 0,03% | [link](https://www.instagram.com/reel/DfrTkmUI8q0/) |
+| 2026-11-12 ↺ | carousel_album | Co u mnie w weekend? Bracia Jussen, Händel i japoń | 6 | 0 | 1 | 3 | 252 | 0,09% | [link](https://www.instagram.com/p/DfpjwM7F64x/) |
+| 2026-11-11 ↺ | carousel_album | Mały król i skarpetki detektywi 🧦 | 3 | 1 | 0 | 0 | 104 | 0,06% | [link](https://www.instagram.com/p/DfmO8Gql1fU/) |
+| 2026-11-11 ↺ | carousel_album | Noblistka w Koperniku i druk na królewskiej prasie | 2 | 0 | 0 | 0 | 139 | 0,03% | [link](https://www.instagram.com/p/DfmO4S7HNst/) |
+| 2026-11-11 ↺ | carousel_album | 108 lat niepodległości i trzy miejsca, w których ś | 3 | 0 | 0 | 0 | 235 | 0,04% | [link](https://www.instagram.com/p/DfmHOXvDa02/) |
+| 2026-11-06 ↺ | image | Orkiestra zamieszkała w dawnym Instytucie Weteryna | 5 | 0 | 0 | 0 | 145 | 0,07% | [link](https://www.instagram.com/p/DfZWwgxkUD_/) |
+| 2026-11-05 ↺ | carousel_album | Co u mnie w weekend? Beethoven, pociągi i Legia ✨ | 9 | 0 | 0 | 1 | 268 | 0,13% | [link](https://www.instagram.com/p/DfXiSzGl45p/) |
+| 2026-11-03 ↺ | carousel_album | Zegar tyka, ogród świeci 🧒 | 7 | 0 | 1 | 0 | 1114 | 0,10% | [link](https://www.instagram.com/p/DfSYizklMq-/) |
+| 2026-11-02 ↺ | carousel_album | Cały listopad pałace bez biletów 🏛️ | 7 | 0 | 4 | 0 | 209 | 0,10% | [link](https://www.instagram.com/p/DfPDpvxFxan/) |
+
+Publiczność zaangażowana: niedostępna (Instagram pokazuje ją od 100 zaangażowanych osób).
+
+Tabela postów obejmuje 21 dni, liczby narastające: ↺ post sprzed tego tygodnia (zmierzony ponownie), ⏳ post młodszy niż doba (liczby jeszcze rosną).
+
+ER = (polubienia + komentarze) / obserwujący. Wnioski dopisz pod tabelą, oddzielając je od liczb.
+
+**Wnioski** (wniosek, nie liczba): w tygodniu 16–23.11 najszerzej doszła znów czwartkowa karuzela „Weekend u mnie” (19.11: zasięg 236), ale pierwszy raz bez udostępnienia; jedyne udostępnienie tygodnia dostała karuzela „Z dzieckiem” 17.11 (zasięg 154). Najlepsze posty z 21 dni to nadal te dwa z początku listopada: lista na cały miesiąc „Cały listopad pałace bez biletów” (4 zapisy) i karuzela z przyjętym współautorstwem @ogrodbotanicznyuw (1114 kont), co potwierdza kierunek z 16.11: lista „cały grudzień” 30.11 i współautorstwa z mniejszymi kontami. Liczba obserwujących spadła o 5 (6991), a zasięg konta wyniósł 475 kont; pierwsze posty według nowej strategii (mniejsi organizatorzy) wychodzą od 19.11, więc ich efekt ocenimy w kolejnych raportach. Rolki z 20.11 nie ma w danych (nie została jeszcze opublikowana albo API jej nie zwraca).
+
 ## Miesiąc 15.10–16.11 (podsumowanie)
 
 Liczby narastające z API 16.11.2026 dla wszystkich 23 postów (w raportach tygodniowych posty mierzone były po kilku godzinach, a tydzień 2–9.11 nie miał raportu). Obserwujący 6987 → 6996.
