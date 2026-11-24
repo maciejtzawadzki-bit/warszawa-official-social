@@ -1,5 +1,5 @@
 {
-  "zaktualizowano": "2026-11-23T10:08:00.714Z",
+  "zaktualizowano": "2026-11-24T07:02:21.371Z",
   "posty": [
     {
       "id": "2026-10-15-wrocilam",
@@ -283,9 +283,7 @@
       "status": "published",
       "naglowek": "86 lat temu zamknięto mur getta 🕯",
       "podpis": "86 lat temu zamknięto mur getta 🕯\n\n🕯 16 listopada 1940 roku Niemcy zamknęli granice getta w Warszawie. Na obszarze około 4 km², za murem i 22 strzeżonymi bramami, znalazło się blisko 400 tysięcy ludzi.\n\n🧱 Ocalałe fragmenty muru stoją do dziś na podwórkach przy ul. Siennej 55 i Złotej 62. Muzeum Getta Warszawskiego przypomina w tych dniach ulicę Sienną kampanią „Był mur w Warszawie, a za nim ulica Sienna” i filmem dokumentalnym „Warszawa pod niemiecką okupacją. Ulica Sienna” na swoim kanale YouTube @warsawghettomuseum\n\nPamiętam.\n\nOn 16 November 1940 the Germans sealed the Warsaw Ghetto: nearly 400,000 people were shut in behind its wall. Surviving fragments still stand at Sienna 55 and Złota 62.\n\n#warszawa #warszawaofficial",
-      "obrazy": [
-        "https://raw.githubusercontent.com/maciejtzawadzki-bit/warszawa-official-social/main/media/mini/2026-11-16-pamiec-01-87b43b3b.jpg"
-      ],
+      "obrazy": [],
       "permalink": "https://www.instagram.com/p/DfzGsGNHfGS/",
       "uwagi": []
     },
@@ -439,6 +437,27 @@
       ],
       "permalink": null,
       "uwagi": []
+    },
+    {
+      "id": "2026-12-08-z-dzieckiem",
+      "date": "2026-12-08",
+      "time": "18:00",
+      "type": "carousel",
+      "rubric": "Z dzieckiem",
+      "status": "planned",
+      "naglowek": "Bałwanek na Grochowie i wełniane nuty na Starówce ⛄",
+      "podpis": "Bałwanek na Grochowie i wełniane nuty na Starówce ⛄\n\n⛄ „Pewnego razu w Lodowej Krainie”, musical dla dzieci 4–10 lat Teatru Piccolo w Centrum Promocji Kultury, ul. Podskarbińska 2: nd. 13.12, 10:00 i 12:00, ok. 75 minut z przerwą, wstęp wolny na wejściówki z biletomatu CPK od wt. 8.12, 16:00 (każde dziecko i każdy dorosły potrzebuje własnej) @centrumpromocjikultury\n\n✂️ „Świąteczne ozdoby”, rodzinne warsztaty plastyczne w Ursynowskim Centrum Kultury Alternatywy, ul. Indiry Gandhi 9: nd. 13.12, 11:00, 30 zł @alternatywy.art\n\n🧶 „Wełna”, zimowy spektakl muzyczny Teatru Małego Widza dla dzieci 1–5 lat, Scena na Jezuickiej, ul. Jezuicka 4 (wejście od Brzozowej): nd. 20.12, 10:00, 12:00, 14:00 i 16:00, 30 minut i kwadrans zabawy, 60 zł za dziecko i za dorosłego @teatr_malego_widza\n\n🎄 „O, choinka!”, teatralny poranek bajkowy w Bemowskim Centrum Kultury, ul. Konarskiego 20: nd. 20.12, 11:30 i 13:00, 50 zł, bilety na stronie BCK i w kasie przy Rozłogi 18 @bemowskie_centrum_kultury\n\nNa wejściówki do Lodowej Krainy nastawcie budzik na wtorek, 16:00.\n\nWith kids in Warsaw before Christmas: a free snowman musical in Grochów, paper ornament workshop in Ursynów, a cosy wool-themed show for toddlers in the Old Town and a Christmas tree fairy tale in Bemowo.\n\n#warszawa #warszawaofficial",
+      "obrazy": [
+        "https://raw.githubusercontent.com/maciejtzawadzki-bit/warszawa-official-social/main/media/mini/2026-12-08-z-dzieckiem-01-55e7c57d.jpg",
+        "https://raw.githubusercontent.com/maciejtzawadzki-bit/warszawa-official-social/main/media/mini/2026-12-08-z-dzieckiem-02-b2f0052c.jpg",
+        "https://raw.githubusercontent.com/maciejtzawadzki-bit/warszawa-official-social/main/media/mini/2026-12-08-z-dzieckiem-03-6db12089.jpg",
+        "https://raw.githubusercontent.com/maciejtzawadzki-bit/warszawa-official-social/main/media/mini/2026-12-08-z-dzieckiem-04-51450f54.jpg",
+        "https://raw.githubusercontent.com/maciejtzawadzki-bit/warszawa-official-social/main/media/mini/2026-12-08-z-dzieckiem-05-9a928e1c.jpg"
+      ],
+      "permalink": null,
+      "uwagi": [
+        "promocje i otwarcia sklepów to nie nasz temat"
+      ]
     }
   ]
 }

@@ -1,0 +1,27 @@
+{
+  "id": "2026-12-08-z-dzieckiem",
+  "date": "2026-12-08",
+  "time": "18:00",
+  "type": "carousel",
+  "status": "planned",
+  "rubric": "Z dzieckiem",
+  "research": "research/2026-11-24.md",
+  "source": [
+    "https://cpk.art.pl/imprezy/pewnego-razu-w-lodowej-krainie-spektakl-dla-dzieci-1/",
+    "https://cpk.art.pl/imprezy/pewnego-razu-w-lodowej-krainie-spektakl-dla-dzieci-2/",
+    "https://alternatywy.art/repertuar/",
+    "https://alternatywy.art/swiateczne-wience-rodzinne-warsztaty-plastyczne/",
+    "https://teatrmalegowidza.pl/event/welna_20-12-2026_10-00/",
+    "https://bemowskie.pl/"
+  ],
+  "tags": ["@centrumpromocjikultury", "@alternatywy.art", "@teatr_malego_widza", "@bemowskie_centrum_kultury"],
+  "collab": ["@teatr_malego_widza", "@centrumpromocjikultury", "@alternatywy.art"],
+  "slides": [
+    { "layout": "cover", "image": "media/zrodla/2026-12-08-welna.jpg", "tags": ["@teatr_malego_widza"], "num": "4", "title": "spektakle\ni warsztaty\nz dzieckiem\n13–20.12" },
+    { "layout": "repost", "image": "media/zrodla/2026-12-08-cpk.jpg", "credit": "@centrumpromocjikultury", "tags": ["@centrumpromocjikultury"], "title": "bałwanek Joguś w Lodowej Krainie", "sub": "nd. 13.12, 10:00 i 12:00 · CPK Grochów · za darmo" },
+    { "layout": "repost", "image": "media/zrodla/2026-12-08-alternatywy.jpg", "credit": "@alternatywy.art", "tags": ["@alternatywy.art"], "title": "świąteczne ozdoby z papieru", "sub": "nd. 13.12, 11:00 · Alternatywy, Ursynów · 30 zł" },
+    { "layout": "repost", "image": "media/zrodla/2026-12-08-welna.jpg", "credit": "@teatr_malego_widza", "tags": ["@teatr_malego_widza"], "title": "wełniany spektakl dla dzieci 1–5 lat", "sub": "nd. 20.12, 10:00–16:00 · Jezuicka 4 · 60 zł" },
+    { "layout": "repost", "image": "media/zrodla/2026-12-08-bck.jpg", "credit": "@bemowskie_centrum_kultury", "tags": ["@bemowskie_centrum_kultury"], "title": "„O, choinka!”: bajka na Bemowie", "sub": "nd. 20.12, 11:30 i 13:00 · BCK · 50 zł" }
+  ],
+  "caption": "Bałwanek na Grochowie i wełniane nuty na Starówce ⛄\n\n⛄ „Pewnego razu w Lodowej Krainie”, musical dla dzieci 4–10 lat Teatru Piccolo w Centrum Promocji Kultury, ul. Podskarbińska 2: nd. 13.12, 10:00 i 12:00, ok. 75 minut z przerwą, wstęp wolny na wejściówki z biletomatu CPK od wt. 8.12, 16:00 (każde dziecko i każdy dorosły potrzebuje własnej) @centrumpromocjikultury\n\n✂️ „Świąteczne ozdoby”, rodzinne warsztaty plastyczne w Ursynowskim Centrum Kultury Alternatywy, ul. Indiry Gandhi 9: nd. 13.12, 11:00, 30 zł @alternatywy.art\n\n🧶 „Wełna”, zimowy spektakl muzyczny Teatru Małego Widza dla dzieci 1–5 lat, Scena na Jezuickiej, ul. Jezuicka 4 (wejście od Brzozowej): nd. 20.12, 10:00, 12:00, 14:00 i 16:00, 30 minut i kwadrans zabawy, 60 zł za dziecko i za dorosłego @teatr_malego_widza\n\n🎄 „O, choinka!”, teatralny poranek bajkowy w Bemowskim Centrum Kultury, ul. Konarskiego 20: nd. 20.12, 11:30 i 13:00, 50 zł, bilety na stronie BCK i w kasie przy Rozłogi 18 @bemowskie_centrum_kultury\n\nNa wejściówki do Lodowej Krainy nastawcie budzik na wtorek, 16:00.\n\nWith kids in Warsaw before Christmas: a free snowman musical in Grochów, paper ornament workshop in Ursynów, a cosy wool-themed show for toddlers in the Old Town and a Christmas tree fairy tale in Bemowo.\n\n#warszawa #warszawaofficial"
+}
