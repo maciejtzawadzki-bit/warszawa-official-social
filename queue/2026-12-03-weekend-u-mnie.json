@@ -5,23 +5,110 @@
   "type": "carousel",
   "status": "planned",
   "rubric": "Weekend u mnie",
-  "research": "research/2026-11-23.md",
+  "research": "research/2026-11-25.md",
   "source": [
     "https://bok.waw.pl/wydarzenia/wieczory-filmowe-na-boku-dziki-kon-dziewiec",
     "https://muzeumwarszawy.pl/zrob-sobie-prezent-2026-2/",
     "https://www.instagram.com/p/Df4SNyZEeGF/",
     "https://dkswit.com.pl/wydarzenia/rodzinny-poranek-mikolajkowy-zima-w-cynamonowej-dolinie-i-spotkanie-z-mikolajem-2/",
-    "https://bok.waw.pl/wydarzenia/krzysztof-kiljanski-swing-time"
+    "https://bok.waw.pl/wydarzenia/krzysztof-kiljanski-swing-time",
+    "https://warszawa19115.pl/-/%C5%9Awi%C4%99ta-w-warszawie-2026",
+    "https://warszawa19115.pl/-/iluminacja-w-warszawie"
   ],
-  "tags": ["@bialoleckiosrodekkultury", "@muzeumwarszawy", "@targisploty", "@fabrykanorblina", "@domkulturyswit"],
-  "collab": ["@targisploty", "@domkulturyswit", "@bialoleckiosrodekkultury"],
+  "tags": [
+    "@bialoleckiosrodekkultury",
+    "@muzeumwarszawy",
+    "@targisploty",
+    "@fabrykanorblina",
+    "@domkulturyswit",
+    "@miasto_warszawa"
+  ],
+  "collab": [
+    "@targisploty",
+    "@domkulturyswit",
+    "@bialoleckiosrodekkultury"
+  ],
   "slides": [
-    { "layout": "cover", "image": "media/zrodla/2026-12-03-swit-mikolaj.jpg", "tags": ["@domkulturyswit"], "num": "5", "title": "pomysłów\nna weekend\nw Warszawie\n4–6.12" },
-    { "layout": "repost", "image": "media/zrodla/2026-12-03-mcdonagh.jpg", "credit": "@bialoleckiosrodekkultury", "tags": ["@bialoleckiosrodekkultury"], "title": "McDonagh i rozmowa po seansie", "sub": "pt. 18:00 · BOK, van Gogha 1 · 20 zł" },
-    { "layout": "repost", "image": "media/zrodla/2026-12-03-muzeum-pragi.jpg", "credit": "@muzeumwarszawy", "tags": ["@muzeumwarszawy"], "title": "warsztaty prezentowe w Muzeum Pragi", "sub": "sob. 11–16 · Targowa 50/52 · za darmo" },
-    { "layout": "repost", "ig": "@targisploty/Df4SNyZEeGF#12", "credit": "@targisploty", "tags": ["@targisploty", "@fabrykanorblina"], "title": "świąteczne targi lokalnych marek", "sub": "czw.–nd. · Fabryka Norblina · wstęp wolny" },
-    { "layout": "repost", "image": "media/zrodla/2026-12-03-swit-mikolaj.jpg", "credit": "@domkulturyswit", "tags": ["@domkulturyswit"], "title": "spektakl i Mikołaj na Bródnie", "sub": "nd. 9:30 · DK Świt · 30 zł" },
-    { "layout": "repost", "image": "media/zrodla/2026-12-03-kiljanski.jpg", "credit": "@bialoleckiosrodekkultury", "tags": ["@bialoleckiosrodekkultury"], "title": "Sinatra w wersji Kiljańskiego", "sub": "sob. 19:00 · BOK, van Gogha 1 · 40–70 zł" }
+    {
+      "layout": "cover",
+      "image": "media/zrodla/2026-12-03-swit-mikolaj.jpg",
+      "tags": [
+        "@domkulturyswit"
+      ],
+      "num": "7",
+      "title": "pomysłów\nna weekend\nw Warszawie\n4–6.12"
+    },
+    {
+      "layout": "repost",
+      "image": "media/zrodla/2026-12-03-mcdonagh.jpg",
+      "credit": "@bialoleckiosrodekkultury",
+      "tags": [
+        "@bialoleckiosrodekkultury"
+      ],
+      "title": "McDonagh i rozmowa po seansie",
+      "sub": "pt. 18:00 · BOK, van Gogha 1 · 20 zł"
+    },
+    {
+      "layout": "repost",
+      "image": "media/zrodla/2026-12-03-muzeum-pragi.jpg",
+      "credit": "@muzeumwarszawy",
+      "tags": [
+        "@muzeumwarszawy"
+      ],
+      "title": "warsztaty prezentowe w Muzeum Pragi",
+      "sub": "sob. 11–16 · Targowa 50/52 · za darmo"
+    },
+    {
+      "layout": "repost",
+      "ig": "@targisploty/Df4SNyZEeGF#12",
+      "credit": "@targisploty",
+      "tags": [
+        "@targisploty",
+        "@fabrykanorblina"
+      ],
+      "title": "świąteczne targi lokalnych marek",
+      "sub": "czw.–nd. · Fabryka Norblina · wstęp wolny"
+    },
+    {
+      "layout": "repost",
+      "image": "media/zrodla/2026-12-03-swit-mikolaj.jpg",
+      "credit": "@domkulturyswit",
+      "tags": [
+        "@domkulturyswit"
+      ],
+      "title": "spektakl i Mikołaj na Bródnie",
+      "sub": "nd. 9:30 · DK Świt · 30 zł"
+    },
+    {
+      "layout": "repost",
+      "image": "media/zrodla/2026-12-03-kiljanski.jpg",
+      "credit": "@bialoleckiosrodekkultury",
+      "tags": [
+        "@bialoleckiosrodekkultury"
+      ],
+      "title": "Sinatra w wersji Kiljańskiego",
+      "sub": "sob. 19:00 · BOK, van Gogha 1 · 40–70 zł"
+    },
+    {
+      "layout": "repost",
+      "ig": "@miasto_warszawa/DgBKlvcjLQf#1",
+      "credit": "@miasto_warszawa · fot. Cezary Warś",
+      "tags": [
+        "@miasto_warszawa"
+      ],
+      "title": "pierniki do ozdobienia na jarmarku",
+      "sub": "pt.–nd. 17–20 · pl. Centralny, przy PKiN · za darmo"
+    },
+    {
+      "layout": "repost",
+      "ig": "@miasto_warszawa/DfzeJ_wKiCZ",
+      "credit": "@miasto_warszawa · fot. Rafał Motyl",
+      "tags": [
+        "@miasto_warszawa"
+      ],
+      "title": "21-metrowa choinka na placu Zamkowym",
+      "sub": "od pt. 4.12 · pl. Zamkowy i Trakt Królewski · za darmo"
+    }
   ],
-  "caption": "Co u mnie w weekend? Sinatra na Białołęce i Mikołaj o 9:30 🎅\n\n🎬 „Dziki Koń Dziewięć” Martina McDonagha w cyklu „Wieczory filmowe na boku”, po seansie rozmowa prowadzona przez Beatę Kwiatkowską: pt. 4.12, 18:00, Białołęcki Ośrodek Kultury, ul. van Gogha 1, 20 zł @bialoleckiosrodekkultury\n\n🎁 „Zrób sobie prezent” w Muzeum Warszawskiej Pragi, ul. Targowa 50/52: sob. 5.12, 11:00–16:00, darmowe warsztaty dla dorosłych i dzieci (gwiazdki z drewna, praskie desenie, breloki, anioły i śnieżynki), a dla chętnych pokaz dmuchania szkła z ozdabianiem bombek za 10 zł (20 miejsc na turę) @muzeumwarszawy\n\n🎄 Świąteczne Targi w Fabryce Norblina, budynek Plater, ul. Żelazna 51/53: czw.–nd. 3–6.12 (i dwa kolejne weekendy), lokalne marki i rękodzieło, wstęp wolny @targisploty @fabrykanorblina\n\n🎅 Rodzinny poranek mikołajkowy w Domu Kultury Świt, ul. Wysockiego 11: nd. 6.12, 9:30, spektakl „Zima w Cynamonowej Dolinie” Teatru Kwatera i spotkanie z Mikołajem, ok. 50 minut, 30 zł; zapakowany prezent dla dziecka rodzice zostawiają w kasie 3–4.12 @domkulturyswit\n\n🎷 Krzysztof Kiljański „Swing Time”, największe przeboje Franka Sinatry: sob. 5.12, 19:00, Białołęcki Ośrodek Kultury, ul. van Gogha 1, 70 zł parter, 40 zł balkon @bialoleckiosrodekkultury\n\nPrezenty z Norblina, gwiazdki z Pragi, a wieczorem swing: tak zaczynam grudzień.\n\nThis weekend in Warsaw: a McDonagh film with a talk, free gift-making workshops at the Praga Museum, a Christmas fair of local brands at Norblin Factory, Santa in Bródno and Sinatra songs in Białołęka.\n\n#warszawa #warszawaofficial"
+  "caption": "Co u mnie w weekend? Sinatra na Białołęce i Mikołaj o 9:30 🎅\n\n🎬 „Dziki Koń Dziewięć” Martina McDonagha w cyklu „Wieczory filmowe na boku”, po seansie rozmowa prowadzona przez Beatę Kwiatkowską: pt. 4.12, 18:00, Białołęcki Ośrodek Kultury, ul. van Gogha 1, 20 zł @bialoleckiosrodekkultury\n\n🎁 „Zrób sobie prezent” w Muzeum Warszawskiej Pragi, ul. Targowa 50/52: sob. 5.12, 11:00–16:00, darmowe warsztaty dla dorosłych i dzieci (gwiazdki z drewna, praskie desenie, breloki, anioły i śnieżynki), a dla chętnych pokaz dmuchania szkła z ozdabianiem bombek za 10 zł (20 miejsc na turę) @muzeumwarszawy\n\n🎄 Świąteczne Targi w Fabryce Norblina, budynek Plater, ul. Żelazna 51/53: czw.–nd. 3–6.12 (i dwa kolejne weekendy), lokalne marki i rękodzieło, wstęp wolny @targisploty @fabrykanorblina\n\n🎅 Rodzinny poranek mikołajkowy w Domu Kultury Świt, ul. Wysockiego 11: nd. 6.12, 9:30, spektakl „Zima w Cynamonowej Dolinie” Teatru Kwatera i spotkanie z Mikołajem, ok. 50 minut, 30 zł; zapakowany prezent dla dziecka rodzice zostawiają w kasie 3–4.12 @domkulturyswit\n\n🎷 Krzysztof Kiljański „Swing Time”, największe przeboje Franka Sinatry: sob. 5.12, 19:00, Białołęcki Ośrodek Kultury, ul. van Gogha 1, 70 zł parter, 40 zł balkon @bialoleckiosrodekkultury\n\n🍪 Warszawska Piernikowa Kraina na Jarmarku Warszawskim, pl. Centralny przy Pałacu Kultury: pt.–nd. 4–6.12 (i dwa kolejne weekendy), 17:00–20:00, ozdabianie pierników z animatorami, piernik do zabrania do domu, za darmo @miasto_warszawa\n\n✨ Od pt. 4.12 świąteczna iluminacja według warszawskich legend: 21-metrowa choinka na placu Zamkowym z Bazyliszkiem i Kamiennym Niedźwiedziem, karuzela na Rynku Nowego Miasta, mapping na Pałacu Staszica, świeci do 14.02 @miasto_warszawa\n\nPrezenty z Norblina, gwiazdki z Pragi, a wieczorem swing: tak zaczynam grudzień.\n\nThis weekend in Warsaw: a McDonagh film with a talk, free gift-making workshops at the Praga Museum, a Christmas fair of local brands at Norblin Factory, Santa in Bródno, Sinatra songs in Białołęka, free gingerbread decorating at the Christmas market and the city Christmas lights from Friday.\n\n#warszawa #warszawaofficial"
 }
