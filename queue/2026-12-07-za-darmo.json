@@ -1,0 +1,23 @@
+{
+  "id": "2026-12-07-za-darmo",
+  "date": "2026-12-07",
+  "time": "11:00",
+  "type": "carousel",
+  "status": "planned",
+  "rubric": "Za darmo",
+  "research": "research/2026-11-27.md",
+  "source": [
+    "https://www.wck-wawer.pl/radosc/aktualnosci/archiwum-20262/eko-sobotki-ferio-wawer",
+    "https://pardontotu.pl/wydarzenia/targi-malych-wydawcow-w-pardon-to-tu-wydanie-swiateczne/",
+    "https://sdk.waw.pl/wydarzenia/rodzaj-wydarzenia/spotkanie-wyklad/smieszka-warszawska-mewa-spotkanie-z-cyklu-ptasie-spacery"
+  ],
+  "tags": ["@wawerskiecentrumkultury", "@pardontotu", "@sluzewski_domkultury"],
+  "collab": ["@pardontotu", "@sluzewski_domkultury", "@wawerskiecentrumkultury"],
+  "slides": [
+    { "layout": "cover", "image": "media/zrodla/2026-12-07-mewa.jpg", "tags": ["@sluzewski_domkultury"], "num": "3", "title": "rzeczy\nza darmo\nw Warszawie\n12–13.12" },
+    { "layout": "repost", "image": "media/zrodla/2026-12-07-eko.jpg", "credit": "@wawerskiecentrumkultury", "tags": ["@wawerskiecentrumkultury"], "title": "ozdoby z recyklingu w stylu Starówki", "sub": "sob. 12.12, 10–14 · Ferio Wawer · wstęp wolny" },
+    { "layout": "repost", "image": "media/zrodla/2026-12-07-pardon.jpg", "credit": "@pardontotu", "tags": ["@pardontotu"], "title": "targi płyt i kaset od małych wydawców", "sub": "sob. 12.12, 12:00 · Pardon, To Tu · wstęp wolny" },
+    { "layout": "repost", "image": "media/zrodla/2026-12-07-mewa.jpg", "credit": "@sluzewski_domkultury", "tags": ["@sluzewski_domkultury"], "title": "zimowy spacer za mewami na Służewie", "sub": "nd. 13.12, 12:00 · Dolinka Służewska · wstęp wolny" }
+  ],
+  "caption": "Kasety, mewy i ozdoby z odzysku, a portfel zostaje w domu 🐦\n\n♻️ Eko Sobótki Wawerskiego Centrum Kultury, „Idą Święta – wyślij dobrą wiadomość”: rodzinne warsztaty robienia ozdób z materiałów z odzysku w stylu kamieniczek Starówki i kartek z Królową Śniegu, sob. 12.12, 10:00–14:00, przy choince w Ferio Wawer, ul. Szpotańskiego 4, wstęp wolny @wawerskiecentrumkultury\n\n💿 Świąteczne Targi Małych Wydawców w Pardon, To Tu, al. Armii Ludowej 14: sob. 12.12, od 12:00, płyty, kasety i książki niezależnych wydawnictw, wstęp wolny @pardontotu\n\n🐦 „Śmieszka – warszawska mewa”, spacer ornitologiczny z cyklu Ptasie Spacery Służewskiego Domu Kultury: nd. 13.12, 12:00, zbiórka w parku Dolinka Służewska za SDK, ul. Bacha 15, bez ograniczeń wieku, wstęp wolny @sluzewski_domkultury\n\nNa prezent z winylu trzeba wydać, na mewy już nie.\n\nFree in Warsaw this weekend: recycled Christmas ornament workshops in Wawer, an indie record and cassette fair at Pardon, To Tu, and a winter birdwatching walk in Mokotów.\n\n#warszawa #warszawaofficial"
+}
